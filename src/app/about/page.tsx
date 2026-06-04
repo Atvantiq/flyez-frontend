@@ -59,12 +59,12 @@ export default function About() {
       <section className="relative py-32 flex items-center justify-center text-center overflow-hidden bg-brand-primary">
         {/* Background Image overlay with parallax zoom effect */}
         <motion.div
-          initial={{ scale: 1.08, opacity: 0.7 }}
-          animate={{ scale: 1, opacity: 0.85 }}
+          initial={{ scale: 1.08, opacity: 0.45 }}
+          animate={{ scale: 1, opacity: 0.6 }}
           transition={{ duration: 6, ease: "easeOut" }}
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{ 
-            backgroundImage: 'url("https://flyez.ai/assets/img/pages/about/1.png")'
+            backgroundImage: 'url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1600&auto=format&fit=crop")'
           }}
         />
 
@@ -72,7 +72,7 @@ export default function About() {
         <div 
           className="absolute inset-0 z-1" 
           style={{
-            background: 'linear-gradient(to bottom, rgba(7, 14, 27, 0.3) 0%, rgba(7, 14, 27, 0.45) 50%, rgba(7, 14, 27, 0.8) 100%)'
+            background: 'linear-gradient(to bottom, rgba(7, 14, 27, 0.25) 0%, rgba(7, 14, 27, 0.4) 50%, rgba(7, 14, 27, 0.75) 100%)'
           }}
         />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.18),transparent_60%)] z-1" />
