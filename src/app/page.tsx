@@ -40,11 +40,11 @@ export default function Home() {
         {/* Why Book With Us Grid */}
         <WhyBookWithUs />
 
-        {/* Trending Cheap Flight Deals Grid (Popular Routes) */}
-        <TrendingDeals />
-
         {/* Popular Holiday Packages */}
         <Packages />
+
+        {/* Trending Cheap Flight Deals Grid (Popular Routes) */}
+        <TrendingDeals />
 
         {/* Luxury Business Class Callout Banner */}
         <LuxuryBanner />
