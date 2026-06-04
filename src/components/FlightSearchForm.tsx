@@ -270,64 +270,75 @@ export default function FlightSearchForm() {
 
         {/* Standard Search Fields (Round trip & One way) */}
         {tripType !== 'multicity' && (
-          <div className={`grid gap-4 items-center w-full grid-cols-1 ${
+          <div className={`grid gap-4 items-start w-full grid-cols-1 ${
             tripType === 'round' ? 'lg:grid-cols-[2.2fr_1.1fr_1.1fr_1.2fr]' : 'lg:grid-cols-[2.2fr_1.2fr_1.4fr]'
           }`}>
             {/* From & To with absolutely overlapping Swap */}
-            <div className="relative flex w-full flex-col lg:flex-row gap-4 lg:gap-0 lg:col-span-1">
-              <div className="flex-1 flex flex-col">
-                <AirportAutocomplete 
-                  label="From" 
-                  placeholder="Origin Airport" 
-                  value={origin} 
-                  onSelect={(code, name) => {
-                    setOrigin(code);
-                    setOriginName(name);
-                  }}
-                  type={1}
-                  isOrigin={true}
-                />
-                <label className="flex items-center gap-1.5 mt-2 ml-1 cursor-pointer text-xs font-semibold text-brand-text-muted select-none">
-                  <input 
-                    type="checkbox" 
-                    checked={nearOrigin}
-                    onChange={(e) => setNearOrigin(e.target.checked)}
-                    className="w-3.5 h-3.5 cursor-pointer accent-brand-accent"
+            <div className="flex flex-col lg:col-span-1 w-full">
+              {/* Inputs row */}
+              <div className="relative flex w-full flex-col lg:flex-row gap-4 lg:gap-0">
+                <div className="flex-1">
+                  <AirportAutocomplete 
+                    label="From" 
+                    placeholder="Origin Airport" 
+                    value={origin} 
+                    onSelect={(code, name) => {
+                      setOrigin(code);
+                      setOriginName(name);
+                    }}
+                    type={1}
+                    isOrigin={true}
                   />
-                  Search nearby airports
-                </label>
-              </div>
-              
-              {/* Overlapping Swap button */}
-              <button
-                type="button"
-                onClick={handleSwap}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white border border-brand-border shadow-md flex items-center justify-center text-brand-accent z-10 cursor-pointer transition-all duration-350 hover:text-brand-orange hover:shadow-lg max-lg:top-1/2 max-lg:left-[90%] max-lg:rotate-90"
-              >
-                <ArrowLeftRight size={14} />
-              </button>
+                </div>
+                
+                {/* Overlapping Swap button */}
+                <button
+                  type="button"
+                  onClick={handleSwap}
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white border border-brand-border shadow-md flex items-center justify-center text-brand-accent z-10 cursor-pointer transition-all duration-350 hover:text-brand-orange hover:shadow-lg max-lg:top-1/2 max-lg:left-[90%] max-lg:rotate-90"
+                >
+                  <ArrowLeftRight size={14} />
+                </button>
 
-              <div className="flex-1 flex flex-col">
-                <AirportAutocomplete 
-                  label="To" 
-                  placeholder="Destination Airport" 
-                  value={destination} 
-                  onSelect={(code, name) => {
-                    setDestination(code);
-                    setDestinationName(name);
-                  }}
-                  type={2}
-                  isOrigin={false}
-                />
-                <label className="flex items-center gap-1.5 mt-2 ml-1 cursor-pointer text-xs font-semibold text-brand-text-muted select-none">
-                  <input 
-                    type="checkbox" 
-                    checked={nearDest}
-                    onChange={(e) => setNearDest(e.target.checked)}
-                    className="w-3.5 h-3.5 cursor-pointer accent-brand-accent"
+                <div className="flex-1">
+                  <AirportAutocomplete 
+                    label="To" 
+                    placeholder="Destination Airport" 
+                    value={destination} 
+                    onSelect={(code, name) => {
+                      setDestination(code);
+                      setDestinationName(name);
+                    }}
+                    type={2}
+                    isOrigin={false}
                   />
-                  Search nearby airports
-                </label>
+                </div>
+              </div>
+
+              {/* Checkboxes row */}
+              <div className="flex w-full flex-col lg:flex-row gap-4 lg:gap-0 mt-2">
+                <div className="flex-1">
+                  <label className="flex items-center gap-1.5 mt-1 ml-1 cursor-pointer text-xs font-semibold text-brand-text-muted select-none">
+                    <input 
+                      type="checkbox" 
+                      checked={nearOrigin}
+                      onChange={(e) => setNearOrigin(e.target.checked)}
+                      className="w-3.5 h-3.5 cursor-pointer accent-brand-accent"
+                    />
+                    Search nearby airports
+                  </label>
+                </div>
+                <div className="flex-1">
+                  <label className="flex items-center gap-1.5 mt-1 ml-1 cursor-pointer text-xs font-semibold text-brand-text-muted select-none">
+                    <input 
+                      type="checkbox" 
+                      checked={nearDest}
+                      onChange={(e) => setNearDest(e.target.checked)}
+                      className="w-3.5 h-3.5 cursor-pointer accent-brand-accent"
+                    />
+                    Search nearby airports
+                  </label>
+                </div>
               </div>
             </div>
 
