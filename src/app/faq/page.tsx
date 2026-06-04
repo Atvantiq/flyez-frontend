@@ -22,6 +22,7 @@ export default function FAQPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [expandedItem, setExpandedItem] = useState<string | null>(null);
+  const [searchFocused, setSearchFocused] = useState(false);
   
   const faqs: FaqItem[] = [
     // --- Booking & Pricing ---
@@ -831,7 +832,7 @@ export default function FAQPage() {
           transition={{ duration: 6, ease: "easeOut" }}
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{ 
-            backgroundImage: 'url("https://images.unsplash.com/photo-1506013186407-3e3068c7855c?q=80&w=1600&auto=format&fit=crop")'
+            backgroundImage: 'url("https://images.unsplash.com/photo-1495147479427-18f4ad369290?q=80&w=1600&auto=format&fit=crop")'
           }}
         />
         <div 
@@ -859,7 +860,7 @@ export default function FAQPage() {
             className="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white leading-tight tracking-tight mb-8"
             style={{ textShadow: '0 4px 30px rgba(7, 14, 27, 0.95), 0 2px 8px rgba(7, 14, 27, 0.7)' }}
           >
-            Frequently Asked Questions
+            Frequently Asked <span className="text-brand-orange">Questions</span>
           </motion.h1>
 
           {/* Search bar inside glass container */}
@@ -867,7 +868,11 @@ export default function FAQPage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="relative flex items-center bg-white/10 dark:bg-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-2 shadow-2xl"
+            className={`relative flex items-center bg-white/10 dark:bg-white/5 backdrop-blur-xl border rounded-2xl p-2 shadow-2xl transition-all duration-300 ${
+              searchFocused 
+                ? 'border-brand-orange/50 shadow-[0_0_25px_rgba(255,92,0,0.25)] bg-white/15 dark:bg-white/10' 
+                : 'border-white/20'
+            }`}
           >
             <div className="pl-4 pr-2 text-white/60">
               <Search size={20} />
@@ -877,6 +882,8 @@ export default function FAQPage() {
               placeholder="Search flights, seat changes, baggage, pets..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              onFocus={() => setSearchFocused(true)}
+              onBlur={() => setSearchFocused(false)}
               className="w-full py-3.5 bg-transparent border-0 text-white placeholder-white/50 focus:ring-0 focus:outline-none text-sm sm:text-base font-medium"
             />
             {searchQuery && (
