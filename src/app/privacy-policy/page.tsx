@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Shield, FileText, Lock, Eye, AlertCircle, Phone, Award } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PromoAlert from '@/components/PromoAlert';
@@ -15,20 +15,26 @@ interface Section {
   icon: React.ReactNode;
   color: string;
   bg: string;
+  glow: string;
   content: React.ReactNode;
 }
 
 export default function PrivacyPolicy() {
   const [activeSection, setActiveSection] = useState('overview');
+  const [hoveredSection, setHoveredSection] = useState<string | null>(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [showMobileNav, setShowMobileNav] = useState(false);
+  const mobileNavRef = React.useRef<HTMLDivElement>(null);
 
   const sections: Section[] = [
     {
       id: "overview",
       number: "00",
       title: "Policy Overview",
-      icon: <FileText size={18} />,
+      icon: <FileText size={16} />,
       color: "#2563eb",
       bg: "bg-blue-50 dark:bg-blue-500/10 text-brand-accent",
+      glow: "rgba(37, 99, 235, 0.12)",
       content: (
         <>
           <p className="text-brand-text-muted dark:text-gray-400 text-sm md:text-base leading-relaxed mb-4">
@@ -44,9 +50,10 @@ export default function PrivacyPolicy() {
       id: "collect",
       number: "01",
       title: "Information We Collect",
-      icon: <Eye size={18} />,
+      icon: <Eye size={16} />,
       color: "#ff5c00",
       bg: "bg-orange-50 dark:bg-orange-500/10 text-brand-orange",
+      glow: "rgba(255, 92, 0, 0.12)",
       content: (
         <>
           <p className="text-brand-text-muted dark:text-gray-400 text-sm md:text-base leading-relaxed mb-4">
@@ -76,9 +83,10 @@ export default function PrivacyPolicy() {
       id: "passenger",
       number: "02",
       title: "Passenger Information",
-      icon: <Shield size={18} />,
+      icon: <Shield size={16} />,
       color: "#10b981",
       bg: "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
+      glow: "rgba(16, 185, 129, 0.12)",
       content: (
         <p className="text-brand-text-muted dark:text-gray-400 text-sm md:text-base leading-relaxed">
           When arranging travel for someone else using FLYEZ, we will request personal details and travel preferences about that person. You must seek their consent before sharing their information with us. You will be the only one with access to view or modify their info through your account.
@@ -89,9 +97,10 @@ export default function PrivacyPolicy() {
       id: "third-party",
       number: "03",
       title: "Log Data & Demographics",
-      icon: <FileText size={18} />,
+      icon: <FileText size={16} />,
       color: "#8b5cf6",
       bg: "bg-purple-50 dark:bg-purple-500/10 text-purple-600",
+      glow: "rgba(139, 92, 246, 0.12)",
       content: (
         <>
           <p className="text-brand-text-muted dark:text-gray-400 text-sm md:text-base leading-relaxed mb-4">
@@ -107,9 +116,10 @@ export default function PrivacyPolicy() {
       id: "cookies",
       number: "04",
       title: "Cookies & Tracking",
-      icon: <Lock size={18} />,
+      icon: <Lock size={16} />,
       color: "#ec4899",
       bg: "bg-pink-50 dark:bg-pink-500/10 text-pink-600",
+      glow: "rgba(236, 72, 153, 0.12)",
       content: (
         <p className="text-brand-text-muted dark:text-gray-400 text-sm md:text-base leading-relaxed">
           We use cookies and tracking technologies to enhance your experience, remember preferences, analyze usage patterns, and deliver personalized content. You can manage your cookie preferences directly in your browser settings.
@@ -120,9 +130,10 @@ export default function PrivacyPolicy() {
       id: "sharing",
       number: "05",
       title: "Information Sharing",
-      icon: <Shield size={18} />,
+      icon: <Shield size={16} />,
       color: "#06b6d4",
       bg: "bg-cyan-50 dark:bg-cyan-500/10 text-cyan-600",
+      glow: "rgba(6, 182, 212, 0.12)",
       content: (
         <>
           <p className="text-brand-text-muted dark:text-gray-400 text-sm md:text-base leading-relaxed mb-4">
@@ -149,9 +160,10 @@ export default function PrivacyPolicy() {
       id: "security",
       number: "06",
       title: "Data Security",
-      icon: <Lock size={18} />,
+      icon: <Lock size={16} />,
       color: "#3b82f6",
       bg: "bg-blue-50 dark:bg-blue-500/10 text-blue-600",
+      glow: "rgba(59, 130, 246, 0.12)",
       content: (
         <p className="text-brand-text-muted dark:text-gray-400 text-sm md:text-base leading-relaxed">
           We employ industry-standard encryption and security measures to protect the information we collect. However, no transmission method over the internet or database storage is 100% secure. While we use commercially acceptable protections, we cannot guarantee absolute security.
@@ -162,9 +174,10 @@ export default function PrivacyPolicy() {
       id: "rights",
       number: "07",
       title: "Access & Rights",
-      icon: <Award size={18} />,
+      icon: <Award size={16} />,
       color: "#cca353",
       bg: "bg-amber-50 dark:bg-amber-500/10 text-amber-600",
+      glow: "rgba(204, 163, 83, 0.12)",
       content: (
         <p className="text-brand-text-muted dark:text-gray-400 text-sm md:text-base leading-relaxed">
           You have the right to access and correct the personal information we hold about you. You can update your details by logging into your profile or by contacting our help desk directly. You can also opt-out of promotional communications by clicking the unsubscribe link.
@@ -175,9 +188,10 @@ export default function PrivacyPolicy() {
       id: "children",
       number: "08",
       title: "Children's Privacy",
-      icon: <Shield size={18} />,
+      icon: <Shield size={16} />,
       color: "#f59e0b",
       bg: "bg-yellow-50 dark:bg-yellow-500/10 text-yellow-600",
+      glow: "rgba(245, 158, 11, 0.12)",
       content: (
         <p className="text-brand-text-muted dark:text-gray-400 text-sm md:text-base leading-relaxed">
           FLYEZ has strict policies regarding minors below the age of 16. Minors are not authorized to transact or book directly with us. Parents or legal guardians must complete all flight bookings and reservations, ensuring correct supervision and adult legal consent.
@@ -188,9 +202,10 @@ export default function PrivacyPolicy() {
       id: "billing",
       number: "09",
       title: "Billing & Card Safety",
-      icon: <AlertCircle size={18} />,
+      icon: <AlertCircle size={16} />,
       color: "#ef4444",
       bg: "bg-red-50 dark:bg-red-500/10 text-red-600",
+      glow: "rgba(239, 68, 68, 0.12)",
       content: (
         <div className="bg-red-500/5 dark:bg-red-500/10 border border-red-500/20 rounded-2xl p-5">
           <p className="text-brand-text-muted dark:text-gray-300 text-xs md:text-sm leading-relaxed mb-3">
@@ -204,11 +219,72 @@ export default function PrivacyPolicy() {
     }
   ];
 
+  // ScrollSpy listener to automatically update active sidebar section on scroll, scroll progress and mobile nav visibility
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-30% 0px -55% 0px',
+      threshold: 0
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((sec) => {
+      const element = document.getElementById(sec.id);
+      if (element) observer.observe(element);
+    });
+
+    const handleScroll = () => {
+      const totalScrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalScrollHeight > 0) {
+        const pct = Math.min(100, Math.max(0, Math.round((window.scrollY / totalScrollHeight) * 100)));
+        setScrollProgress(pct);
+      }
+      
+      if (window.scrollY > 340) {
+        setShowMobileNav(true);
+      } else {
+        setShowMobileNav(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      sections.forEach((sec) => {
+        const element = document.getElementById(sec.id);
+        if (element) observer.unobserve(element);
+      });
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [sections]);
+
+  // Center active mobile index item when activeSection changes
+  useEffect(() => {
+    if (showMobileNav && mobileNavRef.current) {
+      const activeEl = mobileNavRef.current.querySelector('[data-active="true"]');
+      if (activeEl) {
+        activeEl.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center'
+        });
+      }
+    }
+  }, [activeSection, showMobileNav]);
+
   const handleScrollTo = (id: string) => {
     setActiveSection(id);
     const element = document.getElementById(id);
     if (element) {
-      const headerOffset = 100;
+      const headerOffset = 135;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       
@@ -218,6 +294,9 @@ export default function PrivacyPolicy() {
       });
     }
   };
+
+  const activeIndex = sections.findIndex(sec => sec.id === activeSection);
+  const currentActiveSecObj = sections[activeIndex] || sections[0];
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg-light dark:bg-brand-primary">
@@ -265,33 +344,182 @@ export default function PrivacyPolicy() {
         </div>
       </section>
 
+      {/* Sticky Mobile Nav Slider */}
+      <AnimatePresence>
+        {showMobileNav && (
+          <motion.div 
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.2 }}
+            ref={mobileNavRef}
+            className="sticky top-[77px] z-[999] lg:hidden w-full bg-white/95 dark:bg-brand-primary-light/95 backdrop-blur-md border-b border-slate-200/80 dark:border-gray-800/80 shadow-[0_4px_12px_rgba(7,14,27,0.03)] py-3 px-4 overflow-x-auto scrollbar-none flex gap-2.5"
+          >
+            {sections.map((sec) => {
+              const isActive = activeSection === sec.id;
+              return (
+                <button
+                  key={sec.id}
+                  data-active={isActive ? "true" : "false"}
+                  onClick={() => handleScrollTo(sec.id)}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold whitespace-nowrap transition-all duration-350 cursor-pointer border ${
+                    isActive
+                      ? 'bg-brand-accent text-white shadow-[0_4px_12px_rgba(37,99,235,0.25)] border-brand-accent'
+                      : 'bg-slate-100 dark:bg-brand-primary-light/60 text-brand-text-muted hover:text-brand-primary dark:hover:text-white border-slate-200/50 dark:border-gray-800'
+                  }`}
+                >
+                  <span className="shrink-0" style={{ color: isActive ? '#fff' : sec.color }}>
+                    {sec.icon}
+                  </span>
+                  <span>{sec.title}</span>
+                </button>
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Main Grid Content */}
       <main className="flex-1 py-16">
         <div className="premium-container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* Sticky Sidebar Navigation (4 cols) */}
-            <div className="hidden lg:block lg:col-span-4 sticky top-28 bg-white dark:bg-brand-primary-light border border-brand-border dark:border-gray-800 p-6 rounded-3xl shadow-sm">
-              <span className="text-[10px] font-extrabold uppercase text-brand-orange tracking-widest block mb-4">
-                Table of Contents
-              </span>
-              <div className="flex flex-col gap-2">
+            <div 
+              className="hidden lg:block lg:col-span-4 sticky top-28 backdrop-blur-2xl border border-white/20 dark:border-gray-800/60 p-6 rounded-3xl transition-all duration-500 z-30 overflow-hidden"
+              style={{
+                background: 'rgba(255, 255, 255, 0.45)',
+                boxShadow: `0 30px 60px -15px rgba(7, 14, 27, 0.05), 0 0 45px -15px ${currentActiveSecObj.color}20`
+              }}
+            >
+              {/* Dark mode background adjustment */}
+              <div className="absolute inset-0 bg-white/40 dark:bg-brand-primary-light/10 -z-30 pointer-events-none" />
+              
+              {/* Dynamic glowing ambient spheres */}
+              <div 
+                className="absolute -right-20 -top-20 w-44 h-44 rounded-full blur-[80px] opacity-10 dark:opacity-20 transition-all duration-700 pointer-events-none -z-20" 
+                style={{ backgroundColor: currentActiveSecObj.color }}
+              />
+              <div 
+                className="absolute -left-20 -bottom-20 w-36 h-36 rounded-full blur-[70px] opacity-5 dark:opacity-15 transition-all duration-700 pointer-events-none -z-20" 
+                style={{ backgroundColor: currentActiveSecObj.color }}
+              />
+              
+              {/* Flight Dashboard Header with scroll progress ring */}
+              <div className="flex items-center gap-3.5 mb-6 pb-4 border-b border-slate-200/50 dark:border-gray-800/60 relative z-10">
+                <div className="relative w-11 h-11 flex items-center justify-center shrink-0">
+                  <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                    <circle 
+                      cx="18" 
+                      cy="18" 
+                      r="15" 
+                      fill="none" 
+                      className="stroke-slate-200/60 dark:stroke-gray-800/80" 
+                      strokeWidth="2.5" 
+                    />
+                    <motion.circle 
+                      cx="18" 
+                      cy="18" 
+                      r="15" 
+                      fill="none" 
+                      stroke={currentActiveSecObj.color} 
+                      strokeWidth="2.5" 
+                      strokeDasharray="94.2" 
+                      strokeDashoffset={94.2 - (94.2 * scrollProgress) / 100} 
+                      strokeLinecap="round" 
+                      transition={{ type: "spring", stiffness: 85, damping: 18 }}
+                    />
+                  </svg>
+                  <span className="absolute text-[8px] font-mono font-bold text-brand-primary dark:text-white">
+                    {scrollProgress}%
+                  </span>
+                </div>
+                <div>
+                  <span className="text-[10px] font-extrabold uppercase text-brand-orange tracking-widest flex items-center gap-1.5 mb-0.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" /> Flight Plan
+                  </span>
+                  <h4 className="text-sm font-display font-black text-brand-primary dark:text-white">
+                    Privacy Directory
+                  </h4>
+                </div>
+              </div>
+
+              <div className="relative flex flex-col gap-1.5">
+                {/* Vertical timeline connector line */}
+                <div className="absolute left-[33px] top-4 bottom-4 w-[2px] bg-slate-100 dark:bg-gray-800/40 z-0 pointer-events-none" />
+
+                {/* Active Neon Segment Tracker */}
+                <motion.div 
+                  className="absolute left-[33px] w-[2px] rounded-full z-1 pointer-events-none"
+                  initial={false}
+                  animate={{
+                    top: `${activeIndex * 48 + 22}px`,
+                    height: '24px',
+                  }}
+                  style={{
+                    backgroundColor: currentActiveSecObj.color,
+                    boxShadow: `0 0 8px ${currentActiveSecObj.color}`
+                  }}
+                  transition={{ type: "spring", stiffness: 350, damping: 30 }}
+                />
+
                 {sections.map((sec) => {
                   const isActive = activeSection === sec.id;
                   return (
                     <button
                       key={sec.id}
                       onClick={() => handleScrollTo(sec.id)}
-                      className={`flex items-center gap-3.5 px-4 py-3 rounded-xl text-left text-xs font-bold transition-all duration-200 cursor-pointer ${
+                      onMouseEnter={() => setHoveredSection(sec.id)}
+                      onMouseLeave={() => setHoveredSection(null)}
+                      className={`relative flex items-center gap-4 px-4 py-2.5 rounded-2xl text-left transition-all duration-300 group cursor-pointer w-full z-10 ${
                         isActive
-                          ? 'bg-brand-primary text-white dark:bg-brand-primary border border-brand-primary'
-                          : 'text-brand-text-muted hover:text-brand-primary hover:bg-slate-50 dark:hover:bg-brand-primary border border-transparent'
+                          ? 'text-brand-primary dark:text-white font-black'
+                          : 'text-brand-text-muted hover:text-brand-primary dark:hover:text-white font-medium'
                       }`}
                     >
-                      <div className={`p-1.5 rounded-lg ${isActive ? 'bg-white/10 text-white' : sec.bg}`}>
+                      {/* Active Background Pill with Framer Motion layoutId */}
+                      {isActive && (
+                        <motion.div
+                          layoutId="activePill"
+                          className="absolute inset-0 bg-slate-100/90 dark:bg-brand-primary rounded-2xl -z-10 border border-slate-200/50 dark:border-gray-800"
+                          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                          style={{
+                            boxShadow: `0 8px 24px -6px rgba(7, 14, 27, 0.04), 0 0 10px ${sec.glow}`
+                          }}
+                        />
+                      )}
+
+                      {/* Hover Pill Background */}
+                      {hoveredSection === sec.id && !isActive && (
+                        <motion.div
+                          layoutId="hoverPill"
+                          className="absolute inset-0 bg-slate-100/40 dark:bg-white/5 rounded-2xl -z-10 border border-slate-100/30 dark:border-white/5"
+                          transition={{ type: "spring", stiffness: 450, damping: 32 }}
+                        />
+                      )}
+
+                      {/* Timeline Dot / Icon wrapper */}
+                      <div 
+                        className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 z-10 transition-all duration-300 group-hover:scale-105 group-hover:rotate-[6deg] ${
+                          isActive 
+                            ? 'bg-white dark:bg-brand-primary shadow-sm' 
+                            : sec.bg
+                        }`}
+                        style={{
+                          color: isActive ? sec.color : undefined,
+                          boxShadow: isActive ? `0 0 10px ${sec.glow}` : undefined
+                        }}
+                      >
                         {sec.icon}
                       </div>
-                      <span className="flex-1">{sec.title}</span>
+
+                      {/* Title & Number */}
+                      <div className="flex-1 flex items-center justify-between z-10 group-hover:translate-x-1 transition-transform duration-300">
+                        <span className="text-xs tracking-tight">{sec.title}</span>
+                        <span className="text-[10px] font-mono opacity-40 dark:opacity-60 group-hover:opacity-80 transition-opacity">
+                          {sec.number}
+                        </span>
+                      </div>
                     </button>
                   );
                 })}
@@ -309,40 +537,57 @@ export default function PrivacyPolicy() {
                 </span>
               </div>
 
-              {sections.map((sec) => (
-                <motion.div
-                  id={sec.id}
-                  key={sec.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.5 }}
-                  className="relative p-7 rounded-3xl bg-white dark:bg-brand-primary-light border border-brand-border dark:border-gray-800/80 shadow-sm overflow-hidden"
-                >
-                  {/* Dynamic Color top anchor line */}
-                  <div className="absolute top-0 inset-x-0 h-1" style={{ backgroundColor: sec.color }} />
+              {sections.map((sec) => {
+                const isCardActive = activeSection === sec.id;
+                return (
+                  <motion.div
+                    id={sec.id}
+                    key={sec.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.5 }}
+                    className={`relative p-8 rounded-3xl bg-white dark:bg-brand-primary-light border transition-all duration-500 overflow-hidden ${
+                      isCardActive
+                        ? 'border-slate-300 dark:border-slate-700/80 shadow-[0_20px_40px_rgba(7,14,27,0.06)] animate-pulse-glow'
+                        : 'border-brand-border dark:border-gray-800/80 shadow-sm'
+                    }`}
+                  >
+                    {/* Glow border overlay when active */}
+                    {isCardActive && (
+                      <div 
+                        className="absolute inset-0 border border-double rounded-3xl pointer-events-none transition-all duration-500 z-20" 
+                        style={{ borderColor: sec.color, opacity: 0.15 }}
+                      />
+                    )}
 
-                  {/* Watermark Background Number */}
-                  <div className="absolute right-6 bottom-[-15px] text-[90px] font-display font-black text-brand-primary/[0.02] dark:text-white/[0.01] select-none pointer-events-none z-0">
-                    {sec.number}
-                  </div>
+                    {/* Dynamic Color top anchor line */}
+                    <div className="absolute top-0 inset-x-0 h-1" style={{ backgroundColor: sec.color }} />
 
-                  {/* Header Title with Icon */}
-                  <div className="relative z-10 flex items-center gap-3.5 mb-5 border-b border-brand-border dark:border-gray-800/60 pb-4">
-                    <div className={`p-2.5 rounded-xl shrink-0 ${sec.bg}`}>
-                      {sec.icon}
+                    {/* Watermark Background Number */}
+                    <div className="absolute right-6 bottom-[-15px] text-[95px] font-display font-black text-brand-primary/[0.02] dark:text-white/[0.01] select-none pointer-events-none z-0 transition-opacity duration-500"
+                      style={{ opacity: isCardActive ? 0.08 : 0.02 }}
+                    >
+                      {sec.number}
                     </div>
-                    <h3 className="text-xl font-display font-black text-brand-primary dark:text-white tracking-tight leading-none">
-                      {sec.title}
-                    </h3>
-                  </div>
 
-                  {/* Body Content */}
-                  <div className="relative z-10">
-                    {sec.content}
-                  </div>
-                </motion.div>
-              ))}
+                    {/* Header Title with Icon */}
+                    <div className="relative z-10 flex items-center gap-3.5 mb-5 border-b border-brand-border dark:border-gray-800/60 pb-4">
+                      <div className={`p-2.5 rounded-xl shrink-0 transition-transform duration-500 ${sec.bg} ${isCardActive ? 'scale-105 rotate-3' : ''}`}>
+                        {sec.icon}
+                      </div>
+                      <h3 className="text-xl font-display font-black text-brand-primary dark:text-white tracking-tight leading-none">
+                        {sec.title}
+                      </h3>
+                    </div>
+
+                    {/* Body Content */}
+                    <div className="relative z-10">
+                      {sec.content}
+                    </div>
+                  </motion.div>
+                );
+              })}
 
               {/* Call Hotline Banner */}
               <div className="relative overflow-hidden bg-gradient-to-r from-brand-primary to-brand-primary-light dark:from-brand-primary-light dark:to-[#1e293b] rounded-2xl p-9 border border-white/8 dark:border-gray-800 flex flex-col md:flex-row md:items-center md:justify-between gap-6 mt-4">
