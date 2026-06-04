@@ -30,7 +30,7 @@ export default function Home() {
       {/* Main Content Sections */}
       <main className="flex-1 pb-10">
         {/* Overlapping Flight Search Form Container */}
-        <div className="premium-container relative z-20 -mt-16 md:-mt-24 mb-10">
+        <div className="premium-container relative z-20 -mt-20 md:-mt-28 lg:-mt-36 mb-10">
           <FlightSearchForm />
         </div>
 

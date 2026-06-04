@@ -8,7 +8,7 @@ export default function Hero() {
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   return (
-    <section className="relative min-h-[580px] pt-32 pb-44 flex items-center justify-center text-center overflow-hidden bg-brand-primary">
+    <section className="relative pt-24 pb-28 md:pt-28 md:pb-36 flex items-center justify-center text-center overflow-hidden bg-brand-primary">
       {/* Slowly zooming background image for cinematic depth */}
       <motion.div
         initial={{ scale: 1.08, opacity: 0.85 }}
