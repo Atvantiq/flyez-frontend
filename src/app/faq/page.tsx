@@ -806,12 +806,13 @@ export default function FAQPage() {
   const categoriesRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     if (categoriesRef.current) {
-      const activeEl = categoriesRef.current.querySelector('[data-active="true"]');
+      const container = categoriesRef.current;
+      const activeEl = container.querySelector('[data-active="true"]') as HTMLElement;
       if (activeEl) {
-        activeEl.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'center'
+        const scrollLeft = activeEl.offsetLeft - container.offsetWidth / 2 + activeEl.offsetWidth / 2;
+        container.scrollTo({
+          left: scrollLeft,
+          behavior: 'smooth'
         });
       }
     }
@@ -984,7 +985,7 @@ export default function FAQPage() {
             </div>
 
             {/* Accordions Content Area (8 cols) */}
-            <div className="col-span-1 lg:col-span-8 flex flex-col gap-4">
+            <div className="col-span-1 lg:col-span-8 flex flex-col gap-4 min-h-[600px]">
               
               {/* Active Search & Filter Indicators */}
               <div className="flex items-center justify-between border-b border-brand-border dark:border-gray-800 pb-3 mb-2">

@@ -269,12 +269,13 @@ export default function PrivacyPolicy() {
   // Center active mobile index item when activeSection changes
   useEffect(() => {
     if (showMobileNav && mobileNavRef.current) {
-      const activeEl = mobileNavRef.current.querySelector('[data-active="true"]');
+      const container = mobileNavRef.current;
+      const activeEl = container.querySelector('[data-active="true"]') as HTMLElement;
       if (activeEl) {
-        activeEl.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'center'
+        const scrollLeft = activeEl.offsetLeft - container.offsetWidth / 2 + activeEl.offsetWidth / 2;
+        container.scrollTo({
+          left: scrollLeft,
+          behavior: 'smooth'
         });
       }
     }
