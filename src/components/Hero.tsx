@@ -1,10 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Hero() {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
   return (
     <section className="relative min-h-[580px] pt-32 pb-44 flex items-center justify-center text-center overflow-hidden bg-brand-primary">
       {/* Slowly zooming background image for cinematic depth */}
@@ -17,6 +19,28 @@ export default function Hero() {
           backgroundImage: 'url("https://flyez.ai/assets/img/slider-bg-img.webp")'
         }}
       />
+
+      {/* Premium cinematic background video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        onPlay={() => setVideoLoaded(true)}
+        onLoadedData={() => setVideoLoaded(true)}
+        className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-[1500ms] ease-out ${
+          videoLoaded ? 'opacity-75' : 'opacity-0'
+        }`}
+      >
+        <source 
+          src="https://player.vimeo.com/external/500199409.hd.mp4?s=35540ff8803581aed828f76494c7592bab6ef64f&profile_id=174" 
+          type="video/mp4" 
+        />
+        <source 
+          src="https://assets.mixkit.co/videos/preview/mixkit-passenger-airplane-flying-above-the-clouds-34255-large.mp4" 
+          type="video/mp4" 
+        />
+      </video>
 
       {/* Refined gradient overlay for high image visibility and text readability */}
       <div 
