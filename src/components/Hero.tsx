@@ -12,8 +12,14 @@ export default function Hero() {
       {/* Slowly zooming background image for cinematic depth */}
       <motion.div
         initial={{ scale: 1.08, opacity: 0.85 }}
-        animate={{ scale: 1, opacity: 0.95 }}
-        transition={{ duration: 8, ease: "easeOut" }}
+        animate={{ 
+          scale: 1, 
+          opacity: videoLoaded ? 0 : 0.85 
+        }}
+        transition={{ 
+          scale: { duration: 8, ease: "easeOut" },
+          opacity: { duration: 1.5, ease: "easeOut" }
+        }}
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{ 
           backgroundImage: 'url("https://flyez.ai/assets/img/slider-bg-img.webp")'
