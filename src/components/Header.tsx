@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Phone, Menu, X, User } from 'lucide-react';
+import { Menu, X, User } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
@@ -74,29 +74,7 @@ export default function Header() {
 
         {/* Action Widgets */}
         <div className="flex items-center gap-5">
-          {/* Support Widget */}
-          <a
-            href="tel:1800-521-4263"
-            className="flex items-center gap-3 py-1.5 px-4 rounded-md bg-white border border-brand-border shadow-sm transition-all duration-350 hover:border-brand-orange/35 hover:shadow-md hover:-translate-y-0.5 group"
-          >
-            <div className="relative w-9 h-9 rounded-full border-2 border-white shadow-sm flex-shrink-0">
-              <img 
-                src="https://flyez.ai/assets/img/grouptraveltelecaller.webp" 
-                alt="agent" 
-                className="w-full h-full object-cover rounded-full" 
-              />
-              {/* Online pulse dot */}
-              <span 
-                className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-brand-success border-2 border-white shadow-[0_0_6px_rgba(16,185,129,0.5)] animate-[agentPulse_2s_infinite]"
-              />
-            </div>
-            <div className="flex flex-col hidden sm:flex">
-              <span className="text-[11px] text-brand-text-muted font-semibold uppercase tracking-wider">Speak to an Expert</span>
-              <span className="text-base text-brand-primary font-[800] flex items-center gap-1 mt-0.5">
-                <Phone size={13} className="text-brand-orange fill-brand-orange" /> 1800-521-4263
-              </span>
-            </div>
-          </a>
+
 
           {/* SignIn CTA */}
           <a
@@ -139,13 +117,7 @@ export default function Header() {
               );
             })}
           </ul>
-          <div className="h-px bg-slate-100" />
-          <a
-            href="tel:1800-521-4263"
-            className="flex items-center justify-center gap-2.5 padding-3 bg-orange-50/50 border border-dashed border-brand-orange rounded-md text-brand-orange font-bold text-base py-3"
-          >
-            <Phone size={18} fill="currentColor" /> Call 1800-521-4263
-          </a>
+
         </div>
       )}
 

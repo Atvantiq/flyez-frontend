@@ -11,12 +11,14 @@ const SpecialOffers = dynamic(() => import('@/features/marketing/components/Spec
 const WhyBookWithUs = dynamic(() => import('@/features/marketing/components/WhyBookWithUs'), { ssr: true });
 const Packages = dynamic(() => import('@/features/marketing/components/Packages'), { ssr: true });
 const TrendingDeals = dynamic(() => import('@/features/marketing/components/TrendingDeals'), { ssr: true });
+const AirlinePartners = dynamic(() => import('@/features/marketing/components/AirlinePartners'), { ssr: true });
 const LuxuryBanner = dynamic(() => import('@/features/marketing/components/LuxuryBanner'), { ssr: true });
 const Festivals = dynamic(() => import('@/features/marketing/components/Festivals'), { ssr: true });
 const SubscriptionBanner = dynamic(() => import('@/features/marketing/components/SubscriptionBanner'), { ssr: true });
 const Testimonials = dynamic(() => import('@/features/marketing/components/Testimonials'), { ssr: true });
-const AirlinePartners = dynamic(() => import('@/features/marketing/components/AirlinePartners'), { ssr: true });
+
 const TravelGptChat = dynamic(() => import('@/features/chat-ai/components/TravelGptChat'));
+const Ticker = dynamic(() => import('@/features/marketing/components/Ticker'), { ssr: true });
 
 export default function Home() {
   return (
@@ -35,6 +37,11 @@ export default function Home() {
         {/* Overlapping Flight Search Form Container */}
         <div className="premium-container relative z-20 -mt-20 md:-mt-28 lg:-mt-36 mb-10">
           <FlightSearchForm />
+        </div>
+
+        {/* Floating Text Marquee Ticker */}
+        <div className="mb-14">
+          <Ticker />
         </div>
 
         {/* Special Offers Grid & Call Banner */}
@@ -58,11 +65,13 @@ export default function Home() {
         {/* Subscription Newsletter Panel */}
         <SubscriptionBanner />
 
+        {/* Global Airline Directory (partner carriers) */}
+        <AirlinePartners />
+
         {/* Testimonials Review Panel */}
         <Testimonials />
 
-        {/* Accredited Partners Directory + Trust rating */}
-        <AirlinePartners />
+
       </main>
 
       {/* Floating Travel GPT Chat Assistant */}

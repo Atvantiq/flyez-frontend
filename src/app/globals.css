@@ -53,8 +53,12 @@
   --color-brand-success: #10b981;
   --color-brand-border: #e2e8f0;
 
-  --font-display: var(--font-outfit), sans-serif;
-  --font-sans: var(--font-inter), sans-serif;
+  /* Koursair-matched typography: Alegreya display headings, EB Garamond body */
+  --font-display: var(--font-alegreya), Georgia, serif;
+  --font-sans: var(--font-eb-garamond), Georgia, serif;
+  --font-serif: var(--font-eb-garamond), Georgia, serif;
+  --font-alegreya: var(--font-alegreya), serif;
+  --font-ui: var(--font-montserrat), sans-serif;
 
   --radius-sm: 8px;
   --radius-md: 14px;
@@ -72,6 +76,13 @@
   @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
+  }
+
+  --animate-ticker: ticker 35s infinite linear;
+
+  @keyframes ticker {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
   }
 }
 
@@ -222,4 +233,43 @@
 }
 .dark .end:hover {
   background-color: #334155;
+}
+
+/* Ticker Marquee Layout */
+.ticker-wrap {
+  overflow: hidden;
+  background: #070e1b;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 13px 0;
+  width: 100%;
+}
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  animation: var(--animate-ticker);
+  width: max-content;
+}
+.ticker-item {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.ticker-sep {
+  width: 5px;
+  height: 5px;
+  background-color: var(--color-brand-orange);
+  border-radius: 50%;
+  display: inline-block;
+}
+.dark .ticker-wrap {
+  background: #0d1b3e;
+  border-color: rgba(255, 255, 255, 0.05);
 }

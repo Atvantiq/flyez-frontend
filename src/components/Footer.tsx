@@ -203,59 +203,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Trust & Accreditation Badges */}
-        <div className="border-t border-white/7 pt-8 pb-8 flex flex-wrap justify-center items-center gap-8 md:gap-14">
-          <div className="flex items-center gap-2.5 px-4 py-2 bg-white/3 border border-white/5 rounded-lg shadow-sm">
-            <svg className="w-8 h-8 text-brand-orange" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-              <path d="M2 12h20" />
-              <path d="M12 8l4 4-4 4" />
-            </svg>
-            <div className="text-left">
-              <div className="text-[10px] font-bold text-white uppercase tracking-wider leading-none">IATA Accredited</div>
-              <div className="text-[8px] text-white/40 uppercase tracking-widest leading-none mt-0.5">Booking Agent</div>
-            </div>
-          </div>
 
-          <div className="flex items-center gap-2.5 px-4 py-2 bg-white/3 border border-white/5 rounded-lg shadow-sm">
-            <svg className="w-8 h-8 text-[#3b82f6]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-              <path d="M9 11l2 2 4-4" />
-            </svg>
-            <div className="text-left">
-              <div className="text-[10px] font-bold text-white uppercase tracking-wider leading-none">ARC Member</div>
-              <div className="text-[8px] text-white/40 uppercase tracking-widest leading-none mt-0.5">Bonded & Secured</div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2.5 px-4 py-2 bg-white/3 border border-white/5 rounded-lg shadow-sm">
-            <svg className="w-8 h-8 text-[#10b981]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
-            <div className="text-left">
-              <div className="text-[10px] font-bold text-white uppercase tracking-wider leading-none">ASTA Member</div>
-              <div className="text-[8px] text-white/40 uppercase tracking-widest leading-none mt-0.5">Travel Advisors</div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2.5 px-4 py-2 bg-white/3 border border-white/5 rounded-lg shadow-sm">
-            <div className="flex items-center gap-0.5">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <svg key={star} className="w-3 h-3 fill-[#10b981] text-[#10b981]" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <div className="text-left">
-              <div className="text-[10px] font-bold text-white uppercase tracking-wider leading-none">Trustpilot 4.8</div>
-              <div className="text-[8px] text-white/40 uppercase tracking-widest leading-none mt-0.5">Customer Rating</div>
-            </div>
-          </div>
-        </div>
 
         {/* Pricing Disclaimers / Legal Fine Print */}
         <div className="text-[10px] text-white/35 leading-relaxed mb-8 border-t border-white/7 pt-8 text-center max-w-[850px] mx-auto">
@@ -263,7 +211,7 @@ export default function Footer() {
             * Fares listed are round-trip, include fuel surcharges, government taxes, and carrier-imposed fees. All ticket rates are subject to real-time seat availability, booking class limits, and date changes, and cannot be guaranteed until successfully ticketed by the partner airline desk.
           </p>
           <p>
-            FlyEz is a registered independent travel seller and accredited provider. Unpublished offline fares and private consolidator discounts are driven by direct booking desk inventory and can vary by caller location and flight selection. Secure checkout utilizes industry-standard 256-bit SSL encryption keys.
+            FlyEz is a registered independent travel seller. Unpublished offline fares and private consolidator discounts are driven by direct booking desk inventory and can vary by caller location and flight selection. Secure checkout utilizes industry-standard 256-bit SSL encryption keys.
           </p>
         </div>
 
@@ -273,7 +221,7 @@ export default function Footer() {
         {/* Bottom Panel */}
         <div className="flex flex-wrap justify-between items-center gap-5">
           <p className="text-xs text-white/45">
-            &copy; {new Date().getFullYear()} FlyEz. All rights reserved. Registered travel provider IATA accredited partner.
+            &copy; {new Date().getFullYear()} FlyEz. All rights reserved. Registered travel provider.
           </p>
           
           {/* Custom SVG Payment Badges */}

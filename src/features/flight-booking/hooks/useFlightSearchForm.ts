@@ -1,5 +1,13 @@
 import { useFlightSearchStore } from '../store/useFlightSearchStore';
 
+const formatDateToBackend = (dateStr: string) => {
+  if (!dateStr) return '';
+  const [year, month, day] = dateStr.split('-');
+  if (!year || !month || !day) return dateStr;
+  const shortYear = year.slice(-2);
+  return `${month}/${day}/${shortYear}`;
+};
+
 export function useFlightSearchForm() {
   const store = useFlightSearchStore();
 
@@ -53,16 +61,16 @@ export function useFlightSearchForm() {
     if (store.tripType !== 'multicity') {
       params.set('origin', store.origin);
       params.set('destination', store.destination);
-      params.set('depart', store.departDate);
+      params.set('depart', formatDateToBackend(store.departDate));
       if (store.nearOrigin) params.set('nearOrigin', '1');
       if (store.nearDest) params.set('nearDest', '1');
-      if (store.tripType === 'round') params.set('return', store.returnDate);
+      if (store.tripType === 'round') params.set('return', formatDateToBackend(store.returnDate));
     } else {
       // Map multi flights
       store.multiFlights.forEach((flight, idx) => {
         params.set(`origin_${idx}`, flight.origin);
         params.set(`destination_${idx}`, flight.destination);
-        params.set(`depart_${idx}`, flight.date);
+        params.set(`depart_${idx}`, formatDateToBackend(flight.date));
       });
     }
 

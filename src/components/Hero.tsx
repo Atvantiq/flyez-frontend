@@ -39,7 +39,7 @@ export default function Hero() {
         }`}
       >
         <source 
-          src="https://player.vimeo.com/external/500199409.hd.mp4?s=35540ff8803581aed828f76494c7592bab6ef64f&profile_id=174" 
+          src="https://d11rb8slxt017z.cloudfront.net/videos/koursair-video.mp4" 
           type="video/mp4" 
         />
         <source 

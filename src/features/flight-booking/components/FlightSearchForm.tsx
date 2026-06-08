@@ -1,9 +1,10 @@
 'use client';
 
 import React from 'react';
-import { Calendar, Search, ArrowLeftRight, Plus, Trash2, ShieldAlert } from 'lucide-react';
+import { Search, ArrowLeftRight, Plus, Trash2, ShieldAlert } from 'lucide-react';
 import AirportAutocomplete from './AirportAutocomplete';
 import PassengerCountSelector from './PassengerCountSelector';
+import DateField from './DateField';
 import { useFlightSearchForm } from '../hooks/useFlightSearchForm';
 
 export default function FlightSearchForm() {
@@ -49,13 +50,6 @@ export default function FlightSearchForm() {
     handleSearchSubmit,
     handleSwap
   } = useFlightSearchForm();
-
-  // Convert Date from YYYY-MM-DD to MM/DD/YYYY (only used inside component if needed)
-  const formatDateToBackend = (dateStr: string) => {
-    if (!dateStr) return '';
-    const [year, month, day] = dateStr.split('-');
-    return `${month}/${day}/${year}`;
-  };
 
   return (
     <div className="glass-card animate-slide-up rounded-2xl p-7 max-w-[1100px] -mt-15 mx-auto relative z-10 shadow-lg">
@@ -205,37 +199,25 @@ export default function FlightSearchForm() {
             </div>
 
             {/* Depart Date */}
-            <div className="search-input-capsule flex flex-col py-3 px-4 bg-white rounded-md border border-brand-border shadow-sm">
-              <span className="text-[11px] uppercase text-brand-text-muted font-semibold flex items-center gap-1 mb-1">
-                <Calendar size={12} className="text-brand-accent" />
-                Depart
-              </span>
-              <input 
-                type="date" 
-                value={departDate}
-                onChange={(e) => setDepartDate(e.target.value)}
-                min={new Date().toISOString().split('T')[0]}
-                className="border-none outline-none text-base font-bold text-brand-primary cursor-pointer bg-transparent"
-                required
-              />
-            </div>
+            <DateField
+              label="Depart"
+              value={departDate}
+              onChange={setDepartDate}
+              min={new Date().toISOString().split('T')[0]}
+              required
+              accentClass="text-brand-accent"
+            />
 
             {/* Return Date (Round trip only) */}
             {tripType === 'round' && (
-              <div className="search-input-capsule flex flex-col py-3 px-4 bg-white rounded-md border border-brand-border shadow-sm">
-                <span className="text-[11px] uppercase text-brand-text-muted font-semibold flex items-center gap-1 mb-1">
-                  <Calendar size={12} className="text-brand-orange" />
-                  Return
-                </span>
-                <input 
-                  type="date" 
-                  value={returnDate}
-                  onChange={(e) => setReturnDate(e.target.value)}
-                  min={departDate || new Date().toISOString().split('T')[0]}
-                  className="border-none outline-none text-base font-bold text-brand-primary cursor-pointer bg-transparent"
-                  required={tripType === 'round'}
-                />
-              </div>
+              <DateField
+                label="Return"
+                value={returnDate}
+                onChange={setReturnDate}
+                min={departDate || new Date().toISOString().split('T')[0]}
+                required
+                accentClass="text-brand-orange"
+              />
             )}
 
             {/* Passenger Selector */}
@@ -286,20 +268,14 @@ export default function FlightSearchForm() {
                 />
 
                 {/* Depart Date */}
-                <div className="flex flex-col py-3 px-4 bg-white border border-brand-border rounded-md shadow-sm">
-                  <span className="text-[11px] uppercase text-brand-text-muted font-semibold flex items-center gap-1 mb-1">
-                    <Calendar size={12} className="text-brand-accent" />
-                    Depart Date
-                  </span>
-                  <input 
-                    type="date" 
-                    value={flight.date}
-                    onChange={(e) => updateMultiFlight(index, 'date', e.target.value)}
-                    min={new Date().toISOString().split('T')[0]}
-                    className="border-none outline-none text-base font-bold text-brand-primary cursor-pointer bg-transparent"
-                    required
-                  />
-                </div>
+                <DateField
+                  label="Depart Date"
+                  value={flight.date}
+                  onChange={(v) => updateMultiFlight(index, 'date', v)}
+                  min={new Date().toISOString().split('T')[0]}
+                  required
+                  accentClass="text-brand-accent"
+                />
 
                 {/* Remove button */}
                 <div className="flex justify-center max-md:mt-2">
