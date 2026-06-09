@@ -258,7 +258,7 @@ export default function FlightSearchForm() {
         )}
 
         {/* Booking Filters — placed below the search bar */}
-        <div className="flex flex-wrap justify-between items-center gap-4 mt-6 border-t border-brand-border/60 dark:border-gray-800/80 pt-6">
+        <div className="flex flex-wrap justify-between items-center gap-4 mt-6 border-t border-slate-300 dark:border-gray-800/80 pt-6">
           {/* Trip Type Tabs */}
           <div className="flex bg-slate-100 p-1 rounded-lg">
             {[
@@ -353,7 +353,7 @@ export default function FlightSearchForm() {
           </button>
         </div>
 
-        {/* Inline Desk Line Promo */}
+        {/* Inline Hot Line Promo */}
         <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 bg-brand-orange/5 dark:bg-brand-orange/10 border border-brand-orange/20 rounded-xl px-5 py-3.5 text-xs md:text-sm text-brand-primary dark:text-white font-semibold">
           <span className="flex items-center gap-2 text-brand-orange dark:text-brand-orange">
             <span className="w-2 h-2 rounded-full bg-brand-orange animate-ping" />
@@ -363,7 +363,7 @@ export default function FlightSearchForm() {
             href="tel:1800-521-4263"
             className="flex items-center gap-1.5 bg-brand-orange text-white hover:bg-brand-orange-hover px-4 py-2 rounded-lg font-bold transition-all shadow-[0_2px_8px_rgba(255,92,0,0.2)]"
           >
-            Desk Line: 1800-521-4263
+            Hot Line: 1800-521-4263
           </a>
         </div>
       </form>
