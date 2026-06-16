@@ -9,20 +9,21 @@ export default function Hero() {
 
   return (
     <section className="relative pt-24 pb-28 md:pt-28 md:pb-36 flex items-center justify-center text-center overflow-hidden bg-brand-primary">
-      {/* Slowly zooming background image for cinematic depth */}
+      {/* Slowly zooming placeholder — the video's own first frame, so there is
+          no mismatched image flash before playback begins */}
       <motion.div
         initial={{ scale: 1.08, opacity: 0.85 }}
-        animate={{ 
-          scale: 1, 
-          opacity: videoLoaded ? 0 : 0.85 
+        animate={{
+          scale: 1,
+          opacity: videoLoaded ? 0 : 0.85
         }}
-        transition={{ 
+        transition={{
           scale: { duration: 8, ease: "easeOut" },
           opacity: { duration: 1.5, ease: "easeOut" }
         }}
         className="absolute inset-0 bg-cover bg-center z-0"
-        style={{ 
-          backgroundImage: 'url("https://flyez.ai/assets/img/slider-bg-img.webp")'
+        style={{
+          backgroundImage: 'url("/videos/flight-deals-poster.jpg")'
         }}
       />
 
@@ -32,19 +33,17 @@ export default function Hero() {
         loop
         muted
         playsInline
+        preload="auto"
+        poster="/videos/flight-deals-poster.jpg"
         onPlay={() => setVideoLoaded(true)}
         onLoadedData={() => setVideoLoaded(true)}
         className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-[1500ms] ease-out ${
           videoLoaded ? 'opacity-75' : 'opacity-0'
         }`}
       >
-        <source 
-          src="https://d11rb8slxt017z.cloudfront.net/videos/koursair-video.mp4" 
-          type="video/mp4" 
-        />
-        <source 
-          src="https://assets.mixkit.co/videos/preview/mixkit-passenger-airplane-flying-above-the-clouds-34255-large.mp4" 
-          type="video/mp4" 
+        <source
+          src="/videos/flight-deals-travel.mp4"
+          type="video/mp4"
         />
       </video>
 
@@ -78,26 +77,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-display font-black text-white mb-5 leading-[1.08] tracking-tight max-w-4xl"
+          className="text-4xl sm:text-5xl md:text-6xl font-display font-black text-white mb-10 leading-[1.08] tracking-tight max-w-4xl"
           style={{ 
             textShadow: '0 4px 30px rgba(7, 14, 27, 0.95), 0 2px 8px rgba(7, 14, 27, 0.7)' 
           }}
         >
           Unbeatable Flight Deals & <br/>Secret Agent Rates
         </motion.h1>
-        
-        {/* Subtitle Description */}
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="text-base sm:text-lg text-white/95 max-w-2xl mb-10 leading-relaxed font-semibold"
-          style={{ 
-            textShadow: '0 2px 20px rgba(7, 14, 27, 0.95), 0 1px 4px rgba(7, 14, 27, 0.8)' 
-          }}
-        >
-          Access exclusive offline discounts, private consolidator rates, and group airfare deals not available online. Speak to a travel desk agent for instant discounts.
-        </motion.p>
 
         {/* Dialing CTA Button */}
         <motion.div
