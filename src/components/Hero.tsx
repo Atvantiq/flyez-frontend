@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Hero() {
@@ -60,18 +59,7 @@ export default function Hero() {
       <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle,#ffffff_1px,transparent_1.5px)] bg-[size:24px_24px] pointer-events-none z-1" />
 
       <div className="premium-container relative z-10 flex flex-col items-center">
-        
-        {/* VIP Pill */}
-        <motion.span 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-xs font-extrabold text-brand-orange uppercase tracking-[3px] inline-block mb-5 px-4 py-1.5 rounded-full bg-brand-orange/10 border border-brand-orange/30 backdrop-blur-md"
-          style={{ textShadow: '0 1px 2px rgba(7, 14, 27, 0.4)' }}
-        >
-          Unpublished Private Fares
-        </motion.span>
-        
+
         {/* Title Heading */}
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
@@ -84,40 +72,6 @@ export default function Hero() {
         >
           Unbeatable Flight Deals
         </motion.h1>
-
-        {/* Dialing CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <a
-            href="tel:1800-521-4263"
-            className="flex items-center gap-3.5 px-9 py-4 bg-brand-orange hover:bg-brand-orange-hover text-white rounded-2xl shadow-[0_4px_20px_rgba(255,92,0,0.35)] hover:shadow-[0_15px_35px_rgba(255,92,0,0.55)] border border-white/15 transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02]"
-          >
-            <motion.div
-              animate={{
-                boxShadow: [
-                  "0 0 0 0 rgba(255, 255, 255, 0.4)",
-                  "0 0 0 10px rgba(255, 255, 255, 0)",
-                  "0 0 0 0 rgba(255, 255, 255, 0)"
-                ]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center shrink-0"
-            >
-              <Phone size={16} className="fill-current text-white" />
-            </motion.div>
-            <div className="flex flex-col items-start text-left">
-              <span className="text-[10px] text-white/80 uppercase tracking-widest font-extrabold leading-none">Travel Desk · 24/7</span>
-              <span className="text-lg font-ui font-black leading-tight mt-1 tracking-tight">Speak to a Desk Agent</span>
-            </div>
-          </a>
-        </motion.div>
       </div>
     </section>
   );

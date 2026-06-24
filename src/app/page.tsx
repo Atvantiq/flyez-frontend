@@ -11,7 +11,6 @@ const SpecialOffers = dynamic(() => import('@/features/marketing/components/Spec
 const WhyBookWithUs = dynamic(() => import('@/features/marketing/components/WhyBookWithUs'), { ssr: true });
 const Packages = dynamic(() => import('@/features/marketing/components/Packages'), { ssr: true });
 const TrendingDeals = dynamic(() => import('@/features/marketing/components/TrendingDeals'), { ssr: true });
-const AirlinePartners = dynamic(() => import('@/features/marketing/components/AirlinePartners'), { ssr: true });
 const LuxuryBanner = dynamic(() => import('@/features/marketing/components/LuxuryBanner'), { ssr: true });
 const SubscriptionBanner = dynamic(() => import('@/features/marketing/components/SubscriptionBanner'), { ssr: true });
 const Testimonials = dynamic(() => import('@/features/marketing/components/Testimonials'), { ssr: true });
@@ -63,8 +62,6 @@ export default function Home() {
         {/* Subscription Newsletter Panel */}
         <SubscriptionBanner />
 
-        {/* Global Airline Directory (partner carriers) */}
-        <AirlinePartners />
 
         {/* Testimonials Review Panel */}
         <Testimonials />

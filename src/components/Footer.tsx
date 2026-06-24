@@ -192,12 +192,14 @@ export default function Footer() {
             <div>
               <h5 className="text-white text-xs font-bold mb-4 font-display uppercase tracking-widest text-brand-orange">Popular Airlines</h5>
               <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs text-white/45">
-                <li><a href="https://flyez.ai/flight-listing?airline=DL" className="hover:text-brand-orange transition-colors">Delta Air Lines</a></li>
                 <li><a href="https://flyez.ai/flight-listing?airline=AA" className="hover:text-brand-orange transition-colors">American Airlines</a></li>
                 <li><a href="https://flyez.ai/flight-listing?airline=UA" className="hover:text-brand-orange transition-colors">United Airlines</a></li>
-                <li><a href="https://flyez.ai/flight-listing?airline=EK" className="hover:text-brand-orange transition-colors">Emirates</a></li>
-                <li><a href="https://flyez.ai/flight-listing?airline=QR" className="hover:text-brand-orange transition-colors">Qatar Airways</a></li>
+                <li><a href="https://flyez.ai/flight-listing?airline=DL" className="hover:text-brand-orange transition-colors">Delta Air Lines</a></li>
+                <li><a href="https://flyez.ai/flight-listing?airline=BA" className="hover:text-brand-orange transition-colors">British Airways</a></li>
                 <li><a href="https://flyez.ai/flight-listing?airline=LH" className="hover:text-brand-orange transition-colors">Lufthansa</a></li>
+                <li><a href="https://flyez.ai/flight-listing?airline=QR" className="hover:text-brand-orange transition-colors">Qatar Airways</a></li>
+                <li><a href="https://flyez.ai/flight-listing?airline=EK" className="hover:text-brand-orange transition-colors">Emirates</a></li>
+                <li><a href="https://flyez.ai/flight-listing?airline=SQ" className="hover:text-brand-orange transition-colors">Singapore Airlines</a></li>
               </ul>
             </div>
           </div>

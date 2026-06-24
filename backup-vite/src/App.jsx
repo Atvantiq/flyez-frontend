@@ -10,7 +10,6 @@ import Packages from './components/Packages';
 import LuxuryBanner from './components/LuxuryBanner';
 import SubscriptionBanner from './components/SubscriptionBanner';
 import Testimonials from './components/Testimonials';
-import AirlinePartners from './components/AirlinePartners';
 import TravelGptChat from './components/TravelGptChat';
 import Footer from './components/Footer';
 
@@ -167,8 +166,6 @@ function App() {
         {/* Testimonials Review panel */}
         <Testimonials />
 
-        {/* Partner Carrier Badges + Trustpilot review */}
-        <AirlinePartners />
       </main>
 
       {/* Floating Travel GPT Chat Assistant */}
