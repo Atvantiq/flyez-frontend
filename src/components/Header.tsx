@@ -35,10 +35,10 @@ export default function Header() {
           : 'bg-white border-b border-slate-100'
       }`}
     >
-      <div className="premium-container flex items-center gap-10 lg:gap-14">
+      <div className="premium-container flex items-center gap-6 lg:gap-8">
         {/* Logo */}
         <a href="/" className="flex items-center gap-2 group">
-          <svg width="34" height="34" viewBox="34 18 38 42" fill="none" className="transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3 shrink-0">
+          <svg width="36" height="40" viewBox="34 18 38 42" fill="none" className="transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3 shrink-0">
             {/* Blue "F" + Top Swoop */}
             <path d="M38 58 L38 37 C38 27, 48 22, 70 20 C60 26, 45 32, 43 37 L43 43 L57 43 L52 48 L43 48 L43 53 Z" fill="#2563eb" />
             {/* Orange Feathers */}
