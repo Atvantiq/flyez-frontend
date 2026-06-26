@@ -5,8 +5,6 @@ import { Compass, Sparkles, Heart, Award, Phone, CheckCircle, Shield } from 'luc
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import PromoAlert from '@/components/PromoAlert';
-import Ticker from '@/features/marketing/components/Ticker';
 import dynamic from 'next/dynamic';
 const TravelGptChat = dynamic(() => import('@/features/chat-ai/components/TravelGptChat'), { ssr: false });
 
@@ -53,12 +51,9 @@ export default function About() {
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg-light dark:bg-brand-primary">
-      {/* Sticky Header Bar (Promo Alert + Navigation) */}
+      {/* Sticky Header Bar (Navigation) */}
       <div className="sticky top-0 z-[1000] flex flex-col">
-        {/* Consistant Layout Components */}
-        <PromoAlert />
         <Header />
-        <Ticker />
       </div>
 
       {/* About Hero Section */}
@@ -235,7 +230,7 @@ export default function About() {
               <div className="flex flex-col md:flex-row items-start md:items-center gap-6 z-10">
                 <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-brand-orange shadow-[0_0_15px_rgba(255,92,0,0.3)] shrink-0 relative">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src="https://flyez.ai/assets/img/grouptraveltelecaller.webp" alt="telecaller" className="w-full h-full object-cover" />
+                  <img src="/grouptraveltelecaller.webp" alt="telecaller" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h3 className="text-white text-2xl font-display font-black tracking-tight mb-1.5">

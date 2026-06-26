@@ -22,7 +22,7 @@ export default function Hero() {
         }}
         className="absolute inset-0 bg-cover bg-center z-0"
         style={{
-          backgroundImage: 'url("/videos/flight-deals-poster.jpg")'
+          backgroundImage: 'url("/videos/flight-deals-poster.png")'
         }}
       />
 
@@ -33,7 +33,7 @@ export default function Hero() {
         muted
         playsInline
         preload="auto"
-        poster="/videos/flight-deals-poster.jpg"
+        poster="/videos/flight-deals-poster.png"
         onPlay={() => setVideoLoaded(true)}
         onLoadedData={() => setVideoLoaded(true)}
         className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-[1500ms] ease-out ${
@@ -41,7 +41,7 @@ export default function Hero() {
         }`}
       >
         <source
-          src="/videos/flight-deals-travel.mp4"
+          src="https://videos.pexels.com/video-files/1851190/1851190-hd_1920_1080_25fps.mp4"
           type="video/mp4"
         />
       </video>

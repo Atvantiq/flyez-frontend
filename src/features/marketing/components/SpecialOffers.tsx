@@ -126,7 +126,7 @@ export default function SpecialOffers() {
           <div className="flex flex-col md:flex-row items-start md:items-center gap-6 z-10">
             <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-brand-orange shadow-[0_0_15px_rgba(255,92,0,0.3)] shrink-0 relative">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="https://flyez.ai/assets/img/grouptraveltelecaller.webp" alt="telecaller" className="w-full h-full object-cover" />
+              <img src="/grouptraveltelecaller.webp" alt="telecaller" className="w-full h-full object-cover" />
             </div>
             <div>
               <h3 className="text-white text-2xl font-display font-black tracking-tight mb-1.5">

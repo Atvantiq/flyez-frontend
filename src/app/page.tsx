@@ -1,6 +1,5 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import PromoAlert from '@/components/PromoAlert';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import FlightSearchForm from '@/features/flight-booking/components/FlightSearchForm';
@@ -13,24 +12,16 @@ const Packages = dynamic(() => import('@/features/marketing/components/Packages'
 const TrendingDeals = dynamic(() => import('@/features/marketing/components/TrendingDeals'), { ssr: true });
 const LuxuryBanner = dynamic(() => import('@/features/marketing/components/LuxuryBanner'), { ssr: true });
 const SubscriptionBanner = dynamic(() => import('@/features/marketing/components/SubscriptionBanner'), { ssr: true });
-const Testimonials = dynamic(() => import('@/features/marketing/components/Testimonials'), { ssr: true });
 
 const TravelGptChat = dynamic(() => import('@/features/chat-ai/components/TravelGptChat'));
-const Ticker = dynamic(() => import('@/features/marketing/components/Ticker'), { ssr: true });
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg-light dark:bg-brand-primary">
-      {/* Sticky Header Bar (Promo Alert + Navigation) */}
+      {/* Sticky Header Bar (Navigation) */}
       <div className="sticky top-0 z-[1000] flex flex-col">
-        {/* Discount Promo Code Alert Banner */}
-        <PromoAlert />
-
         {/* Premium Header */}
         <Header />
-
-        {/* Floating Text Marquee Ticker */}
-        <Ticker />
       </div>
 
       {/* Hero Section */}
@@ -61,10 +52,6 @@ export default function Home() {
 
         {/* Subscription Newsletter Panel */}
         <SubscriptionBanner />
-
-
-        {/* Testimonials Review Panel */}
-        <Testimonials />
 
 
       </main>

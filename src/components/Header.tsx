@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Menu, X, User } from 'lucide-react';
+import { Menu, X, PhoneCall } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 
 export default function Header() {
@@ -29,33 +29,33 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full py-4 transition-all duration-350 font-ui ${
+      className={`w-full py-3.5 transition-all duration-350 font-ui ${
         isSticky
           ? 'bg-white/92 backdrop-blur-md border-b border-slate-200/80 shadow-[0_4px_20px_-4px_rgba(11,26,48,0.05)]'
           : 'bg-white border-b border-slate-100'
       }`}
     >
-      <div className="premium-container flex items-center gap-6 lg:gap-8">
-        {/* Logo */}
-        <a href="/" className="flex items-center gap-2 group">
-          <svg width="36" height="40" viewBox="34 18 38 42" fill="none" className="transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3 shrink-0">
-            {/* Blue "F" + Top Swoop */}
-            <path d="M38 58 L38 37 C38 27, 48 22, 70 20 C60 26, 45 32, 43 37 L43 43 L57 43 L52 48 L43 48 L43 53 Z" fill="#2563eb" />
-            {/* Orange Feathers */}
-            <path d="M45 35.5 C50 35.5, 58 33, 71 23 C63 29, 56 32, 54 34 C58 34, 62 34, 66 34 C58 38, 50 40, 45 40.5 Z" fill="#ff5c00" />
-          </svg>
+      <div className="premium-container flex items-center justify-between gap-4">
+        {/* Logo left-aligned */}
+        <a href="/" className="flex items-center gap-2 group shrink-0">
+          <img 
+            src="/logo-small.gif" 
+            alt="FlyEz Logo" 
+            className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+          />
           <span className="text-2xl font-[900] font-ui tracking-tight text-brand-primary">
             Fly<span className="text-brand-orange">Ez</span>
           </span>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center">
-          <ul className="flex gap-7 text-[15px] font-semibold">
+        <nav className="hidden lg:flex items-center font-ui">
+          <ul className="flex gap-6 xl:gap-7 text-[14px] xl:text-[15px] font-semibold">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
+              const isTalkToUs = link.name === "Talk to Us";
               return (
-                <li key={link.name}>
+                <li key={link.name} className="flex items-center gap-1">
                   <a 
                     href={link.href} 
                     className={`relative py-2 transition-colors duration-150 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-brand-accent after:transition-all after:duration-150 ${
@@ -66,6 +66,14 @@ export default function Header() {
                   >
                     {link.name}
                   </a>
+                  {isTalkToUs && (
+                    <a 
+                      href="tel:1800-521-4263" 
+                      className="text-brand-orange hover:text-brand-orange-hover font-bold text-xs xl:text-sm ml-1 flex items-center gap-1 shrink-0 bg-brand-orange/5 px-2 py-0.5 rounded-full border border-brand-orange/15 transition-all hover:bg-brand-orange/10"
+                    >
+                      <PhoneCall size={10} className="inline" /> 1800-521-4263
+                    </a>
+                  )}
                 </li>
               );
             })}
@@ -73,22 +81,28 @@ export default function Header() {
         </nav>
 
         {/* Action Widgets */}
-        <div className="ml-auto flex items-center gap-5">
-
-
-
-          {/* SignIn CTA */}
+        <div className="flex items-center gap-3">
+          {/* Travel Specialist Call Widget */}
           <a
-            href="/login"
-            className="hidden sm:flex items-center gap-2 py-2.5 px-5 rounded-md border-1.5 border-brand-accent text-brand-accent text-sm font-bold transition-all duration-350 hover:bg-brand-accent hover:text-white hover:-translate-y-0.5"
+            href="tel:1800-521-4263"
+            className="hidden sm:flex items-center gap-2.5 py-1 px-3.5 rounded-full border border-slate-200 bg-slate-50/50 hover:bg-slate-100 transition-all duration-300 hover:shadow-sm"
           >
-            <User size={16} /> Sign In
+            <img
+              src="/grouptraveltelecaller.webp"
+              alt="Travel Specialist"
+              className="w-8 h-8 rounded-full object-cover border border-brand-orange"
+            />
+            <div className="flex flex-col font-ui text-left">
+              <span className="text-[9px] text-brand-text-muted font-bold uppercase tracking-wider leading-none">Talk to Us</span>
+              <span className="text-xs font-black text-brand-primary hover:text-brand-orange transition-colors">1800-521-4263</span>
+            </div>
           </a>
 
           {/* Mobile menu trigger */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="lg:hidden p-2 rounded-sm bg-slate-50 border border-slate-200 text-brand-primary"
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -97,7 +111,7 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       {isMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-lg py-5 px-6 flex flex-col gap-4 animate-[fadeIn_0.25s_ease] lg:hidden">
+        <div className="absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-lg py-5 px-6 flex flex-col gap-4 animate-[fadeIn_0.25s_ease] lg:hidden z-[1001]">
           <ul className="flex flex-col gap-4 text-base font-semibold">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -118,7 +132,15 @@ export default function Header() {
               );
             })}
           </ul>
-
+          
+          <div className="pt-4 border-t border-slate-100">
+            <a
+              href="tel:1800-521-4263"
+              className="flex items-center justify-center gap-2 py-3 px-4 bg-brand-orange hover:bg-brand-orange-hover text-white rounded-lg font-bold text-sm transition-colors"
+            >
+              <PhoneCall size={16} /> Call Expert: 1800-521-4263
+            </a>
+          </div>
         </div>
       )}
 

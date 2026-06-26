@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Alegreya, EB_Garamond, Montserrat, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import StickyBottomCall from "@/components/StickyBottomCall";
 
 // Koursair type system: Alegreya (serif headings) + EB Garamond (serif body)
 // + Montserrat (sans UI accent). Weights are capped so headings never render
@@ -46,7 +47,10 @@ export default function RootLayout({
       lang="en"
       className={`${alegreya.variable} ${ebGaramond.variable} ${montserrat.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <StickyBottomCall />
+      </body>
     </html>
   );
 }

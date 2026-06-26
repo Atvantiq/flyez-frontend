@@ -20,16 +20,11 @@ export default function Footer() {
           {/* Brand Info & Socials */}
           <div className="flex flex-col gap-5">
             <a href="/" className="flex items-center gap-2.5 group">
-              <div
-                className="w-9 h-9 flex items-center justify-center transition-transform duration-300 group-hover:scale-108 group-hover:rotate-3"
-              >
-                <svg width="34" height="34" viewBox="35 18 38 42" fill="none">
-                  {/* White "F" + Top Swoop */}
-                  <path d="M38 58 L38 37 C38 27, 48 22, 70 20 C60 26, 45 32, 43 37 L43 43 L57 43 L52 48 L43 48 L43 53 Z" fill="#ffffff" />
-                  {/* Orange Feathers */}
-                  <path d="M45 35.5 C50 35.5, 58 33, 71 23 C63 29, 56 32, 54 34 C58 34, 62 34, 66 34 C58 38, 50 40, 45 40.5 Z" fill="#ff5c00" />
-                </svg>
-              </div>
+              <img 
+                src="/logo-small.gif" 
+                alt="FlyEz Logo" 
+                className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-108" 
+              />
               <span className="text-xl font-[800] font-display text-white letter-spacing-[-0.5px]">
                 Fly<span className="text-brand-orange">Ez</span>
               </span>

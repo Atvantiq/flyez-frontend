@@ -8,8 +8,6 @@ import {
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import PromoAlert from '@/components/PromoAlert';
-import Ticker from '@/features/marketing/components/Ticker';
 import dynamic from 'next/dynamic';
 
 const TravelGptChat = dynamic(() => import('@/features/chat-ai/components/TravelGptChat'), { ssr: false });
@@ -118,11 +116,9 @@ export default function TestimonialsPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg-light dark:bg-brand-primary">
-      {/* Sticky Header Bar (Promo Alert + Navigation) */}
+      {/* Sticky Header Bar (Navigation) */}
       <div className="sticky top-0 z-[1000] flex flex-col">
-        <PromoAlert />
         <Header />
-        <Ticker />
       </div>
 
       {/* Hero Banner */}
@@ -133,7 +129,7 @@ export default function TestimonialsPage() {
           transition={{ duration: 6, ease: "easeOut" }}
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{ 
-            backgroundImage: 'url("https://images.unsplash.com/photo-1522878129833-838a904a0e9e?q=80&w=1600&auto=format&fit=crop")'
+            backgroundImage: 'url("https://images.unsplash.com/photo-1506013013222-c941df990c0f?q=80&w=1600&auto=format&fit=crop")'
           }}
         />
         <div 

@@ -7,6 +7,7 @@ interface AirportAutocompleteProps {
   label: string;
   placeholder: string;
   value: string;
+  selectedValueName?: string;
   onSelect: (code: string, name: string) => void;
   type: number; /* 1 for origin, 2 for destination, 3+ for multicity */
   isOrigin?: boolean;
@@ -16,6 +17,7 @@ export default function AirportAutocomplete({
   label, 
   placeholder, 
   value, 
+  selectedValueName,
   onSelect, 
   type, 
   isOrigin = true 
@@ -94,27 +96,40 @@ export default function AirportAutocomplete({
     <div ref={wrapperRef} className="relative w-full">
       {/* Label and input container */}
       <div
-        className={`search-input-capsule cursor-text ${isOpen ? 'is-active' : ''}`}
+        className={`search-input-capsule cursor-text flex items-center ${isOpen ? 'is-active' : ''}`}
         onClick={() => setIsOpen(true)}
       >
         <span className={`field-icon-chip ${isOrigin ? 'bg-brand-accent/10 text-brand-accent' : 'bg-brand-orange/10 text-brand-orange'}`}>
           {isOrigin ? <PlaneTakeoff size={18} /> : <PlaneLanding size={18} />}
         </span>
-        <div className="flex flex-col min-w-0 flex-1">
-          <span className="text-[10px] uppercase text-brand-text-muted font-bold tracking-[0.09em]">
+        <div className="flex flex-col min-w-0 flex-1 relative justify-center">
+          <span className="text-[10px] uppercase text-brand-text-muted font-bold tracking-[0.09em] leading-none mb-1">
             {label}
           </span>
-          <input
-            type="text"
-            placeholder={placeholder}
-            value={query}
-            onChange={(e) => {
-              setQuery(e.target.value);
-              setIsOpen(true);
-            }}
-            onFocus={() => setIsOpen(true)}
-            className="border-none outline-none w-full text-[17px] font-bold text-brand-primary bg-transparent placeholder:text-slate-300 placeholder:font-semibold placeholder:text-sm"
-          />
+          {!isOpen && value ? (
+            <div className="flex items-baseline gap-2 cursor-pointer select-none">
+              <span className="text-[17px] font-black text-brand-primary leading-none">
+                {value}
+              </span>
+              {selectedValueName && (
+                <span className="text-xs text-brand-text-muted font-semibold truncate max-w-[130px] lg:max-w-[150px] leading-none">
+                  {selectedValueName.split('(')[0].trim()}
+                </span>
+              )}
+            </div>
+          ) : (
+            <input
+              type="text"
+              placeholder={placeholder}
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setIsOpen(true);
+              }}
+              onFocus={() => setIsOpen(true)}
+              className="border-none outline-none w-full text-[17px] font-bold text-brand-primary bg-transparent placeholder:text-slate-300 placeholder:font-semibold placeholder:text-sm p-0 leading-none"
+            />
+          )}
         </div>
         {query && (
           <button

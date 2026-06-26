@@ -20,7 +20,7 @@ export default function SubscriptionBanner() {
   };
 
   return (
-    <section className="py-24 bg-brand-primary border-t border-b border-white/5 relative overflow-hidden">
+    <section className="py-12 bg-brand-primary border-t border-b border-white/5 relative overflow-hidden">
       
       {/* Dynamic Ambient Glow Effects */}
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[140%] rounded-full bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.15)_0%,transparent_70%)] pointer-events-none" />
@@ -43,7 +43,7 @@ export default function SubscriptionBanner() {
 
           {/* Left: Travel Visual Gradient Panel with canyon background */}
           <div 
-            className="relative bg-cover bg-center p-10 md:p-12 text-white flex flex-col justify-center min-h-[300px] border-b md:border-b-0 md:border-r border-white/8 z-10"
+            className="relative bg-cover bg-center p-6 md:p-8 text-white flex flex-col justify-center min-h-[260px] border-b md:border-b-0 md:border-r border-white/8 z-10"
             style={{
               backgroundImage: 'linear-gradient(135deg, rgba(7, 14, 27, 0.75) 0%, rgba(37, 99, 235, 0.45) 100%), url("https://flyez.ai/assets/img/slider-bg-img.webp")'
             }}
@@ -67,7 +67,7 @@ export default function SubscriptionBanner() {
             <span className="text-[10px] text-brand-orange uppercase font-extrabold tracking-[3px] block mb-3">
               VIP Fare Alerts
             </span>
-            <h3 className="text-white text-3xl font-display font-black mb-5 leading-tight tracking-tight">
+            <h3 className="text-white text-2xl font-display font-black mb-3 leading-tight tracking-tight">
               Your Next Journey Starts Here
             </h3>
             <ul className="flex flex-col gap-3.5 text-sm opacity-95">
@@ -83,11 +83,11 @@ export default function SubscriptionBanner() {
           </div>
 
           {/* Right: Email Signup Form */}
-          <div className="p-10 md:p-12 flex flex-col justify-center z-10 bg-brand-primary-light/10">
-            <h4 className="text-white text-2xl font-display font-black mb-2 tracking-tight">
+          <div className="p-6 md:p-8 flex flex-col justify-center z-10 bg-brand-primary-light/10">
+            <h4 className="text-white text-xl font-display font-black mb-1.5 tracking-tight">
               Unlock Member-Only Deals
             </h4>
-            <p className="text-white/70 text-sm mb-8 leading-relaxed">
+            <p className="text-white/70 text-sm mb-5 leading-relaxed">
               Join the FlyEz newsletter and receive exclusive flight promotional codes and flash travel warnings.
             </p>
             

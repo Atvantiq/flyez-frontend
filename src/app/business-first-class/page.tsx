@@ -8,8 +8,7 @@ import {
 import { motion } from 'framer-motion';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import PromoAlert from '@/components/PromoAlert';
-import Ticker from '@/features/marketing/components/Ticker';
+import FlightSearchForm from '@/features/flight-booking/components/FlightSearchForm';
 import dynamic from 'next/dynamic';
 
 const TravelGptChat = dynamic(() => import('@/features/chat-ai/components/TravelGptChat'), { ssr: false });
@@ -61,11 +60,9 @@ export default function BusinessFirstClass() {
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-bg-light dark:bg-brand-primary">
-      {/* Sticky Header Bar (Promo Alert + Navigation) */}
+      {/* Sticky Header Bar (Navigation) */}
       <div className="sticky top-0 z-[1000] flex flex-col">
-        <PromoAlert />
         <Header />
-        <Ticker />
       </div>
 
       {/* Hero Banner */}
@@ -110,7 +107,12 @@ export default function BusinessFirstClass() {
       </section>
 
       {/* Main Content */}
-      <main className="flex-1 py-20 relative">
+      <main className="flex-1 pb-20 relative">
+        {/* Overlapping Flight Search Form Container */}
+        <div className="premium-container relative z-20 -mt-20 md:-mt-28 lg:-mt-36 mb-16">
+          <FlightSearchForm restrictToBusinessFirst={true} />
+        </div>
+
         <div className="absolute top-1/4 right-[10%] w-96 h-96 rounded-full bg-brand-accent/3 blur-[120px] pointer-events-none -z-10" />
         <div className="absolute bottom-1/4 left-[5%] w-80 h-80 rounded-full bg-brand-orange/3 blur-[100px] pointer-events-none -z-10" />
 

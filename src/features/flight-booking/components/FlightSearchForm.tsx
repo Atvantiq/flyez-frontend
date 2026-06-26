@@ -7,7 +7,11 @@ import PassengerCountSelector from './PassengerCountSelector';
 import DateField from './DateField';
 import { useFlightSearchForm } from '../hooks/useFlightSearchForm';
 
-export default function FlightSearchForm() {
+interface FlightSearchFormProps {
+  restrictToBusinessFirst?: boolean;
+}
+
+export default function FlightSearchForm({ restrictToBusinessFirst = false }: FlightSearchFormProps) {
   const {
     tripType,
     setTripType,
@@ -59,10 +63,14 @@ export default function FlightSearchForm() {
     const month = String(d.getMonth() + 1).padStart(2, '0');
     const day = String(d.getDate()).padStart(2, '0');
     setTodayDate(`${year}-${month}-${day}`);
-  }, []);
+    
+    if (restrictToBusinessFirst) {
+      setCabin('B');
+    }
+  }, [restrictToBusinessFirst]);
 
   return (
-    <div className="glass-card animate-slide-up rounded-2xl p-7 max-w-[920px] -mt-15 mx-auto relative z-10">
+    <div className="glass-card animate-slide-up rounded-2xl py-4.5 px-6 max-w-[1150px] -mt-15 mx-auto relative z-10">
       <form onSubmit={handleSearchSubmit}>
         {/* Validation Errors banner */}
         {validationError && (
@@ -73,7 +81,7 @@ export default function FlightSearchForm() {
         )}
 
         {/* Trip Type Tabs (Moved to top) */}
-        <div className="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-lg w-fit mb-5">
+        <div className="flex bg-slate-100 dark:bg-slate-800 p-1 rounded-lg w-fit mb-4">
           {[
             { id: 'round', label: 'Round Trip' },
             { id: 'one', label: 'One Way' },
@@ -105,12 +113,13 @@ export default function FlightSearchForm() {
             {/* From & To with absolutely overlapping Swap */}
             <div className="flex flex-col lg:col-span-1 w-full">
               {/* Inputs row */}
-              <div className="relative flex w-full flex-col lg:flex-row gap-4 lg:gap-0">
+              <div className="relative flex w-full flex-col lg:flex-row gap-4 lg:gap-6">
                 <div className="flex-1">
                   <AirportAutocomplete 
                     label="From" 
                     placeholder="Origin Airport" 
                     value={origin} 
+                    selectedValueName={originName}
                     onSelect={(code, name) => {
                       setOrigin(code, name);
                     }}
@@ -133,6 +142,7 @@ export default function FlightSearchForm() {
                     label="To" 
                     placeholder="Destination Airport" 
                     value={destination} 
+                    selectedValueName={destinationName}
                     onSelect={(code, name) => {
                       setDestination(code, name);
                     }}
@@ -223,6 +233,7 @@ export default function FlightSearchForm() {
                   label="From" 
                   placeholder="Origin Airport" 
                   value={flight.origin} 
+                  selectedValueName={flight.originName}
                   onSelect={(code, name) => updateMultiFlight(index, 'origin', code, name)}
                   type={3 + index * 2}
                   isOrigin={true}
@@ -233,6 +244,7 @@ export default function FlightSearchForm() {
                   label="To" 
                   placeholder="Destination Airport" 
                   value={flight.destination} 
+                  selectedValueName={flight.destinationName}
                   onSelect={(code, name) => updateMultiFlight(index, 'destination', code, name)}
                   type={4 + index * 2}
                   isOrigin={false}
@@ -293,7 +305,7 @@ export default function FlightSearchForm() {
         )}
 
         {/* Booking Filters & Search Submit — placed below the search inputs */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6 border-t border-slate-200 dark:border-slate-800/80 pt-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-4 border-t border-slate-200 dark:border-slate-800/80 pt-4">
           {/* Class & Airline Dropdowns */}
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2">
@@ -303,10 +315,19 @@ export default function FlightSearchForm() {
                 onChange={(e) => setCabin(e.target.value)}
                 className="booking-select text-sm text-brand-primary dark:text-white"
               >
-                <option value="E">Economy</option>
-                <option value="B">Business</option>
-                <option value="F">First Class</option>
-                <option value="P">Premium Economy</option>
+                {restrictToBusinessFirst ? (
+                  <>
+                    <option value="B">Business</option>
+                    <option value="F">First Class</option>
+                  </>
+                ) : (
+                  <>
+                    <option value="E">Economy</option>
+                    <option value="B">Business</option>
+                    <option value="F">First Class</option>
+                    <option value="P">Premium Economy</option>
+                  </>
+                )}
               </select>
             </div>
 
@@ -340,7 +361,7 @@ export default function FlightSearchForm() {
         </div>
 
         {/* Travel Preferences Checklist */}
-        <div className="flex flex-wrap gap-x-6 gap-y-2 mt-4 text-xs font-semibold text-brand-text-muted">
+        <div className="flex flex-wrap gap-x-6 gap-y-2 mt-3 text-xs font-semibold text-brand-text-muted font-ui">
           <label className="flex items-center gap-2 cursor-pointer select-none">
             <input 
               type="checkbox" 
@@ -363,7 +384,7 @@ export default function FlightSearchForm() {
         </div>
 
         {/* Inline Hot Line Promo */}
-        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-3 bg-brand-orange/5 dark:bg-brand-orange/10 border border-brand-orange/20 rounded-xl px-5 py-3.5 text-xs md:text-sm text-brand-primary dark:text-white font-semibold">
+        <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 bg-brand-orange/5 dark:bg-brand-orange/10 border border-brand-orange/20 rounded-xl px-5 py-3.5 text-xs md:text-sm text-brand-primary dark:text-white font-semibold">
           <span className="flex items-center gap-2 text-brand-orange dark:text-brand-orange">
             <span className="w-2 h-2 rounded-full bg-brand-orange animate-ping" />
             Save an Extra $30 to $50 Off Secret Offline Rates
