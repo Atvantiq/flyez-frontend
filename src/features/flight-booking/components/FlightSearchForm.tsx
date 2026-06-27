@@ -111,11 +111,11 @@ export default function FlightSearchForm({ restrictToBusinessFirst = false }: Fl
             tripType === 'round' ? 'lg:grid-cols-[2.2fr_1.1fr_1.1fr_1.2fr]' : 'lg:grid-cols-[2.2fr_1.2fr_1.4fr]'
           }`}>
             {/* From & To with absolutely overlapping Swap */}
-            <div className="flex flex-col lg:col-span-1 w-full">
+            <div className="flex flex-col lg:col-span-1 w-full min-w-0">
               {/* Inputs row */}
               <div className="relative flex w-full flex-col lg:flex-row gap-4 lg:gap-6">
-                <div className="flex-1">
-                  <AirportAutocomplete 
+                <div className="flex-1 min-w-0">
+                  <AirportAutocomplete
                     label="From" 
                     placeholder="Origin Airport" 
                     value={origin} 
@@ -137,8 +137,8 @@ export default function FlightSearchForm({ restrictToBusinessFirst = false }: Fl
                   <ArrowLeftRight size={14} />
                 </button>
 
-                <div className="flex-1">
-                  <AirportAutocomplete 
+                <div className="flex-1 min-w-0">
+                  <AirportAutocomplete
                     label="To" 
                     placeholder="Destination Airport" 
                     value={destination} 
@@ -383,19 +383,6 @@ export default function FlightSearchForm({ restrictToBusinessFirst = false }: Fl
           </label>
         </div>
 
-        {/* Inline Hot Line Promo */}
-        <div className="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 bg-brand-orange/5 dark:bg-brand-orange/10 border border-brand-orange/20 rounded-xl px-5 py-3.5 text-xs md:text-sm text-brand-primary dark:text-white font-semibold">
-          <span className="flex items-center gap-2 text-brand-orange dark:text-brand-orange">
-            <span className="w-2 h-2 rounded-full bg-brand-orange animate-ping" />
-            Save an Extra $30 to $50 Off Secret Offline Rates
-          </span>
-          <a
-            href="tel:1800-521-4263"
-            className="flex items-center gap-1.5 bg-brand-orange text-white hover:bg-brand-orange-hover px-4 py-2 rounded-lg font-bold transition-all shadow-[0_2px_8px_rgba(255,92,0,0.2)]"
-          >
-            Hot Line: 1800-521-4263
-          </a>
-        </div>
       </form>
     </div>
   );

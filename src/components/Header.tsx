@@ -37,15 +37,12 @@ export default function Header() {
     >
       <div className="premium-container flex items-center justify-between gap-4">
         {/* Logo left-aligned */}
-        <a href="/" className="flex items-center gap-2 group shrink-0">
-          <img 
-            src="/logo-small.gif" 
-            alt="FlyEz Logo" 
-            className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+        <a href="/" className="flex items-center group shrink-0">
+          <img
+            src="/logo-small.gif"
+            alt="FlyEz Logo"
+            className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
           />
-          <span className="text-2xl font-[900] font-ui tracking-tight text-brand-primary">
-            Fly<span className="text-brand-orange">Ez</span>
-          </span>
         </a>
 
         {/* Desktop Navigation */}

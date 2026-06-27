@@ -117,49 +117,6 @@ export default function SpecialOffers() {
           ))}
         </div>
 
-        {/* Help Banner call to action */}
-        <div className="relative overflow-hidden bg-gradient-to-r from-brand-primary to-brand-primary-light dark:from-brand-primary-light dark:to-[#1e293b] rounded-2xl p-9 md:p-10 border border-white/8 dark:border-gray-800 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-          
-          {/* Subtle glowing radial overlay */}
-          <div className="absolute -top-1/2 -right-1/10 w-[300px] height-[300px] bg-[radial-gradient(circle,rgba(255,92,0,0.08)_0%,rgba(0,0,0,0)_70%)] pointer-events-none" />
-
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 z-10">
-            <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-brand-orange shadow-[0_0_15px_rgba(255,92,0,0.3)] shrink-0 relative">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/grouptraveltelecaller.webp" alt="telecaller" className="w-full h-full object-cover" />
-            </div>
-            <div>
-              <h3 className="text-white text-2xl font-display font-black tracking-tight mb-1.5">
-                Let Us Help You Book!
-              </h3>
-              <p className="text-white/75 text-sm md:text-base max-w-2xl leading-relaxed">
-                Speak with a travel desk expert and secure unpublished rates, cancellation adjustments, or custom travel dates 24/7.
-              </p>
-            </div>
-          </div>
-
-          <motion.a 
-            href="tel:1800-521-4263"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            animate={{
-              boxShadow: [
-                "0 0 0 0 rgba(255, 92, 0, 0.4)",
-                "0 0 0 10px rgba(255, 92, 0, 0)",
-                "0 0 0 0 rgba(255, 92, 0, 0)"
-              ]
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="bg-gradient-to-r from-brand-orange to-brand-orange-hover text-white px-8 py-4 rounded-md font-extrabold text-base flex items-center justify-center gap-2.5 z-10 shrink-0 self-stretch md:self-start lg:self-auto cursor-pointer"
-          >
-            <Headphones size={18} className="fill-current" /> Call 1800-521-4263
-          </motion.a>
-        </div>
-
       </div>
     </section>
   );
