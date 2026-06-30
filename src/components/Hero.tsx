@@ -2,13 +2,12 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import FlightSearchForm from '@/features/flight-booking/components/FlightSearchForm';
 
 export default function Hero() {
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   return (
-    <section className="relative min-h-[calc(100vh-72px)] flex flex-col justify-between py-5 md:py-6 overflow-hidden bg-brand-primary">
+    <section className="relative min-h-[420px] md:min-h-[460px] lg:min-h-[500px] flex flex-col justify-between py-5 md:py-6 overflow-hidden bg-brand-primary">
       {/* Slowly zooming placeholder — the video's own first frame, so there is
           no mismatched image flash before playback begins */}
       <motion.div
@@ -63,24 +62,19 @@ export default function Hero() {
       <div className="h-2" />
 
       {/* Center Heading Title */}
-      <div className="premium-container relative z-10 flex flex-col items-center flex-1 justify-center py-4">
+      <div className="premium-container relative z-10 flex flex-col items-center flex-1 justify-center pb-20 pt-4">
         {/* Title Heading */}
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-4xl sm:text-5xl md:text-6xl font-display italic font-black text-white leading-[1.08] tracking-tight max-w-4xl text-center"
-          style={{ 
-            textShadow: '0 4px 30px rgba(7, 14, 27, 0.95), 0 2px 8px rgba(7, 14, 27, 0.7)' 
+          style={{
+            textShadow: '0 4px 30px rgba(7, 14, 27, 0.95), 0 2px 8px rgba(7, 14, 27, 0.7)'
           }}
         >
           Unbeatable Flight Deals
         </motion.h1>
-      </div>
-
-      {/* Bottom Booking Wizard Form */}
-      <div className="premium-container relative z-20 w-full mb-1 sm:mb-2 mt-auto">
-        <FlightSearchForm />
       </div>
     </section>
   );

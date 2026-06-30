@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
+import FlightSearchForm from '@/features/flight-booking/components/FlightSearchForm';
 
 // Dynamically load below-the-fold components for performance optimization & code splitting
 const SpecialOffers = dynamic(() => import('@/features/marketing/components/SpecialOffers'), { ssr: true });
@@ -25,6 +26,13 @@ export default function Home() {
 
       {/* Hero Section */}
       <Hero />
+
+      {/* Flight Search Wizard — hangs over the hero's bottom edge, fully visible */}
+      <div className="relative z-30 -mt-28 md:-mt-32 mb-12">
+        <div className="premium-container px-4">
+          <FlightSearchForm />
+        </div>
+      </div>
 
       {/* Main Content Sections */}
       <main className="flex-1">
