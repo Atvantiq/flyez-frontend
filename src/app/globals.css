@@ -199,10 +199,10 @@
 .search-input-capsule {
   display: flex;
   align-items: center;
-  gap: 10px;
-  height: 48px;
-  padding: 0 12px;
-  border-radius: 10px;
+  gap: 8px;
+  height: 42px;
+  padding: 0 10px;
+  border-radius: 8px;
   background: #ffffff;
   border: 1.5px solid #000000;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
@@ -210,8 +210,8 @@
 }
 .search-input-capsule:hover {
   border-color: #000000;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 18px -10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-0.5px);
+  box-shadow: 0 6px 14px -8px rgba(0, 0, 0, 0.2);
 }
 .search-input-capsule:focus-within,
 .search-input-capsule.is-active {
@@ -221,9 +221,9 @@
 
 /* Leading tinted icon chip inside each booking field */
 .field-icon-chip {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 5px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -231,7 +231,7 @@
   transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 .search-input-capsule:hover .field-icon-chip {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 .search-input-capsule:focus-within .field-icon-chip,
 .search-input-capsule.is-active .field-icon-chip {
