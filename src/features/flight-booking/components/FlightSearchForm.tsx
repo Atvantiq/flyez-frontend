@@ -115,7 +115,7 @@ export default function FlightSearchForm({ restrictToBusinessFirst = false }: Fl
   }, [restrictToBusinessFirst]);
 
   return (
-    <div className="glass-card animate-slide-up rounded-[22px] py-6 px-6 md:px-8 max-w-[1150px] mx-auto relative z-10">
+    <div className="glass-card animate-slide-up rounded-[18px] py-4 px-5 max-w-[1150px] mx-auto relative z-10">
       <form onSubmit={handleSearchSubmit}>
         {/* Validation Errors banner */}
         {validationError && (
@@ -126,7 +126,7 @@ export default function FlightSearchForm({ restrictToBusinessFirst = false }: Fl
         )}
 
         {/* Trip Type Tabs */}
-        <div className="flex bg-white/8 border border-white/10 p-1 rounded-xl w-fit mb-5">
+        <div className="flex bg-black/5 border border-black/8 p-0.5 rounded-lg w-fit mb-3">
           {[
             { id: 'round', label: 'Round Trip' },
             { id: 'one', label: 'One Way' },
@@ -139,10 +139,10 @@ export default function FlightSearchForm({ restrictToBusinessFirst = false }: Fl
                 setTripType(tab.id as 'round' | 'one' | 'multicity');
                 setValidationError(null);
               }}
-              className={`py-2 px-5 rounded-lg text-xs sm:text-sm font-semibold tracking-wide transition-all duration-200 cursor-pointer ${
+              className={`py-1.5 px-4 rounded-md text-xs font-semibold transition-all duration-200 cursor-pointer ${
                 tripType === tab.id
-                  ? 'bg-white shadow-[0_2px_10px_rgba(0,0,0,0.18)] text-brand-primary font-bold'
-                  : 'bg-transparent text-white/55 hover:text-white/85 hover:bg-white/5'
+                  ? 'bg-white shadow-[0_1px_6px_rgba(7,20,43,0.12)] text-brand-primary'
+                  : 'bg-transparent text-slate-500 hover:text-slate-700'
               }`}
             >
               {tab.label}
@@ -200,7 +200,7 @@ export default function FlightSearchForm({ restrictToBusinessFirst = false }: Fl
               {/* Checkboxes row */}
               <div className="flex w-full flex-col lg:flex-row gap-4 lg:gap-0 mt-2">
                 <div className="flex-1">
-                  <label className="flex items-center gap-1.5 mt-1 ml-1 cursor-pointer text-xs font-semibold text-white/50 hover:text-white/80 select-none">
+                  <label className="flex items-center gap-1.5 mt-1 ml-1 cursor-pointer text-xs font-medium text-slate-400 hover:text-slate-600 select-none">
                     <input 
                       type="checkbox" 
                       checked={nearOrigin}
@@ -211,7 +211,7 @@ export default function FlightSearchForm({ restrictToBusinessFirst = false }: Fl
                   </label>
                 </div>
                 <div className="flex-1">
-                  <label className="flex items-center gap-1.5 mt-1 ml-1 cursor-pointer text-xs font-semibold text-white/50 hover:text-white/80 select-none">
+                  <label className="flex items-center gap-1.5 mt-1 ml-1 cursor-pointer text-xs font-medium text-slate-400 hover:text-slate-600 select-none">
                     <input 
                       type="checkbox" 
                       checked={nearDest}
@@ -234,7 +234,7 @@ export default function FlightSearchForm({ restrictToBusinessFirst = false }: Fl
                 required
                 accentClass="text-brand-accent"
               />
-              <label className="flex items-center gap-1.5 mt-2.5 ml-1 cursor-pointer text-xs font-semibold text-white/50 hover:text-white/80 select-none">
+              <label className="flex items-center gap-1.5 mt-2 ml-1 cursor-pointer text-xs font-medium text-slate-400 hover:text-slate-600 select-none">
                 <input 
                   type="checkbox" 
                   checked={directFlights} 
@@ -256,7 +256,7 @@ export default function FlightSearchForm({ restrictToBusinessFirst = false }: Fl
                   required
                   accentClass="text-brand-orange"
                 />
-                 <label className="flex items-center gap-1.5 mt-2.5 ml-1 cursor-pointer text-xs font-semibold text-white/50 hover:text-white/80 select-none">
+                 <label className="flex items-center gap-1.5 mt-2 ml-1 cursor-pointer text-xs font-medium text-slate-400 hover:text-slate-600 select-none">
                   <input 
                     type="checkbox" 
                     checked={flexibleDates} 
@@ -281,7 +281,7 @@ export default function FlightSearchForm({ restrictToBusinessFirst = false }: Fl
                 setInfants={setInfants}
               />
               {tripType === 'one' && (
-                <label className="flex items-center gap-1.5 mt-2.5 ml-1 cursor-pointer text-xs font-semibold text-white/50 hover:text-white/80 select-none">
+                <label className="flex items-center gap-1.5 mt-2 ml-1 cursor-pointer text-xs font-medium text-slate-400 hover:text-slate-600 select-none">
                   <input 
                     type="checkbox" 
                     checked={flexibleDates} 
@@ -301,7 +301,7 @@ export default function FlightSearchForm({ restrictToBusinessFirst = false }: Fl
             {multiFlights.map((flight, index) => (
               <div 
                 key={index}
-                className="grid gap-2.5 p-2 bg-white/6 rounded-xl border border-dashed border-white/15 items-center grid-cols-1 md:grid-cols-[30px_1fr_1fr_1fr_36px]"
+                className="grid gap-2.5 p-2 bg-slate-50 rounded-xl border border-dashed border-slate-200 items-center grid-cols-1 md:grid-cols-[30px_1fr_1fr_1fr_36px]"
               >
                 {/* Segment indicator */}
                 <div className="flex items-center justify-center w-6 h-6 rounded-full bg-brand-primary text-white text-[10px] font-bold mx-auto">
@@ -392,11 +392,11 @@ export default function FlightSearchForm({ restrictToBusinessFirst = false }: Fl
         )}
 
         {/* Booking Filters & Search Submit */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-4 border-t border-white/8 pt-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-3 border-t border-slate-100 pt-3">
           {/* Class & Airline Dropdowns */}
-          <div className="flex flex-wrap items-center gap-4">
-            <div className="flex items-center gap-2 relative" ref={cabinRef}>
-              <span className="text-xs font-semibold text-white/55 tracking-wide uppercase">Class:</span>
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-1.5 relative" ref={cabinRef}>
+              <span className="text-[10px] font-bold text-slate-400 tracking-widest uppercase">Class:</span>
               <button
                 type="button"
                 onClick={() => {
@@ -426,8 +426,8 @@ export default function FlightSearchForm({ restrictToBusinessFirst = false }: Fl
               )}
             </div>
 
-            <div className="flex items-center gap-2 relative" ref={airlineRef}>
-              <span className="text-xs font-semibold text-white/55 tracking-wide uppercase">Airline:</span>
+            <div className="flex items-center gap-1.5 relative" ref={airlineRef}>
+              <span className="text-[10px] font-bold text-slate-400 tracking-widest uppercase">Airline:</span>
               <button
                 type="button"
                 onClick={() => {
@@ -461,9 +461,9 @@ export default function FlightSearchForm({ restrictToBusinessFirst = false }: Fl
           {/* Search Button */}
           <button
             type="submit"
-            className="py-3 px-8 rounded-xl bg-brand-orange hover:bg-brand-orange-hover text-white text-sm font-bold tracking-wide flex items-center justify-center gap-2 shadow-[0_4px_18px_rgba(255,92,0,0.40),0_1px_3px_rgba(0,0,0,0.20)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(255,92,0,0.50)] active:translate-y-0 cursor-pointer sm:min-w-[180px]"
+            className="py-2.5 px-7 rounded-xl bg-brand-orange hover:bg-brand-orange-hover text-white text-sm font-bold tracking-wide flex items-center justify-center gap-2 shadow-[0_3px_14px_rgba(255,92,0,0.35),0_1px_3px_rgba(0,0,0,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(255,92,0,0.45)] active:translate-y-0 cursor-pointer sm:min-w-[170px]"
           >
-            <Search size={15} /> Search Flights
+            <Search size={14} /> Search Flights
           </button>
         </div>
 
