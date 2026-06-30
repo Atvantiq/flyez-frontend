@@ -43,12 +43,12 @@ export default function DateField({
       </span>
 
       <div className="flex flex-col min-w-0 flex-1 justify-center">
-        <span className="text-[10px] uppercase text-brand-text-muted font-bold tracking-[0.09em] leading-none mb-1">
+        <span className="text-[10px] uppercase text-slate-500 font-bold tracking-[0.09em] leading-none mb-1">
           {label}
         </span>
         <span
           className={`text-[15px] font-bold tracking-tight tabular-nums leading-none ${
-            isPlaceholder ? 'text-slate-300' : 'text-black'
+            isPlaceholder ? 'text-slate-400' : 'text-black'
           }`}
         >
           {display}

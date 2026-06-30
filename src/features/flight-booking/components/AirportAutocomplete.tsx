@@ -103,7 +103,7 @@ export default function AirportAutocomplete({
           {isOrigin ? <PlaneTakeoff size={18} /> : <PlaneLanding size={18} />}
         </span>
         <div className="flex flex-col min-w-0 flex-1 relative justify-center">
-          <span className="text-[10px] uppercase text-brand-text-muted font-bold tracking-[0.09em] leading-none mb-1">
+          <span className="text-[10px] uppercase text-slate-500 font-bold tracking-[0.09em] leading-none mb-1">
             {label}
           </span>
           {!isOpen && value ? (
@@ -112,7 +112,7 @@ export default function AirportAutocomplete({
                 {value}
               </span>
               {selectedValueName && (
-                <span className="text-xs text-brand-text-muted font-semibold truncate max-w-[130px] lg:max-w-[150px] leading-none">
+                <span className="text-xs text-slate-500 font-semibold truncate max-w-[130px] lg:max-w-[150px] leading-none">
                   {selectedValueName.split('(')[0].trim()}
                 </span>
               )}
@@ -127,7 +127,7 @@ export default function AirportAutocomplete({
                 setIsOpen(true);
               }}
               onFocus={() => setIsOpen(true)}
-              className="border-none outline-none w-full text-[15px] font-bold text-black bg-transparent placeholder:text-slate-300 placeholder:font-semibold placeholder:text-sm p-0 leading-none"
+              className="border-none outline-none w-full text-[15px] font-bold text-black bg-transparent placeholder:text-slate-400 placeholder:font-medium placeholder:text-sm p-0 leading-none"
             />
           )}
         </div>

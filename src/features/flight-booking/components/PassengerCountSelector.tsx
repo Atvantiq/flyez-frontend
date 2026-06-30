@@ -95,7 +95,7 @@ export default function PassengerCountSelector({
           <Users size={18} />
         </span>
         <div className="flex flex-col min-w-0 flex-1 justify-center">
-          <span className="text-[10px] uppercase text-brand-text-muted font-bold tracking-[0.09em] leading-none mb-1">
+          <span className="text-[10px] uppercase text-slate-500 font-bold tracking-[0.09em] leading-none mb-1">
             Travelers
           </span>
           <span className="text-[15px] font-bold text-black leading-none">
