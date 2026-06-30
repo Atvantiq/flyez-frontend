@@ -13,7 +13,7 @@ export default function LoginPage() {
       {/* Sticky Header Bar (Promo Alert + Navigation) */}
       <div className="sticky top-0 z-[1000] flex flex-col">
         <PromoAlert />
-        <Header />
+        <Header overlay={false} />
         <Ticker />
       </div>
 
