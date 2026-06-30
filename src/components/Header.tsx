@@ -45,11 +45,20 @@ export default function Header({ overlay = true }: HeaderProps) {
     <header
       className={`${overlay ? 'fixed top-0 left-0' : ''} w-full z-[1000] transition-all duration-500 font-ui ${
         transparent
-          ? 'py-5 bg-gradient-to-b from-black/55 via-black/25 to-transparent'
+          ? 'py-5 bg-transparent'
           : 'py-3 bg-white/90 backdrop-blur-xl border-b border-slate-200/70 shadow-[0_8px_30px_-12px_rgba(7,14,27,0.12)]'
       }`}
     >
-      <div className="premium-container flex items-center justify-between gap-6">
+      {/* Graceful gradient veil — taller than the bar so it fades smoothly
+          below the menu, keeping white nav legible over bright imagery */}
+      {transparent && (
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[170px] bg-gradient-to-b from-black/70 via-black/30 to-transparent"
+        />
+      )}
+
+      <div className="premium-container relative flex items-center justify-between gap-6">
         {/* Logo left-aligned */}
         <a href="/" className="flex items-center group shrink-0">
           <img
