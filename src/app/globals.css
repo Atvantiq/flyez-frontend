@@ -167,16 +167,26 @@
 }
 
 @utility glass-card {
-  background: rgba(255, 255, 255, 0.12) !important;
-  backdrop-filter: blur(25px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(25px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.22) !important;
-  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.15) !important;
+  background: rgba(6, 13, 30, 0.88) !important;
+  backdrop-filter: blur(36px) saturate(160%) brightness(0.9) !important;
+  -webkit-backdrop-filter: blur(36px) saturate(160%) brightness(0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  border-top: 3px solid rgba(255, 100, 20, 0.52) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    0 8px 20px rgba(0, 0, 0, 0.24),
+    0 28px 64px rgba(0, 0, 0, 0.36),
+    0 72px 120px rgba(0, 0, 0, 0.22) !important;
 }
 .dark .glass-card {
-  background: rgba(15, 23, 42, 0.45) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4) !important;
+  background: rgba(4, 9, 22, 0.92) !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  border-top: 3px solid rgba(255, 100, 20, 0.48) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 8px 20px rgba(0, 0, 0, 0.36),
+    0 28px 64px rgba(0, 0, 0, 0.48),
+    0 72px 120px rgba(0, 0, 0, 0.32) !important;
 }
 
 @utility tp-star {
@@ -206,93 +216,97 @@
 .search-input-capsule {
   display: flex;
   align-items: center;
-  gap: 8px;
-  height: 42px;
-  padding: 0 10px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.86);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
+  gap: 10px;
+  height: 52px;
+  padding: 0 13px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.15s ease;
 }
 .search-input-capsule:hover {
-  border-color: rgba(0, 0, 0, 0.18);
-  background: rgba(255, 255, 255, 0.95);
-  transform: translateY(-0.5px);
-  box-shadow: 0 6px 14px -8px rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 255, 255, 1);
+  background: #ffffff;
+  transform: translateY(-1px);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 .search-input-capsule:focus-within,
 .search-input-capsule.is-active {
-  border-color: #ff5c00;
+  border-color: rgba(255, 92, 0, 0.65);
   background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(255, 92, 0, 0.16);
+  box-shadow:
+    0 0 0 3.5px rgba(255, 92, 0, 0.18),
+    0 4px 14px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 .dark .search-input-capsule {
-  background: rgba(30, 41, 59, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.97);
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
 }
 
 /* Leading tinted icon chip inside each booking field */
 .field-icon-chip {
-  width: 24px;
-  height: 24px;
-  border-radius: 5px;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+  transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease;
 }
 .search-input-capsule:hover .field-icon-chip {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 .search-input-capsule:focus-within .field-icon-chip,
 .search-input-capsule.is-active .field-icon-chip {
   background-color: rgba(255, 92, 0, 0.1) !important;
   color: #ff5c00 !important;
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 
-/* Native dropdowns inside the booking section */
+/* Class / Airline selector buttons in the bottom bar */
 .booking-select {
   appearance: none;
   -webkit-appearance: none;
-  padding: 6px 28px 6px 12px;
+  padding: 7px 30px 7px 13px;
   border-radius: 8px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  background-color: rgba(255, 255, 255, 0.86);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: rgba(255, 255, 255, 0.10);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 9px center;
+  color: #ffffff;
   font-weight: 600;
   font-size: 13px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
   cursor: pointer;
 }
 .booking-select:hover {
-  border-color: rgba(0, 0, 0, 0.18);
-  background-color: rgba(255, 255, 255, 0.95);
+  border-color: rgba(255, 255, 255, 0.32);
+  background-color: rgba(255, 255, 255, 0.16);
 }
 .booking-select:focus {
   outline: none;
-  border-color: #ff5c00;
-  background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(255, 92, 0, 0.16);
-}
-.dark .booking-select {
-  background-color: rgba(30, 41, 59, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  border-color: rgba(255, 92, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 0 0 3px rgba(255, 92, 0, 0.18);
 }
 
 /* Premium dropdown panels (suggestions / passenger popover) */
 .booking-popover {
   border-radius: 16px;
-  border: 1px solid rgba(226, 232, 240, 0.9);
+  border: 1px solid rgba(226, 232, 240, 0.85);
   box-shadow:
-    0 24px 50px -16px rgba(7, 14, 27, 0.28),
-    0 0 0 1px rgba(7, 14, 27, 0.02);
+    0 4px 6px rgba(7, 14, 27, 0.06),
+    0 24px 56px -12px rgba(7, 14, 27, 0.32),
+    0 0 0 1px rgba(7, 14, 27, 0.03);
 }
 
 /* TravelGptChat dynamic action buttons */
