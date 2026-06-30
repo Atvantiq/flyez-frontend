@@ -130,7 +130,7 @@ export default function TrendingDeals() {
             <div className="flex items-center gap-2 text-brand-orange dark:text-brand-orange text-xs font-extrabold uppercase tracking-widest mb-3">
               <Sparkles size={16} /> Exclusive Fares
             </div>
-            <h2 className="text-4xl font-display font-black text-brand-primary dark:text-white leading-tight">
+            <h2 className="text-4xl font-display font-semibold text-brand-primary dark:text-white leading-tight">
               Popular Routes
             </h2>
             <p className="text-brand-text-muted dark:text-gray-400 text-base mt-2">
@@ -180,7 +180,7 @@ export default function TrendingDeals() {
 
                   {/* Airport codes & Sliding flight path */}
                   <div className="flex items-center gap-2 my-2">
-                    <span className="text-3xl font-display font-black text-brand-primary dark:text-white tracking-tight">
+                    <span className="text-3xl font-display font-semibold text-brand-primary dark:text-white tracking-tight">
                       {deal.origin}
                     </span>
                     
@@ -199,7 +199,7 @@ export default function TrendingDeals() {
                       </motion.div>
                     </div>
 
-                    <span className="text-3xl font-display font-black text-brand-primary dark:text-white tracking-tight">
+                    <span className="text-3xl font-display font-semibold text-brand-primary dark:text-white tracking-tight">
                       {deal.destination}
                     </span>
                   </div>
@@ -235,7 +235,7 @@ export default function TrendingDeals() {
                 {/* Price Display */}
                 <div>
                   <span className="text-[9px] text-brand-text-muted dark:text-gray-400 font-bold block">FROM</span>
-                  <span className="text-3xl font-display font-black text-brand-orange leading-none">
+                  <span className="text-3xl font-display font-semibold text-brand-orange leading-none">
                     <span className="text-sm font-extrabold align-super mr-0.5">$</span>
                     {deal.price}
                   </span>

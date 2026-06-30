@@ -115,7 +115,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white leading-tight tracking-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-white leading-tight tracking-tight"
             style={{ textShadow: '0 4px 30px rgba(7, 14, 27, 0.95), 0 2px 8px rgba(7, 14, 27, 0.7)' }}
           >
             Contact Us
@@ -139,7 +139,7 @@ export default function ContactPage() {
                 <span className="text-[10px] font-extrabold uppercase text-brand-orange tracking-widest flex items-center gap-1.5 mb-2.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" /> Support Centers
                 </span>
-                <h2 className="text-3xl font-display font-black text-brand-primary dark:text-white tracking-tight mb-4">
+                <h2 className="text-3xl font-display font-semibold text-brand-primary dark:text-white tracking-tight mb-4">
                   Need Help? Talk to Our Travel Experts
                 </h2>
                 <p className="text-brand-text-muted dark:text-gray-400 text-sm md:text-base leading-relaxed font-medium">
@@ -159,7 +159,7 @@ export default function ContactPage() {
                       <span className="w-1.5 h-1.5 rounded-full bg-brand-success animate-[pulse_1.5s_infinite]" /> Online
                     </span>
                   </div>
-                  <a href="tel:1800-521-4263" className="text-xl sm:text-2xl font-display font-black text-brand-primary dark:text-white block hover:text-brand-accent transition-colors">
+                  <a href="tel:1800-521-4263" className="text-xl sm:text-2xl font-display font-semibold text-brand-primary dark:text-white block hover:text-brand-accent transition-colors">
                     1800-521-4263
                   </a>
                   <p className="text-brand-text-muted dark:text-gray-400 text-xs mt-1.5 font-medium">
@@ -249,7 +249,7 @@ export default function ContactPage() {
                         <span className="text-[10px] bg-brand-accent/10 text-brand-accent border border-brand-accent/20 px-2.5 py-1 rounded-full font-extrabold uppercase tracking-wider inline-flex items-center gap-1.5">
                           <MessageSquare size={11} /> Contact Form
                         </span>
-                        <h3 className="text-2xl font-display font-black text-brand-primary dark:text-white tracking-tight mt-3">
+                        <h3 className="text-2xl font-display font-semibold text-brand-primary dark:text-white tracking-tight mt-3">
                           Send a Message
                         </h3>
                         <p className="text-brand-text-muted dark:text-gray-400 text-xs mt-1.5 font-medium">
@@ -393,7 +393,7 @@ export default function ContactPage() {
                         <CheckCircle size={38} className="text-brand-success animate-[scale-in_0.35s_ease-out]" />
                       </div>
                       
-                      <h3 className="text-2xl sm:text-3xl font-display font-black text-brand-primary dark:text-white mb-3">
+                      <h3 className="text-2xl sm:text-3xl font-display font-semibold text-brand-primary dark:text-white mb-3">
                         Message Sent Successfully!
                       </h3>
                       

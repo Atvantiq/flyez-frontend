@@ -92,7 +92,7 @@ export default function About() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white leading-tight tracking-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-white leading-tight tracking-tight"
             style={{ textShadow: '0 4px 30px rgba(7, 14, 27, 0.95), 0 2px 8px rgba(7, 14, 27, 0.7)' }}
           >
             Discover the FlyEz Story
@@ -118,7 +118,7 @@ export default function About() {
                 >
                   <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-accent/5 rounded-full blur-2xl group-hover:bg-brand-accent/8 transition-colors duration-500" />
                   
-                  <h3 className="text-xl font-display font-black text-brand-primary dark:text-white mb-6 border-b border-brand-border dark:border-gray-800 pb-3 flex items-center gap-2">
+                  <h3 className="text-xl font-display font-semibold text-brand-primary dark:text-white mb-6 border-b border-brand-border dark:border-gray-800 pb-3 flex items-center gap-2">
                     <Shield size={18} className="text-brand-orange" /> FlyEz Registry
                   </h3>
 
@@ -148,7 +148,7 @@ export default function About() {
                 <span className="text-xs font-extrabold text-brand-orange uppercase tracking-widest inline-flex items-center gap-2">
                   <Award size={14} /> Who We Are
                 </span>
-                <h2 className="text-3xl lg:text-4xl font-display font-black text-brand-primary dark:text-white leading-tight tracking-tight">
+                <h2 className="text-3xl lg:text-4xl font-display font-semibold text-brand-primary dark:text-white leading-tight tracking-tight">
                   Welcome to FLYEZ.ai!
                 </h2>
                 
@@ -176,7 +176,7 @@ export default function About() {
               <span className="text-xs font-extrabold text-brand-orange uppercase tracking-widest block mb-2.5">
                 Our Core Competency
               </span>
-              <h2 className="text-3xl lg:text-4xl font-display font-black text-brand-primary dark:text-white">
+              <h2 className="text-3xl lg:text-4xl font-display font-semibold text-brand-primary dark:text-white">
                 How We Deliver Values
               </h2>
             </div>
@@ -200,7 +200,7 @@ export default function About() {
                   <div className="absolute top-0 inset-x-0 h-1 transition-transform duration-300 group-hover:scale-x-110" style={{ backgroundColor: p.color }} />
 
                   {/* Animated Background Number Watermark */}
-                  <div className="absolute right-6 bottom-[-15px] text-[80px] font-display font-black text-brand-primary/[0.02] dark:text-white/[0.01] select-none pointer-events-none transition-all duration-500 group-hover:scale-108 group-hover:text-brand-primary/[0.04] dark:group-hover:text-white/[0.02]">
+                  <div className="absolute right-6 bottom-[-15px] text-[80px] font-display font-semibold text-brand-primary/[0.02] dark:text-white/[0.01] select-none pointer-events-none transition-all duration-500 group-hover:scale-108 group-hover:text-brand-primary/[0.04] dark:group-hover:text-white/[0.02]">
                     {p.number}
                   </div>
 
@@ -209,7 +209,7 @@ export default function About() {
                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-105 group-hover:rotate-[6deg] ${p.bg}`}>
                       {p.icon}
                     </div>
-                    <h4 className="text-lg font-display font-black text-brand-primary dark:text-white mb-2.5">
+                    <h4 className="text-lg font-display font-semibold text-brand-primary dark:text-white mb-2.5">
                       {p.title}
                     </h4>
                     <p className="text-brand-text-muted dark:text-gray-400 text-xs md:text-sm leading-relaxed">
@@ -233,7 +233,7 @@ export default function About() {
                   <img src="/grouptraveltelecaller.webp" alt="telecaller" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <h3 className="text-white text-2xl font-display font-black tracking-tight mb-1.5">
+                  <h3 className="text-white text-2xl font-display font-semibold tracking-tight mb-1.5">
                     Looking for Unpublished Private Fares?
                   </h3>
                   <p className="text-white/75 text-sm md:text-base max-w-2xl leading-relaxed">

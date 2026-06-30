@@ -144,7 +144,7 @@ export default function EventsPage() {
             <span className="text-[10px] font-extrabold uppercase text-brand-orange tracking-widest flex items-center justify-center gap-1.5 mb-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" /> Complete Flight + Ticket Packages
             </span>
-            <h2 className="text-3xl sm:text-4xl font-display font-black text-brand-primary dark:text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-brand-primary dark:text-white mb-6">
               Travel to the World's Biggest Celebrations
             </h2>
             <p className="text-lg text-brand-text-muted font-sans leading-relaxed">
@@ -219,7 +219,7 @@ export default function EventsPage() {
               <span className="text-[10px] font-extrabold uppercase text-brand-orange tracking-widest flex items-center gap-1.5 mb-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" /> Need Assistance?
               </span>
-              <h3 className="text-3xl font-display font-black text-brand-primary dark:text-white tracking-tight leading-none mb-2">
+              <h3 className="text-3xl font-display font-semibold text-brand-primary dark:text-white tracking-tight leading-none mb-2">
                 Consult a Festival Specialist
               </h3>
               <p className="text-sm text-brand-text-muted font-sans leading-relaxed mb-4">

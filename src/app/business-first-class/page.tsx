@@ -127,7 +127,7 @@ export default function BusinessFirstClass() {
             <span className="text-[10px] font-extrabold uppercase text-brand-orange tracking-widest flex items-center justify-center gap-1.5 mb-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" /> Luxury Air Travel
             </span>
-            <h2 className="text-3xl sm:text-4xl font-display font-black text-brand-primary dark:text-white mb-6">
+            <h2 className="text-3xl sm:text-4xl font-display font-semibold text-brand-primary dark:text-white mb-6">
               Fly in Unparalleled Luxury for Less
             </h2>
             <p className="text-lg text-brand-text-muted font-sans leading-relaxed">
@@ -165,7 +165,7 @@ export default function BusinessFirstClass() {
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.15),transparent_50%)]" />
                 <div className="relative z-10">
                   <span className="text-xs font-bold text-brand-orange uppercase tracking-wider block mb-2">Unpublished Phone Fares</span>
-                  <h3 className="text-2xl font-display font-black mb-4">Request a Premium Quote</h3>
+                  <h3 className="text-2xl font-display font-semibold mb-4">Request a Premium Quote</h3>
                   <p className="text-sm text-slate-300 leading-relaxed mb-6 font-sans">
                     Due to strict airline restrictions, our deepest luxury discounts are unpublished. Call our VIP Luxury desk to speak directly with an airfare specialist and obtain immediate flight options.
                   </p>

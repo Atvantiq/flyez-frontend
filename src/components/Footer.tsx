@@ -226,10 +226,10 @@ export default function Footer() {
             <span className="text-[11px] text-white/35 uppercase font-semibold tracking-wider">Secured booking via</span>
             
             <div className="flex gap-2">
-              <div className="w-11 h-6 bg-white/3 border border-white/10 rounded-md flex items-center justify-center text-[9px] font-black text-white/60 transition-all duration-300 hover:text-white hover:-translate-y-0.5 hover:bg-white/6 hover:border-[#2563eb] hover:shadow-[0_0_10px_rgba(37,99,235,0.3)]">VISA</div>
-              <div className="w-11 h-6 bg-white/3 border border-white/10 rounded-md flex items-center justify-center text-[9px] font-black text-white/60 transition-all duration-300 hover:text-white hover:-translate-y-0.5 hover:bg-white/6 hover:border-[#ff5c00] hover:shadow-[0_0_10px_rgba(255,92,0,0.3)]">MC</div>
-              <div className="w-11 h-6 bg-white/3 border border-white/10 rounded-md flex items-center justify-center text-[9px] font-black text-white/60 transition-all duration-300 hover:text-white hover:-translate-y-0.5 hover:bg-white/6 hover:border-[#06b6d4] hover:shadow-[0_0_10px_rgba(6,182,212,0.3)]">AMEX</div>
-              <div className="w-11 h-6 bg-white/3 border border-white/10 rounded-md flex items-center justify-center text-[9px] font-black text-white/60 transition-all duration-300 hover:text-white hover:-translate-y-0.5 hover:bg-white/6 hover:border-[#e11d48] hover:shadow-[0_0_10px_rgba(225,29,72,0.3)]">DISC</div>
+              <div className="w-11 h-6 bg-white/3 border border-white/10 rounded-md flex items-center justify-center text-[9px] font-semibold tracking-wide text-white/55 transition-all duration-300 hover:text-white hover:-translate-y-0.5 hover:bg-white/6 hover:border-white/25">VISA</div>
+              <div className="w-11 h-6 bg-white/3 border border-white/10 rounded-md flex items-center justify-center text-[9px] font-semibold tracking-wide text-white/55 transition-all duration-300 hover:text-white hover:-translate-y-0.5 hover:bg-white/6 hover:border-white/25">MC</div>
+              <div className="w-11 h-6 bg-white/3 border border-white/10 rounded-md flex items-center justify-center text-[9px] font-semibold tracking-wide text-white/55 transition-all duration-300 hover:text-white hover:-translate-y-0.5 hover:bg-white/6 hover:border-white/25">AMEX</div>
+              <div className="w-11 h-6 bg-white/3 border border-white/10 rounded-md flex items-center justify-center text-[9px] font-semibold tracking-wide text-white/55 transition-all duration-300 hover:text-white hover:-translate-y-0.5 hover:bg-white/6 hover:border-white/25">DISC</div>
             </div>
           </div>
         </div>

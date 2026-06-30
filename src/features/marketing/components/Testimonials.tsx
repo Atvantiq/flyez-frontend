@@ -36,7 +36,7 @@ export default function Testimonials() {
             <div className="flex items-center gap-2 text-brand-orange text-xs font-bold uppercase tracking-wider mb-2.5">
               <Star size={14} className="fill-current text-brand-orange" /> Customer Trust
             </div>
-            <h2 className="text-4xl font-display font-black text-brand-primary dark:text-white mb-4 leading-tight">
+            <h2 className="text-4xl font-display font-semibold text-brand-primary dark:text-white mb-4 leading-tight">
               What Our Flyers Are Saying
             </h2>
             <p className="text-brand-text-muted dark:text-gray-400 text-sm md:text-base leading-relaxed mb-8">

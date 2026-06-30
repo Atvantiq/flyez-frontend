@@ -37,14 +37,14 @@ export default function LoginForm() {
               <path d="M38 58 L38 37 C38 27, 48 22, 70 20 C60 26, 45 32, 43 37 L43 43 L57 43 L52 48 L43 48 L43 53 Z" fill="#2563eb" />
               <path d="M45 35.5 C50 35.5, 58 33, 71 23 C63 29, 56 32, 54 34 C58 34, 62 34, 66 34 C58 38, 50 40, 45 40.5 Z" fill="#ff5c00" />
             </svg>
-            <span className="text-xl font-black font-display text-white tracking-tight">
+            <span className="text-xl font-semibold font-display text-white tracking-tight">
               Fly<span className="text-brand-orange">Ez</span>
             </span>
           </div>
 
           {/* Motivational Text */}
           <div className="my-auto pt-20">
-            <h3 className="text-3xl font-display font-black text-white leading-tight mb-4" style={{ textShadow: '0 2px 10px rgba(7, 14, 27, 0.4)' }}>
+            <h3 className="text-3xl font-display font-semibold text-white leading-tight mb-4" style={{ textShadow: '0 2px 10px rgba(7, 14, 27, 0.4)' }}>
               Unlock Exclusive <br />Offline Airfares
             </h3>
             <p className="text-white/80 text-sm leading-relaxed max-w-xs font-semibold">
@@ -73,7 +73,7 @@ export default function LoginForm() {
               >
                 {/* Title block */}
                 <div className="mb-8">
-                  <h2 className="text-3xl font-display font-black text-brand-primary dark:text-white tracking-tight">
+                  <h2 className="text-3xl font-display font-semibold text-brand-primary dark:text-white tracking-tight">
                     Welcome back
                   </h2>
                   <p className="text-brand-text-muted dark:text-gray-400 text-sm mt-2 font-semibold">
@@ -221,7 +221,7 @@ export default function LoginForm() {
                 >
                   <CheckCircle size={40} />
                 </motion.div>
-                <h2 className="text-3xl font-display font-black text-brand-primary dark:text-white tracking-tight mb-2">
+                <h2 className="text-3xl font-display font-semibold text-brand-primary dark:text-white tracking-tight mb-2">
                   Successfully Signed In
                 </h2>
                 <p className="text-brand-text-muted dark:text-gray-400 text-sm leading-relaxed max-w-sm mx-auto mb-8 font-semibold">

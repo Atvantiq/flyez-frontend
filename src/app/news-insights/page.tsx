@@ -160,7 +160,7 @@ export default function NewsInsights() {
                   <span className="bg-brand-orange/10 text-brand-orange py-1 px-2.5 rounded-md">Featured</span>
                   <span className="flex items-center gap-1"><Clock size={12} /> 10 min read</span>
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-display font-black text-brand-primary dark:text-white mb-4 leading-snug">
+                <h2 className="text-2xl sm:text-3xl font-display font-semibold text-brand-primary dark:text-white mb-4 leading-snug">
                   The Ultimate Guide to Booking Consolidated Airline Tickets
                 </h2>
                 <p className="text-sm sm:text-base text-brand-text-muted font-sans leading-relaxed mb-6">
@@ -229,7 +229,7 @@ export default function NewsInsights() {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.15),transparent_50%)]" />
             <div className="relative z-10 max-w-xl mx-auto">
               <Mail size={32} className="text-brand-orange mx-auto mb-4" />
-              <h3 className="text-2xl font-display font-black mb-3">Join the Insider List</h3>
+              <h3 className="text-2xl font-display font-semibold mb-3">Join the Insider List</h3>
               <p className="text-xs sm:text-sm text-slate-300 mb-6 font-sans leading-relaxed">
                 Subscribe to receive weekly flight deals, unpublished price alerts, and expert airfare strategies sent directly to your inbox.
               </p>

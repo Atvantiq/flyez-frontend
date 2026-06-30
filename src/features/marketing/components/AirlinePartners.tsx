@@ -35,7 +35,7 @@ export default function AirlinePartners() {
             <span className="text-xs font-extrabold text-brand-orange uppercase tracking-widest block mb-3">
               Global Ticketing Desk
             </span>
-            <h2 className="text-4xl font-display font-black text-brand-primary dark:text-white leading-tight">
+            <h2 className="text-4xl font-display font-semibold text-brand-primary dark:text-white leading-tight">
               Global Airline Directory
             </h2>
             <p className="text-brand-text-muted dark:text-gray-400 text-base leading-relaxed mt-3 max-w-2xl">
@@ -61,7 +61,7 @@ export default function AirlinePartners() {
               className="flex flex-col justify-between p-5 rounded-2xl bg-white dark:bg-brand-primary-light border border-brand-border dark:border-gray-800 shadow-sm relative overflow-hidden group cursor-default min-h-[160px]"
             >
               {/* Glowing dynamic background airline code watermark */}
-              <div className="absolute right-4 bottom-[-15px] text-[72px] font-display font-black text-brand-primary/[0.02] dark:text-white/[0.01] select-none pointer-events-none transition-all duration-300 group-hover:scale-110 group-hover:text-brand-primary/[0.04] dark:group-hover:text-white/[0.02]">
+              <div className="absolute right-4 bottom-[-15px] text-[72px] font-display font-semibold text-brand-primary/[0.02] dark:text-white/[0.01] select-none pointer-events-none transition-all duration-300 group-hover:scale-110 group-hover:text-brand-primary/[0.04] dark:group-hover:text-white/[0.02]">
                 {a.code}
               </div>
 

@@ -68,7 +68,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-display italic font-black text-white leading-[1.08] tracking-tight max-w-4xl text-center"
+          className="text-4xl sm:text-5xl md:text-6xl font-display italic font-semibold text-white leading-[1.08] tracking-tight max-w-4xl text-center"
           style={{
             textShadow: '0 4px 30px rgba(7, 14, 27, 0.95), 0 2px 8px rgba(7, 14, 27, 0.7)'
           }}

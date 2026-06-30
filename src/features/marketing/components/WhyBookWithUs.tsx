@@ -61,7 +61,7 @@ export default function WhyBookWithUs() {
               <span className="text-xs font-extrabold text-brand-orange uppercase tracking-widest inline-flex items-center gap-2 mb-3">
                 <Award size={14} /> Unrivaled Service
               </span>
-              <h2 className="text-4xl lg:text-5xl font-display font-black text-brand-primary dark:text-white leading-[1.1] tracking-tight mb-4">
+              <h2 className="text-4xl lg:text-5xl font-display font-semibold text-brand-primary dark:text-white leading-[1.1] tracking-tight mb-4">
                 Smart Flight <br/>Desk Solutions
               </h2>
               <p className="text-brand-text-muted dark:text-gray-400 text-base leading-relaxed">
@@ -104,7 +104,7 @@ export default function WhyBookWithUs() {
                 <div className="absolute top-0 left-0 w-1 h-full transition-transform duration-300 group-hover:scale-y-110" style={{ backgroundColor: b.color }} />
 
                 {/* Animated Background Number Watermark */}
-                <div className="absolute right-6 bottom-[-15px] text-[72px] font-display font-black text-brand-primary/[0.02] dark:text-white/[0.01] select-none pointer-events-none transition-all duration-500 group-hover:scale-108 group-hover:text-brand-primary/[0.04] dark:group-hover:text-white/[0.02]">
+                <div className="absolute right-6 bottom-[-15px] text-[72px] font-display font-semibold text-brand-primary/[0.02] dark:text-white/[0.01] select-none pointer-events-none transition-all duration-500 group-hover:scale-108 group-hover:text-brand-primary/[0.04] dark:group-hover:text-white/[0.02]">
                   {b.number}
                 </div>
 
@@ -115,7 +115,7 @@ export default function WhyBookWithUs() {
 
                 {/* Content */}
                 <div className="flex-1 pr-6 z-10">
-                  <h4 className="text-lg font-display font-black text-brand-primary dark:text-white mb-2 leading-none">
+                  <h4 className="text-lg font-display font-semibold text-brand-primary dark:text-white mb-2 leading-none">
                     {b.title}
                   </h4>
                   <p className="text-brand-text-muted dark:text-gray-400 text-xs md:text-sm leading-relaxed">

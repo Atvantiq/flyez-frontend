@@ -47,7 +47,7 @@ export default function SpecialOffers() {
         
         {/* Title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-display font-black text-brand-primary dark:text-white mb-3">
+          <h2 className="text-4xl font-display font-semibold text-brand-primary dark:text-white mb-3">
             Special Offers
           </h2>
           <p className="text-brand-text-muted dark:text-gray-400 text-base max-w-xl mx-auto">
@@ -94,7 +94,7 @@ export default function SpecialOffers() {
 
                 {/* Bottom Info */}
                 <div className="w-100 z-10">
-                  <h4 className="text-white text-xl font-display font-black mb-1.5 leading-snug tracking-tight">
+                  <h4 className="text-white text-xl font-display font-semibold mb-1.5 leading-snug tracking-tight">
                     {offer.title}
                   </h4>
                   <p className="text-white/75 text-xs leading-relaxed">

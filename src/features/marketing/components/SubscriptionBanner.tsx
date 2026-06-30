@@ -33,7 +33,7 @@ export default function SubscriptionBanner() {
           <span className="text-[10px] text-brand-orange uppercase font-extrabold tracking-[2px] mb-1.5 block">
             VIP Fare Alerts
           </span>
-          <h3 className="text-white text-lg sm:text-xl font-display font-black leading-tight mb-1">
+          <h3 className="text-white text-lg sm:text-xl font-display font-semibold leading-tight mb-1">
             Unlock Member-Only Deals
           </h3>
           <p className="text-xs sm:text-sm text-white/70">

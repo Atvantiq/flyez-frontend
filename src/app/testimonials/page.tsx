@@ -176,7 +176,7 @@ export default function TestimonialsPage() {
                 className="bg-white dark:bg-brand-primary-light border border-brand-border dark:border-slate-800 p-6 rounded-2xl text-center shadow-[0_4px_20px_rgba(11,26,48,0.01)]"
               >
                 <span className="text-xs font-bold text-brand-text-muted uppercase tracking-wider block mb-2 font-ui">{s.label}</span>
-                <span className="text-2xl sm:text-3xl font-display font-black text-brand-primary dark:text-white block mb-1">{s.value}</span>
+                <span className="text-2xl sm:text-3xl font-display font-semibold text-brand-primary dark:text-white block mb-1">{s.value}</span>
                 <span className="text-[10px] text-brand-text-muted font-sans">{s.desc}</span>
               </div>
             ))}
@@ -231,7 +231,7 @@ export default function TestimonialsPage() {
               <span className="text-[10px] font-extrabold uppercase text-brand-orange tracking-widest flex items-center gap-1.5 mb-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" /> Feedback Channel
               </span>
-              <h3 className="text-3xl font-display font-black text-brand-primary dark:text-white tracking-tight leading-none mb-2">
+              <h3 className="text-3xl font-display font-semibold text-brand-primary dark:text-white tracking-tight leading-none mb-2">
                 We'd Love to Hear From You
               </h3>
               <p className="text-sm text-brand-text-muted font-sans leading-relaxed">

@@ -343,7 +343,7 @@ export default function PrivacyPolicy() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white leading-tight tracking-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-white leading-tight tracking-tight"
             style={{ textShadow: '0 4px 30px rgba(7, 14, 27, 0.95), 0 2px 8px rgba(7, 14, 27, 0.7)' }}
           >
             Privacy Policy
@@ -445,7 +445,7 @@ export default function PrivacyPolicy() {
                   <span className="text-[10px] font-extrabold uppercase text-brand-orange tracking-widest flex items-center gap-1.5 mb-0.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-brand-orange animate-pulse" /> Flight Plan
                   </span>
-                  <h4 className="text-sm font-display font-black text-brand-primary dark:text-white">
+                  <h4 className="text-sm font-display font-semibold text-brand-primary dark:text-white">
                     Privacy Directory
                   </h4>
                 </div>
@@ -572,7 +572,7 @@ export default function PrivacyPolicy() {
                     <div className="absolute top-0 inset-x-0 h-1" style={{ backgroundColor: sec.color }} />
 
                     {/* Watermark Background Number */}
-                    <div className="absolute right-6 bottom-[-15px] text-[95px] font-display font-black text-brand-primary/[0.02] dark:text-white/[0.01] select-none pointer-events-none z-0 transition-opacity duration-500"
+                    <div className="absolute right-6 bottom-[-15px] text-[95px] font-display font-semibold text-brand-primary/[0.02] dark:text-white/[0.01] select-none pointer-events-none z-0 transition-opacity duration-500"
                       style={{ opacity: isCardActive ? 0.08 : 0.02 }}
                     >
                       {sec.number}
@@ -583,7 +583,7 @@ export default function PrivacyPolicy() {
                       <div className={`p-2.5 rounded-xl shrink-0 transition-transform duration-500 ${sec.bg} ${isCardActive ? 'scale-105 rotate-3' : ''}`}>
                         {sec.icon}
                       </div>
-                      <h3 className="text-xl font-display font-black text-brand-primary dark:text-white tracking-tight leading-none">
+                      <h3 className="text-xl font-display font-semibold text-brand-primary dark:text-white tracking-tight leading-none">
                         {sec.title}
                       </h3>
                     </div>
@@ -603,7 +603,7 @@ export default function PrivacyPolicy() {
                     <Phone size={20} className="fill-current text-brand-orange" />
                   </div>
                   <div>
-                    <h4 className="text-white text-xl font-display font-black tracking-tight mb-1">
+                    <h4 className="text-white text-xl font-display font-semibold tracking-tight mb-1">
                       Need Immediate Assistance?
                     </h4>
                     <p className="text-white/70 text-xs md:text-sm">

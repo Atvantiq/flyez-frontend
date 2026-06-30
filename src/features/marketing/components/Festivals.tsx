@@ -134,7 +134,7 @@ export default function Festivals() {
               <CalendarRange size={14} /> Exclusive Seasonal Calendars
             </span>
           </span>
-          <h2 className="text-4xl font-display font-black text-brand-primary dark:text-white">
+          <h2 className="text-4xl font-display font-semibold text-brand-primary dark:text-white">
             Festivals & Special Events
           </h2>
           <p className="text-brand-text-muted dark:text-gray-400 text-base max-w-xl mx-auto mt-2">
@@ -187,7 +187,7 @@ export default function Festivals() {
                     {event.tag} • {event.discount}
                   </span>
                   
-                  <h4 className="text-white text-2xl font-display font-black mb-1.5 tracking-tight leading-snug">
+                  <h4 className="text-white text-2xl font-display font-semibold mb-1.5 tracking-tight leading-snug">
                     {event.name}
                   </h4>
 

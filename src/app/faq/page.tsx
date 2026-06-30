@@ -863,7 +863,7 @@ export default function FAQPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white leading-tight tracking-tight mb-8"
+            className="text-4xl sm:text-5xl lg:text-6xl font-display font-semibold text-white leading-tight tracking-tight mb-8"
             style={{ textShadow: '0 4px 30px rgba(7, 14, 27, 0.95), 0 2px 8px rgba(7, 14, 27, 0.7)' }}
           >
             Frequently Asked <span className="text-brand-orange">Questions</span>
@@ -1018,7 +1018,7 @@ export default function FAQPage() {
                   <div className="w-16 h-16 bg-slate-100 dark:bg-gray-850 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-text-muted dark:text-gray-400">
                     <AlertCircle size={28} />
                   </div>
-                  <h3 className="text-lg font-display font-black text-brand-primary dark:text-white mb-2">
+                  <h3 className="text-lg font-display font-semibold text-brand-primary dark:text-white mb-2">
                     No FAQs Found
                   </h3>
                   <p className="text-brand-text-muted dark:text-gray-400 text-sm max-w-sm mx-auto">
@@ -1052,7 +1052,7 @@ export default function FAQPage() {
                           <span className="inline-flex items-center gap-1 text-[9px] font-extrabold text-brand-accent uppercase tracking-wider mb-2">
                             {catObj?.icon} {catObj?.name}
                           </span>
-                          <h4 className="text-sm sm:text-base font-display font-black text-brand-primary dark:text-white tracking-tight leading-snug group-hover:text-brand-accent transition-colors duration-200">
+                          <h4 className="text-sm sm:text-base font-display font-semibold text-brand-primary dark:text-white tracking-tight leading-snug group-hover:text-brand-accent transition-colors duration-200">
                             {faq.question}
                           </h4>
                         </div>
@@ -1095,7 +1095,7 @@ export default function FAQPage() {
                     <MessageSquare size={22} className="text-brand-orange" />
                   </div>
                   <div>
-                    <h4 className="text-white text-lg sm:text-xl font-display font-black tracking-tight mb-1">
+                    <h4 className="text-white text-lg sm:text-xl font-display font-semibold tracking-tight mb-1">
                       Still Have Questions?
                     </h4>
                     <p className="text-white/70 text-xs sm:text-sm">

@@ -41,7 +41,7 @@ export default function Packages() {
         
         {/* Title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-display font-black text-brand-primary dark:text-white">
+          <h2 className="text-4xl font-display font-semibold text-brand-primary dark:text-white">
             Popular Holiday Packages
           </h2>
           <p className="text-brand-text-muted dark:text-gray-400 text-base max-w-xl mx-auto mt-2">
@@ -94,7 +94,7 @@ export default function Packages() {
                   {/* Bottom Section: Name, Desc, Price tag, and Slide-up CTA */}
                   <div className="w-100 z-10">
                     <div className="flex justify-between items-end mb-1.5">
-                      <h4 className="text-white text-2xl font-display font-black leading-none">
+                      <h4 className="text-white text-2xl font-display font-semibold leading-none">
                         {city.name}
                       </h4>
                       
@@ -119,7 +119,7 @@ export default function Packages() {
                 </div>
 
                 {/* Subtle background text representation */}
-                <div className="absolute right-4 -bottom-5 text-[90px] font-display font-black text-white/[0.03] dark:text-white/[0.02] select-none pointer-events-none z-0">
+                <div className="absolute right-4 -bottom-5 text-[90px] font-display font-semibold text-white/[0.03] dark:text-white/[0.02] select-none pointer-events-none z-0">
                   {city.name.substring(0, 3).toUpperCase()}
                 </div>
 
