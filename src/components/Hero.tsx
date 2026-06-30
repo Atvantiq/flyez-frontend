@@ -7,7 +7,7 @@ export default function Hero() {
   const [videoLoaded, setVideoLoaded] = useState(false);
 
   return (
-    <section className="relative min-h-[520px] md:min-h-[600px] lg:min-h-[680px] flex flex-col justify-between py-5 md:py-6 overflow-hidden bg-brand-primary">
+    <section className="relative min-h-[460px] md:min-h-[520px] lg:min-h-[560px] flex flex-col justify-between py-5 md:py-6 overflow-hidden bg-brand-primary">
       {/* Slowly zooming placeholder — the video's own first frame, so there is
           no mismatched image flash before playback begins */}
       <motion.div
