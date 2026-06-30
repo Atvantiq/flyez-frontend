@@ -66,7 +66,7 @@ export default function BusinessFirstClass() {
       </div>
 
       {/* Hero Banner */}
-      <section className="relative min-h-[calc(100vh-72px)] flex flex-col justify-between py-5 md:py-6 overflow-hidden bg-brand-primary">
+      <section className="relative h-[62vh] min-h-[480px] lg:h-[65vh] lg:min-h-[530px] flex flex-col justify-between py-5 md:py-6 overflow-hidden bg-brand-primary">
         <motion.div
           initial={{ scale: 1.08, opacity: 0.45 }}
           animate={{ scale: 1, opacity: 0.6 }}
