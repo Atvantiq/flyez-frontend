@@ -99,7 +99,7 @@ export default function AirportAutocomplete({
         className={`search-input-capsule cursor-text flex items-center ${isOpen ? 'is-active' : ''}`}
         onClick={() => setIsOpen(true)}
       >
-        <span className={`field-icon-chip ${isOrigin ? 'bg-brand-accent/10 text-brand-accent' : 'bg-brand-orange/10 text-brand-orange'}`}>
+        <span className="field-icon-chip bg-black/5 text-black">
           {isOrigin ? <PlaneTakeoff size={18} /> : <PlaneLanding size={18} />}
         </span>
         <div className="flex flex-col min-w-0 flex-1 relative justify-center">
@@ -108,7 +108,7 @@ export default function AirportAutocomplete({
           </span>
           {!isOpen && value ? (
             <div className="flex items-baseline gap-2 cursor-pointer select-none">
-              <span className="text-[17px] font-black text-brand-primary leading-none">
+              <span className="text-[15px] font-black text-black leading-none">
                 {value}
               </span>
               {selectedValueName && (
@@ -127,7 +127,7 @@ export default function AirportAutocomplete({
                 setIsOpen(true);
               }}
               onFocus={() => setIsOpen(true)}
-              className="border-none outline-none w-full text-[17px] font-bold text-brand-primary bg-transparent placeholder:text-slate-300 placeholder:font-semibold placeholder:text-sm p-0 leading-none"
+              className="border-none outline-none w-full text-[15px] font-bold text-black bg-transparent placeholder:text-slate-300 placeholder:font-semibold placeholder:text-sm p-0 leading-none"
             />
           )}
         </div>
@@ -139,7 +139,7 @@ export default function AirportAutocomplete({
               setQuery('');
               onSelect('', '');
             }}
-            className="text-brand-text-muted hover:text-brand-primary transition-colors shrink-0"
+            className="text-brand-text-muted hover:text-black transition-colors shrink-0"
           >
             <X size={16} />
           </button>

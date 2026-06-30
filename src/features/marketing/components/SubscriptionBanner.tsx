@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Mail, CheckCircle2, ArrowRight, Plane } from 'lucide-react';
+import { Mail, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function SubscriptionBanner() {
@@ -20,121 +20,71 @@ export default function SubscriptionBanner() {
   };
 
   return (
-    <section className="py-12 bg-brand-primary border-t border-b border-white/5 relative overflow-hidden">
+    <section className="py-4.5 sm:py-5.5 bg-gradient-to-r from-[#070e1b] to-[#0d1b3e] border-t border-b border-white/5 relative overflow-hidden">
       
       {/* Dynamic Ambient Glow Effects */}
-      <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[140%] rounded-full bg-[radial-gradient(circle_at_center,rgba(37,99,235,0.15)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute bottom-[-30%] right-[-10%] w-[50%] h-[140%] rounded-full bg-[radial-gradient(circle_at_center,rgba(255,92,0,0.12)_0%,transparent_70%)] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-radial from-brand-accent/5 to-transparent pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] rounded-full bg-radial from-brand-orange/4 to-transparent pointer-events-none" />
 
-      <div className="premium-container relative z-10">
+      <div className="premium-container relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
         
-        {/* High-Energy Glassmorphic Subscription Card */}
-        <motion.div 
-          whileHover={{ y: -4, borderColor: 'rgba(255, 255, 255, 0.15)', boxShadow: '0 40px 80px rgba(0, 0, 0, 0.5), 0 0 50px rgba(37, 99, 235, 0.12)' }}
-          transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-          className="relative bg-[#0d1b3e]/45 backdrop-blur-xl border border-white/8 rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-2 shadow-[0_30px_60px_rgba(0,0,0,0.4),0_0_40px_rgba(37,99,235,0.08)]"
-        >
-          {/* Decorative Flight Trail SVG Layer */}
-          <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden z-0">
-            <svg width="100%" height="100%" viewBox="0 0 800 300" fill="none" preserveAspectRatio="none">
-              <path d="M-50,220 C150,180 350,260 550,140 C650,80 750,120 850,50" stroke="#ff5c00" strokeWidth="2.5" strokeDasharray="6 6" />
-            </svg>
-          </div>
+        {/* Left Side: Copywriting */}
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-[620px]">
+          <span className="text-[10px] text-brand-orange uppercase font-extrabold tracking-[2px] mb-1.5 block">
+            VIP Fare Alerts
+          </span>
+          <h3 className="text-white text-lg sm:text-xl font-display font-black leading-tight mb-1">
+            Unlock Member-Only Deals
+          </h3>
+          <p className="text-xs sm:text-sm text-white/70">
+            Join our newsletter and receive exclusive flight promotional codes and flash travel warnings.
+          </p>
+        </div>
 
-          {/* Left: Travel Visual Gradient Panel with canyon background */}
-          <div 
-            className="relative bg-cover bg-center p-6 md:p-8 text-white flex flex-col justify-center min-h-[260px] border-b md:border-b-0 md:border-r border-white/8 z-10"
-            style={{
-              backgroundImage: 'linear-gradient(135deg, rgba(7, 14, 27, 0.75) 0%, rgba(37, 99, 235, 0.45) 100%), url("https://flyez.ai/assets/img/slider-bg-img.webp")'
-            }}
-          >
-            {/* Flying Mini Plane Icon */}
-            <motion.div 
-              animate={{ 
-                y: [0, -6, 0],
-                rotate: [45, 48, 45]
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="absolute top-6 right-10 text-brand-orange opacity-80"
-            >
-              <Plane size={24} />
-            </motion.div>
-
-            <span className="text-[10px] text-brand-orange uppercase font-extrabold tracking-[3px] block mb-3">
-              VIP Fare Alerts
-            </span>
-            <h3 className="text-white text-2xl font-display font-black mb-3 leading-tight tracking-tight">
-              Your Next Journey Starts Here
-            </h3>
-            <ul className="flex flex-col gap-3.5 text-sm opacity-95">
-              <li className="flex items-center gap-2.5">
-                <CheckCircle2 size={18} className="text-brand-orange shrink-0" /> 
-                <span>Unpublished private flight rate drops</span>
-              </li>
-              <li className="flex items-center gap-2.5">
-                <CheckCircle2 size={18} className="text-brand-orange shrink-0" /> 
-                <span>Secret airline discounts directly in your inbox</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Right: Email Signup Form */}
-          <div className="p-6 md:p-8 flex flex-col justify-center z-10 bg-brand-primary-light/10">
-            <h4 className="text-white text-xl font-display font-black mb-1.5 tracking-tight">
-              Unlock Member-Only Deals
-            </h4>
-            <p className="text-white/70 text-sm mb-5 leading-relaxed">
-              Join the FlyEz newsletter and receive exclusive flight promotional codes and flash travel warnings.
-            </p>
-            
-            <AnimatePresence mode="wait">
-              {success ? (
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  className="p-5 rounded-xl bg-brand-success/12 border border-dashed border-brand-success/40 text-brand-success text-sm font-bold text-center shadow-[0_10px_20px_rgba(16,185,129,0.05)]"
+        {/* Right Side: Email Signup Form */}
+        <div className="w-full lg:max-w-[460px] shrink-0">
+          <AnimatePresence mode="wait">
+            {success ? (
+              <motion.div 
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -5 }}
+                className="py-2.5 px-5 rounded-full bg-brand-success/10 border border-dashed border-brand-success/30 text-brand-success text-xs sm:text-sm font-bold text-center"
+              >
+                ✓ Subscription Successful! Watch your inbox.
+              </motion.div>
+            ) : (
+              <motion.form 
+                onSubmit={handleSubscribe}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="flex items-center bg-white/5 hover:bg-white/7 border border-white/10 focus-within:border-brand-orange focus-within:bg-white/8 focus-within:shadow-[0_0_20px_rgba(255,92,0,0.2)] rounded-full p-1 transition-all duration-300 w-full"
+              >
+                <div className="flex items-center gap-2 flex-1 min-w-0 pl-3">
+                  <Mail size={14} className="text-white/40 shrink-0" />
+                  <input 
+                    type="email" 
+                    placeholder="Enter email for secret deals" 
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full bg-transparent border-0 outline-none text-xs sm:text-sm text-white placeholder-white/40 py-1.5"
+                  />
+                </div>
+                
+                <motion.button 
+                  type="submit"
+                  whileHover={{ scale: 1.02, backgroundColor: '#e05200' }}
+                  whileTap={{ scale: 0.98 }}
+                  className="px-5 py-2 rounded-full bg-brand-orange text-white font-extrabold text-xs sm:text-sm flex items-center justify-center gap-1.5 cursor-pointer shadow-[0_4px_12px_rgba(255,92,0,0.25)] whitespace-nowrap"
                 >
-                  ✓ Subscription Successful! Watch your inbox.
-                </motion.div>
-              ) : (
-                <motion.form 
-                  onSubmit={handleSubscribe}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  className="flex flex-col sm:flex-row items-stretch sm:items-center bg-white/3 hover:bg-white/5 border border-white/10 focus-within:border-brand-orange focus-within:bg-white/6 focus-within:shadow-[0_0_20px_rgba(255,92,0,0.3)] rounded-xl sm:rounded-full p-2 transition-all duration-300 gap-2"
-                >
-                  <div className="flex items-center gap-3 flex-1 px-4 py-2 sm:py-0">
-                    <Mail size={18} className="text-white/45" />
-                    <input 
-                      type="email" 
-                      placeholder="Enter your email address" 
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-transparent border-0 outline-none text-sm text-white placeholder-white/45 py-2"
-                    />
-                  </div>
-                  
-                  <motion.button 
-                    type="submit"
-                    whileHover={{ scale: 1.02, backgroundColor: '#e05200' }}
-                    whileTap={{ scale: 0.98 }}
-                    className="px-7 py-3 rounded-lg sm:rounded-full bg-brand-orange text-white font-extrabold text-sm flex items-center justify-center gap-2 cursor-pointer shadow-[0_4px_12px_rgba(255,92,0,0.25)] whitespace-nowrap"
-                  >
-                    Join VIP <ArrowRight size={15} />
-                  </motion.button>
-                </motion.form>
-              )}
-            </AnimatePresence>
-          </div>
-
-        </motion.div>
+                  Join VIP <ArrowRight size={13} />
+                </motion.button>
+              </motion.form>
+            )}
+          </AnimatePresence>
+        </div>
 
       </div>
     </section>

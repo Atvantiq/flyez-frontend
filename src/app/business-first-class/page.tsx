@@ -66,30 +66,34 @@ export default function BusinessFirstClass() {
       </div>
 
       {/* Hero Banner */}
-      <section className="relative py-32 flex items-center justify-center text-center overflow-hidden bg-brand-primary">
+      <section className="relative min-h-[calc(100vh-72px)] flex flex-col justify-between py-5 md:py-6 overflow-hidden bg-brand-primary">
         <motion.div
           initial={{ scale: 1.08, opacity: 0.45 }}
           animate={{ scale: 1, opacity: 0.6 }}
           transition={{ duration: 6, ease: "easeOut" }}
-          className="absolute inset-0 bg-cover bg-center z-0"
+          className="absolute top-0 left-0 right-0 bottom-[62px] bg-cover bg-center z-0"
           style={{ 
             backgroundImage: 'url("https://images.unsplash.com/photo-1540962351504-03099e0a754b?q=80&w=1600&auto=format&fit=crop")'
           }}
         />
         <div 
-          className="absolute inset-0 z-1" 
+          className="absolute top-0 left-0 right-0 bottom-[62px] z-1" 
           style={{
             background: 'linear-gradient(to bottom, rgba(7, 14, 27, 0.25) 0%, rgba(7, 14, 27, 0.4) 50%, rgba(7, 14, 27, 0.75) 100%)'
           }}
         />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.18),transparent_60%)] z-1" />
-        <div className="absolute inset-0 opacity-5 bg-[radial-gradient(circle,#ffffff_1px,transparent_1.5px)] bg-[size:24px_24px] pointer-events-none z-1" />
+        <div className="absolute top-0 left-0 right-0 bottom-[62px] bg-[radial-gradient(circle_at_top_right,rgba(37,99,235,0.18),transparent_60%)] z-1" />
+        <div className="absolute top-0 left-0 right-0 bottom-[62px] opacity-5 bg-[radial-gradient(circle,#ffffff_1px,transparent_1.5px)] bg-[size:24px_24px] pointer-events-none z-1" />
 
-        <div className="premium-container relative z-10">
+        {/* Top spacer to balance the navigation header bar spacing */}
+        <div className="h-2" />
+
+        {/* Center Heading Title */}
+        <div className="premium-container relative z-10 flex flex-col items-center flex-1 justify-center py-4">
           <motion.span 
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-xs font-extrabold text-brand-orange uppercase tracking-widest inline-block mb-3.5"
+            className="text-xs font-extrabold text-brand-orange uppercase tracking-widest inline-block mb-2"
             style={{ textShadow: '0 1px 2px rgba(7, 14, 27, 0.4)' }}
           >
             Premium Cabin Upgrades
@@ -98,20 +102,21 @@ export default function BusinessFirstClass() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-display italic font-black text-white leading-tight tracking-tight"
+            className="text-4xl sm:text-5xl lg:text-6xl font-display italic font-black text-white leading-tight tracking-tight text-center"
             style={{ textShadow: '0 4px 30px rgba(7, 14, 27, 0.95), 0 2px 8px rgba(7, 14, 27, 0.7)' }}
           >
             Business & First Class
           </motion.h1>
         </div>
+
+        {/* Bottom Booking Wizard Form */}
+        <div className="premium-container relative z-20 w-full mb-1 sm:mb-2 mt-auto">
+          <FlightSearchForm restrictToBusinessFirst={true} />
+        </div>
       </section>
 
       {/* Main Content */}
       <main className="flex-1 pb-20 relative">
-        {/* Overlapping Flight Search Form Container */}
-        <div className="premium-container relative z-20 -mt-20 md:-mt-28 lg:-mt-36 mb-16">
-          <FlightSearchForm restrictToBusinessFirst={true} />
-        </div>
 
         <div className="absolute top-1/4 right-[10%] w-96 h-96 rounded-full bg-brand-accent/3 blur-[120px] pointer-events-none -z-10" />
         <div className="absolute bottom-1/4 left-[5%] w-80 h-80 rounded-full bg-brand-orange/3 blur-[100px] pointer-events-none -z-10" />

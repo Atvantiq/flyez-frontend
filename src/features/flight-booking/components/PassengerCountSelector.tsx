@@ -91,14 +91,14 @@ export default function PassengerCountSelector({
         onClick={() => setIsOpen(!isOpen)}
         className={`search-input-capsule select-none cursor-pointer ${isOpen ? 'is-active' : ''}`}
       >
-        <span className="field-icon-chip bg-brand-accent/10 text-brand-accent">
+        <span className="field-icon-chip bg-black/5 text-black">
           <Users size={18} />
         </span>
-        <div className="flex flex-col min-w-0 flex-1">
-          <span className="text-[10px] uppercase text-brand-text-muted font-bold tracking-[0.09em]">
+        <div className="flex flex-col min-w-0 flex-1 justify-center">
+          <span className="text-[10px] uppercase text-brand-text-muted font-bold tracking-[0.09em] leading-none mb-1">
             Travelers
           </span>
-          <span className="text-[17px] font-bold text-brand-primary">
+          <span className="text-[15px] font-bold text-black leading-none">
             {totalTravelers} Traveler{totalTravelers > 1 ? 's' : ''}
           </span>
         </div>

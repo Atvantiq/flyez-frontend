@@ -2,7 +2,6 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import FlightSearchForm from '@/features/flight-booking/components/FlightSearchForm';
 import Footer from '@/components/Footer';
 
 // Dynamically load below-the-fold components for performance optimization & code splitting
@@ -28,11 +27,7 @@ export default function Home() {
       <Hero />
 
       {/* Main Content Sections */}
-      <main className="flex-1 pb-10">
-        {/* Overlapping Flight Search Form Container */}
-        <div className="premium-container relative z-20 -mt-20 md:-mt-28 lg:-mt-36">
-          <FlightSearchForm />
-        </div>
+      <main className="flex-1">
 
         {/* Special Offers Grid & Call Banner */}
         <SpecialOffers />

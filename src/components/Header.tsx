@@ -50,27 +50,18 @@ export default function Header() {
           <ul className="flex gap-6 xl:gap-7 text-[14px] xl:text-[15px] font-semibold">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
-              const isTalkToUs = link.name === "Talk to Us";
               return (
                 <li key={link.name} className="flex items-center gap-1">
                   <a 
                     href={link.href} 
-                    className={`relative py-2 transition-colors duration-150 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-brand-accent after:transition-all after:duration-150 ${
+                    className={`py-2 transition-colors duration-150 ${
                       isActive
-                        ? 'text-brand-primary after:w-full'
-                        : 'text-brand-text-muted hover:text-brand-primary after:w-0 hover:after:w-full'
+                        ? 'text-brand-orange font-bold'
+                        : 'text-black hover:text-brand-orange'
                     }`}
                   >
                     {link.name}
                   </a>
-                  {isTalkToUs && (
-                    <a 
-                      href="tel:1800-521-4263" 
-                      className="text-brand-orange hover:text-brand-orange-hover font-bold text-xs xl:text-sm ml-1 flex items-center gap-1 shrink-0 bg-brand-orange/5 px-2 py-0.5 rounded-full border border-brand-orange/15 transition-all hover:bg-brand-orange/10"
-                    >
-                      <PhoneCall size={10} className="inline" /> 1800-521-4263
-                    </a>
-                  )}
                 </li>
               );
             })}
@@ -119,8 +110,8 @@ export default function Header() {
                     onClick={() => setIsMenuOpen(false)} 
                     className={`block py-1 transition-colors ${
                       isActive 
-                        ? 'text-brand-orange' 
-                        : 'text-brand-text-muted hover:text-brand-primary'
+                        ? 'text-brand-orange font-bold' 
+                        : 'text-black hover:text-brand-orange'
                     }`}
                   >
                     {link.name}
