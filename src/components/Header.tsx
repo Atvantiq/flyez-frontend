@@ -29,35 +29,35 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full py-3.5 transition-all duration-350 font-ui ${
+      className={`w-full transition-all duration-500 font-ui ${
         isSticky
-          ? 'bg-white/92 backdrop-blur-md border-b border-slate-200/80 shadow-[0_4px_20px_-4px_rgba(11,26,48,0.05)]'
-          : 'bg-white border-b border-slate-100'
+          ? 'py-3 bg-white/85 backdrop-blur-xl border-b border-slate-200/70 shadow-[0_8px_30px_-12px_rgba(7,14,27,0.12)]'
+          : 'py-4 bg-white border-b border-slate-100'
       }`}
     >
-      <div className="premium-container flex items-center justify-between gap-4">
+      <div className="premium-container flex items-center justify-between gap-6">
         {/* Logo left-aligned */}
         <a href="/" className="flex items-center group shrink-0">
           <img
             src="/logo-small.gif"
             alt="FlyEz Logo"
-            className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            className="h-10 w-auto object-contain transition-transform duration-500 group-hover:scale-[1.04]"
           />
         </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center font-ui">
-          <ul className="flex gap-6 xl:gap-7 text-[14px] xl:text-[15px] font-semibold">
+          <ul className="flex gap-7 xl:gap-9 text-[15px] xl:text-[16px]">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
-                <li key={link.name} className="flex items-center gap-1">
-                  <a 
-                    href={link.href} 
-                    className={`py-2 transition-colors duration-150 ${
+                <li key={link.name} className="flex items-center">
+                  <a
+                    href={link.href}
+                    className={`relative py-2 tracking-[0.01em] transition-colors duration-300 after:absolute after:bottom-0.5 after:left-0 after:h-[1.5px] after:bg-brand-orange after:transition-all after:duration-300 ${
                       isActive
-                        ? 'text-brand-orange font-bold'
-                        : 'text-black hover:text-brand-orange'
+                        ? 'text-brand-primary font-semibold after:w-full'
+                        : 'text-brand-primary/70 font-medium hover:text-brand-primary after:w-0 hover:after:w-full'
                     }`}
                   >
                     {link.name}
@@ -73,23 +73,23 @@ export default function Header() {
           {/* Travel Specialist Call Widget */}
           <a
             href="tel:1800-521-4263"
-            className="hidden sm:flex items-center gap-2.5 py-1 px-3.5 rounded-full border border-slate-200 bg-slate-50/50 hover:bg-slate-100 transition-all duration-300 hover:shadow-sm"
+            className="hidden sm:flex items-center gap-2.5 py-1.5 pl-1.5 pr-4 rounded-full border border-slate-200/80 bg-white hover:border-brand-orange/30 transition-all duration-300 hover:shadow-[0_6px_20px_-8px_rgba(255,92,0,0.35)] group"
           >
             <img
               src="/grouptraveltelecaller.webp"
               alt="Travel Specialist"
-              className="w-8 h-8 rounded-full object-cover border border-brand-orange"
+              className="w-8 h-8 rounded-full object-cover ring-1 ring-brand-orange/40 ring-offset-1 ring-offset-white"
             />
-            <div className="flex flex-col font-ui text-left">
-              <span className="text-[9px] text-brand-text-muted font-bold uppercase tracking-wider leading-none">Talk to Us</span>
-              <span className="text-xs font-black text-brand-primary hover:text-brand-orange transition-colors">1800-521-4263</span>
+            <div className="flex flex-col font-ui text-left leading-none">
+              <span className="text-[9px] text-brand-text-muted font-semibold uppercase tracking-[0.14em] mb-0.5">Talk to a Specialist</span>
+              <span className="text-[13px] font-semibold text-brand-primary tracking-wide group-hover:text-brand-orange transition-colors">1800-521-4263</span>
             </div>
           </a>
 
           {/* Mobile menu trigger */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-sm bg-slate-50 border border-slate-200 text-brand-primary"
+            className="lg:hidden p-2 rounded-lg bg-slate-50 border border-slate-200 text-brand-primary transition-colors hover:bg-slate-100"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
