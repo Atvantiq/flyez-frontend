@@ -17,7 +17,7 @@ const TravelGptChat = dynamic(() => import('@/features/chat-ai/components/Travel
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-brand-bg-light dark:bg-brand-primary">
+    <div className="min-h-screen flex flex-col bg-white dark:bg-brand-primary">
       {/* Sticky Header Bar (Navigation) */}
       <div className="sticky top-0 z-[1000] flex flex-col">
         {/* Premium Header */}
@@ -28,7 +28,7 @@ export default function Home() {
       <Hero />
 
       {/* Flight Search Wizard — hangs over the hero's bottom edge, fully visible */}
-      <div className="relative z-30 -mt-28 md:-mt-32 mb-12">
+      <div className="relative z-30 -mt-28 md:-mt-32 mb-6">
         <div className="premium-container px-4">
           <FlightSearchForm />
         </div>

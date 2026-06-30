@@ -42,7 +42,7 @@ export default function SpecialOffers() {
   ];
 
   return (
-    <section className="py-24 bg-white dark:bg-brand-primary border-b border-brand-border dark:border-gray-800">
+    <section className="pt-12 pb-24 bg-white dark:bg-brand-primary border-b border-brand-border dark:border-gray-800">
       <div className="premium-container">
         
         {/* Title */}
