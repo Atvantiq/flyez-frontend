@@ -51,7 +51,7 @@ export default function WhyBookWithUs() {
             </div>
 
             {/* Center Card - Luxury Flight Cabin Suite */}
-            <div className="w-[40%] h-[390px] md:h-[420px] rounded-3xl overflow-hidden border-4 border-[#fafaf9] shadow-2xl z-10 transition-all duration-500 hover:scale-105 hover:shadow-2xl group cursor-pointer shrink-0">
+            <div className="w-[46%] h-[350px] md:h-[380px] rounded-3xl overflow-hidden border-4 border-[#fafaf9] shadow-2xl z-10 transition-all duration-500 hover:scale-105 hover:shadow-2xl group cursor-pointer shrink-0">
               <img
                 src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?q=80&w=800&auto=format&fit=crop"
                 alt="Luxury aircraft private cabin suite"
