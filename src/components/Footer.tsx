@@ -171,17 +171,17 @@ export default function Footer() {
 
         </div>
 
-        {/* Tier 3: Directory Well (Grouped Index) */}
-        <div className="bg-[#050b16] border border-white/[0.04] rounded-3xl p-8 mb-12 shadow-[inset_0_1px_1px_rgba(255,255,255,0.02)]">
-          <div className="text-stone-300 text-[10px] font-bold font-ui uppercase tracking-wider mb-6 pb-3 border-b border-white/[0.05] flex items-center justify-between">
+        {/* Tier 3: Directory Well (Symmetrical 4-Column Layout) */}
+        <div className="border-t border-white/[0.06] pt-12 pb-4 mb-10">
+          <div className="text-stone-300 text-[10px] font-bold font-ui uppercase tracking-wider mb-8 flex items-center justify-between">
             <span>Global Route & Airline Directories</span>
             <span className="text-[9px] text-brand-orange font-normal lowercase tracking-normal">consolidator pools</span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
             <div>
               <h5 className="text-stone-300 text-xs font-bold mb-4 font-display uppercase tracking-wider text-brand-orange font-ui">Flights to US Cities</h5>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs text-white/40 font-sans">
+              <ul className="flex flex-col gap-2.5 text-xs text-white/40 font-sans">
                 <li><a href="/flights?tp=round&couch=E&d1=LAX&ar1=JFK" className="hover:text-brand-orange transition-colors">New York (JFK)</a></li>
                 <li><a href="/flights?tp=round&couch=E&d1=JFK&ar1=LAX" className="hover:text-brand-orange transition-colors">Los Angeles (LAX)</a></li>
                 <li><a href="/flights?tp=round&couch=E&d1=LAX&ar1=LAS" className="hover:text-brand-orange transition-colors">Las Vegas (LAS)</a></li>
@@ -192,7 +192,7 @@ export default function Footer() {
             </div>
             <div>
               <h5 className="text-stone-300 text-xs font-bold mb-4 font-display uppercase tracking-wider text-brand-orange font-ui">Flights to Intl Cities</h5>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs text-white/40 font-sans">
+              <ul className="flex flex-col gap-2.5 text-xs text-white/40 font-sans">
                 <li><a href="/flights?tp=round&couch=E&d1=JFK&ar1=LHR" className="hover:text-brand-orange transition-colors">London (LHR)</a></li>
                 <li><a href="/flights?tp=round&couch=E&d1=JFK&ar1=CDG" className="hover:text-brand-orange transition-colors">Paris (CDG)</a></li>
                 <li><a href="/flights?tp=round&couch=E&d1=LAX&ar1=NRT" className="hover:text-brand-orange transition-colors">Tokyo (NRT)</a></li>
@@ -202,11 +202,16 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h5 className="text-stone-300 text-xs font-bold mb-4 font-display uppercase tracking-wider text-brand-orange font-ui">Popular Airlines</h5>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-xs text-white/40 font-sans">
+              <h5 className="text-stone-300 text-xs font-bold mb-4 font-display uppercase tracking-wider text-brand-orange font-ui">Domestic Airlines</h5>
+              <ul className="flex flex-col gap-2.5 text-xs text-white/40 font-sans">
                 <li><a href="/flights?tp=round&couch=E&d1=JFK&ar1=LHR&airline=AA" className="hover:text-brand-orange transition-colors">American Airlines</a></li>
                 <li><a href="/flights?tp=round&couch=E&d1=JFK&ar1=LHR&airline=UA" className="hover:text-brand-orange transition-colors">United Airlines</a></li>
                 <li><a href="/flights?tp=round&couch=E&d1=JFK&ar1=LHR&airline=DL" className="hover:text-brand-orange transition-colors">Delta Air Lines</a></li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="text-stone-300 text-xs font-bold mb-4 font-display uppercase tracking-wider text-brand-orange font-ui">Intl Carriers</h5>
+              <ul className="flex flex-col gap-2.5 text-xs text-white/40 font-sans">
                 <li><a href="/flights?tp=round&couch=E&d1=JFK&ar1=LHR&airline=BA" className="hover:text-brand-orange transition-colors">British Airways</a></li>
                 <li><a href="/flights?tp=round&couch=E&d1=JFK&ar1=LHR&airline=LH" className="hover:text-brand-orange transition-colors">Lufthansa</a></li>
                 <li><a href="/flights?tp=round&couch=E&d1=JFK&ar1=LHR&airline=QR" className="hover:text-brand-orange transition-colors">Qatar Airways</a></li>
