@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { EB_Garamond, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
+import StickyBottomCall from "@/components/StickyBottomCall";
 
 // Koursair font: EB Garamond used site-wide (headings, body, header menu, UI).
 // Weights capped at 700 so headings stay elegant, not overly bold/big.
@@ -39,6 +40,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         {children}
+        <StickyBottomCall />
       </body>
     </html>
   );
