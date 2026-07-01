@@ -38,10 +38,10 @@ export default function WhyBookWithUs() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
           {/* Left Column: Premium Staggered Fan Deck */}
-          <div className="lg:col-span-5 w-full flex items-center justify-center h-[340px] md:h-[360px] relative select-none">
+          <div className="lg:col-span-5 w-full flex items-center justify-center h-[440px] md:h-[480px] relative select-none">
             
             {/* Left Card - Wings / Sky */}
-            <div className="w-[30%] h-[240px] md:h-[260px] rounded-2xl overflow-hidden border-4 border-[#fafaf9] shadow-lg -rotate-6 translate-x-6 mt-6 transition-all duration-500 hover:rotate-0 hover:scale-105 hover:z-20 hover:shadow-2xl group cursor-pointer shrink-0">
+            <div className="w-[30%] h-[310px] md:h-[340px] rounded-2xl overflow-hidden border-4 border-[#fafaf9] shadow-lg -rotate-6 translate-x-6 mt-8 transition-all duration-500 hover:rotate-0 hover:scale-105 hover:z-20 hover:shadow-2xl group cursor-pointer shrink-0">
               <img
                 src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=400&auto=format&fit=crop"
                 alt="Premium flight wing sunset"
@@ -51,7 +51,7 @@ export default function WhyBookWithUs() {
             </div>
 
             {/* Center Card - Luxury Flight Cabin Suite */}
-            <div className="w-[48%] h-[300px] md:h-[320px] rounded-3xl overflow-hidden border-4 border-[#fafaf9] shadow-2xl z-10 transition-all duration-500 hover:scale-105 hover:shadow-2xl group cursor-pointer shrink-0">
+            <div className="w-[48%] h-[390px] md:h-[420px] rounded-3xl overflow-hidden border-4 border-[#fafaf9] shadow-2xl z-10 transition-all duration-500 hover:scale-105 hover:shadow-2xl group cursor-pointer shrink-0">
               <img
                 src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?q=80&w=800&auto=format&fit=crop"
                 alt="Luxury aircraft private cabin suite"
@@ -61,7 +61,7 @@ export default function WhyBookWithUs() {
             </div>
 
             {/* Right Card - 5-Star VIP Airport Lounge */}
-            <div className="w-[30%] h-[240px] md:h-[260px] rounded-2xl overflow-hidden border-4 border-[#fafaf9] shadow-lg rotate-6 -translate-x-6 mt-6 transition-all duration-500 hover:rotate-0 hover:scale-105 hover:z-20 hover:shadow-2xl group cursor-pointer shrink-0">
+            <div className="w-[30%] h-[310px] md:h-[340px] rounded-2xl overflow-hidden border-4 border-[#fafaf9] shadow-lg rotate-6 -translate-x-6 mt-8 transition-all duration-500 hover:rotate-0 hover:scale-105 hover:z-20 hover:shadow-2xl group cursor-pointer shrink-0">
               <img
                 src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=400&auto=format&fit=crop"
                 alt="Luxury VIP transit lounge"
