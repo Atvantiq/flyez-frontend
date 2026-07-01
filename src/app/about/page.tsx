@@ -17,22 +17,7 @@ export default function About() {
       </div>
 
       {/* About Hero Section */}
-      <section className="relative py-28 md:py-36 flex items-center justify-center text-center overflow-hidden bg-brand-primary">
-        {/* Background Image overlay */}
-        <div
-          className="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-[6000ms] scale-100 hover:scale-[1.03]"
-          style={{ 
-            backgroundImage: 'url("https://images.unsplash.com/photo-1544016768-382df4b5a2b5?q=80&w=1600&auto=format&fit=crop")'
-          }}
-        />
-
-        {/* Navy linear overlay to ensure contrast */}
-        <div 
-          className="absolute inset-0 z-[1]" 
-          style={{
-            background: 'linear-gradient(to bottom, rgba(7, 14, 27, 0.3) 0%, rgba(7, 14, 27, 0.55) 60%, rgba(7, 14, 27, 0.85) 100%)'
-          }}
-        />
+      <section className="relative py-28 md:py-36 flex items-center justify-center text-center overflow-hidden bg-gradient-to-b from-[#070e1b] to-[#0c1b33] border-b border-white/5">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,92,0,0.12),transparent_50%)] z-[1]" />
 
         <div className="premium-container relative z-10">
