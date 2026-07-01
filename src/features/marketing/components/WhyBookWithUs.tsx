@@ -73,28 +73,28 @@ export default function WhyBookWithUs() {
           </div>
 
           {/* Right Column: Editorial Value Proposition Copy & Stacked Values */}
-          <div className="lg:col-span-7 flex flex-col justify-center gap-8">
+          <div className="lg:col-span-7 flex flex-col justify-center gap-5.5">
             {/* Value Pitch Header */}
             <div>
-              <span className="text-[10px] font-bold text-brand-orange uppercase tracking-[0.2em] block mb-2.5 font-ui">
+              <span className="text-[10px] font-bold text-brand-orange uppercase tracking-[0.2em] block mb-2 font-ui">
                 THE FLYEZ PROMISE
               </span>
-              <h2 className="text-3xl lg:text-4xl font-display font-medium text-brand-primary leading-tight tracking-tight mb-4">
+              <h2 className="text-2xl sm:text-3xl font-display font-medium text-brand-primary leading-tight tracking-tight mb-2.5">
                 Bespoke Airfare Solutions
               </h2>
-              <p className="text-brand-text-muted text-sm md:text-base leading-relaxed">
+              <p className="text-brand-text-muted text-xs sm:text-sm leading-relaxed">
                 FlyEz combines direct GDS airline contracts, wholesale consolidator connections, and 24/7 human expertise to offer flight bookings at rates simply unavailable to the general public.
               </p>
 
               {/* Minimal inline bullet list */}
-              <div className="flex flex-wrap gap-x-6 gap-y-2 mt-5">
+              <div className="flex flex-wrap gap-x-5 gap-y-1.5 mt-3.5">
                 {[
                   "PCI-DSS Secure Desk",
                   "Instant PNR Confirmations",
                   "Zero Ticketing Surcharges"
                 ].map((text, idx) => (
-                  <div key={idx} className="flex items-center gap-1.5 text-xs font-bold text-brand-primary font-ui uppercase tracking-wider">
-                    <Check size={13} className="text-brand-orange shrink-0" strokeWidth={3} />
+                  <div key={idx} className="flex items-center gap-1.5 text-[11px] font-bold text-brand-primary font-ui uppercase tracking-wider">
+                    <Check size={12} className="text-brand-orange shrink-0" strokeWidth={3} />
                     <span className="text-slate-700">{text}</span>
                   </div>
                 ))}
@@ -102,31 +102,31 @@ export default function WhyBookWithUs() {
             </div>
 
             {/* Premium Vertical List */}
-            <div className="flex flex-col divide-y divide-stone-200/50 pt-2 border-t border-stone-200/40">
+            <div className="flex flex-col divide-y divide-stone-200/50 pt-1.5 border-t border-stone-200/40">
               {benefits.map((b, idx) => (
                 <div
                   key={idx}
-                  className="flex items-start gap-5 py-5 first:pt-0 last:pb-0 group"
+                  className="flex items-start gap-4 py-3.5 first:pt-0 last:pb-0 group"
                 >
                   {/* Large elegant serif index indicator */}
-                  <span className="font-display italic text-2xl md:text-3xl text-brand-orange/60 font-medium shrink-0 select-none w-10 md:w-12 pt-0.5">
+                  <span className="font-display italic text-xl md:text-2xl text-brand-orange/60 font-medium shrink-0 select-none w-8 md:w-10 pt-0.5">
                     {b.number}
                   </span>
 
                   {/* Content Area */}
                   <div className="flex-1">
                     {/* Category Details */}
-                    <span className="text-[9px] font-extrabold text-slate-400 font-ui tracking-[0.18em] block mb-1">
+                    <span className="text-[8px] font-extrabold text-slate-400 font-ui tracking-[0.18em] block mb-0.5">
                       {b.label}
                     </span>
 
                     {/* Headline */}
-                    <h3 className="text-base md:text-lg font-display font-semibold text-brand-primary tracking-tight leading-snug">
+                    <h3 className="text-sm md:text-base font-display font-semibold text-brand-primary tracking-tight leading-snug">
                       {b.title}
                     </h3>
 
                     {/* Paragraph copy */}
-                    <p className="text-brand-text-muted text-xs md:text-sm leading-relaxed mt-1">
+                    <p className="text-brand-text-muted text-xs leading-relaxed mt-0.5">
                       {b.desc}
                     </p>
                   </div>
