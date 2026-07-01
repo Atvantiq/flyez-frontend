@@ -148,20 +148,20 @@ export default function TrendingDeals() {
             <div
               key={idx}
               onClick={() => handleDealClick(deal)}
-              className="relative flex bg-white dark:bg-brand-primary-light border border-slate-200 dark:border-gray-800 rounded-2xl min-h-[180px] shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-350 cursor-pointer overflow-hidden group"
+              className="relative flex bg-white dark:bg-[#0c182c] border border-stone-200/60 dark:border-gray-800 rounded-3xl min-h-[190px] shadow-[0_8px_30px_rgba(7,14,27,0.02)] hover:shadow-[0_15px_45px_rgba(7,14,27,0.08)] transition-all duration-500 hover:-translate-y-2 cursor-pointer overflow-hidden group"
             >
-              {/* Colored Side Stripe */}
-              <div className="w-1.5 shrink-0" style={{ backgroundColor: deal.color }} />
+              {/* Elegant Top Color Band Tag */}
+              <div className="absolute top-0 left-0 right-0 h-1.5" style={{ backgroundColor: deal.color }} />
 
               {/* Left Side: Ticket Itinerary */}
-              <div className="flex-1 p-6 flex flex-col justify-between">
+              <div className="flex-1 p-6 pt-7 flex flex-col justify-between">
                 <div>
                   {/* Cabin Category Badge */}
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-[10px] font-extrabold tracking-wider" style={{ color: deal.color }}>
+                  <div className="flex justify-between items-center mb-2.5">
+                    <span className="text-[10px] font-extrabold tracking-wider font-ui uppercase" style={{ color: deal.color }}>
                       {deal.class}
                     </span>
-                    <span className="text-[10px] font-bold uppercase text-brand-text-muted dark:text-gray-400">
+                    <span className="text-[9px] font-bold uppercase tracking-wider text-slate-400 bg-slate-50 dark:bg-black/20 px-2 py-0.5 rounded">
                       {deal.type === 'round' ? 'Round Trip' : 'One Way'}
                     </span>
                   </div>
@@ -173,7 +173,7 @@ export default function TrendingDeals() {
                     </span>
                     
                     {/* path dotted line */}
-                    <div className="flex-1 h-px border-b-2 border-dashed border-brand-border dark:border-gray-800 mx-2 relative min-w-[40px]">
+                    <div className="flex-1 h-px border-b-2 border-dashed border-stone-200 dark:border-gray-700 mx-2 relative min-w-[40px]">
                       <div 
                         className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 rotate-90 left-[10%] group-hover:left-[80%] transition-all duration-[750ms] ease-out"
                         style={{ color: deal.color }}
@@ -194,41 +194,46 @@ export default function TrendingDeals() {
                 </div>
 
                 {/* Carrier info */}
-                <div className="flex items-center gap-1.5 text-xs text-brand-primary dark:text-white font-bold mt-2.5">
-                  <Plane size={12} style={{ color: deal.color }} />
+                <div className="flex items-center gap-1.5 text-xs text-brand-primary dark:text-white font-bold mt-3 font-ui">
+                  <div className="w-5 h-5 rounded-full flex items-center justify-center bg-stone-50 dark:bg-black/25 border border-stone-100 dark:border-gray-800">
+                    <Plane size={11} style={{ color: deal.color }} />
+                  </div>
                   <span>{deal.carrier}</span>
                 </div>
               </div>
 
               {/* Ticket Coupon Separator (Dashed vertical line + cutout notches) */}
-              <div className="relative w-px border-l-2 border-dashed border-brand-border dark:border-gray-800 my-4 shrink-0">
-                <div className="absolute -top-[23px] -left-2 w-4 h-4 bg-white dark:bg-brand-primary rounded-full border border-brand-border dark:border-gray-800 border-t-transparent transform rotate-135" />
-                <div className="absolute -bottom-[23px] -left-2 w-4 h-4 bg-white dark:bg-brand-primary rounded-full border border-brand-border dark:border-gray-800 border-b-transparent transform rotate-135" />
+              <div className="relative w-px border-l-2 border-dashed border-stone-200/80 dark:border-gray-800 my-4 shrink-0 z-10">
+                <div className="absolute -top-[27px] -left-2 w-4 h-4 bg-white dark:bg-brand-primary rounded-full border border-stone-200/60 dark:border-gray-800 border-t-transparent transform rotate-135" />
+                <div className="absolute -bottom-[27px] -left-2 w-4 h-4 bg-white dark:bg-brand-primary rounded-full border border-stone-200/60 dark:border-gray-800 border-b-transparent transform rotate-135" />
               </div>
 
               {/* Right Side: Price & Barcode details */}
-              <div className="w-[125px] shrink-0 p-6 bg-gradient-to-b from-brand-primary/5 to-brand-primary/10 dark:from-white/2 dark:to-white/5 flex flex-col justify-between items-center text-center">
+              <div className="w-[130px] shrink-0 p-6 pt-7 bg-stone-50/40 dark:bg-black/15 flex flex-col justify-between items-center text-center border-l border-stone-100/50 dark:border-gray-850">
                 
                 {/* Boarding Date */}
                 <div className="flex flex-col">
-                  <span className="text-[9px] text-brand-text-muted dark:text-gray-400 font-extrabold uppercase tracking-wider">BOARDING</span>
+                  <span className="text-[8px] text-slate-400 font-extrabold uppercase tracking-widest font-ui">BOARDING</span>
                   <span className="text-xs font-bold text-brand-primary dark:text-white mt-0.5">{deal.dates.split(' - ')[0]}</span>
                 </div>
 
                 {/* Price Display */}
-                <div>
-                  <span className="text-[9px] text-brand-text-muted dark:text-gray-400 font-bold block">FROM</span>
-                  <span className="text-3xl font-display font-semibold text-brand-orange leading-none">
+                <div className="my-2.5">
+                  <span className="text-[8px] text-slate-400 font-bold block font-ui tracking-wider">FROM</span>
+                  <span className="text-3xl font-display font-medium text-brand-orange leading-none group-hover:scale-105 transition-transform duration-300 block">
                     <span className="text-sm font-extrabold align-super mr-0.5">$</span>
                     {deal.price}
                   </span>
                 </div>
 
                 {/* Micro Barcode placeholder representing a real ticket */}
-                <div className="flex gap-0.5 h-3.5 w-16 opacity-35 dark:opacity-60" title="Book Private Flight Deal">
-                  {[1.5, 3, 1, 2.5, 1, 4, 1.5, 2, 1, 3].map((w, idx) => (
-                    <div key={idx} style={{ flexGrow: w }} className="h-full bg-brand-primary dark:bg-white" />
-                  ))}
+                <div className="flex flex-col items-center">
+                  <div className="flex gap-0.5 h-3.5 w-16 opacity-35 dark:opacity-60" title="Book Private Flight Deal">
+                    {[1.5, 3, 1, 2.5, 1, 4, 1.5, 2, 1, 3].map((w, idx) => (
+                      <div key={idx} style={{ flexGrow: w }} className="h-full bg-brand-primary dark:bg-white" />
+                    ))}
+                  </div>
+                  <span className="text-[7.5px] font-mono text-stone-400 dark:text-slate-500 mt-1 uppercase tracking-widest">AI-{deal.origin}-{deal.destination}</span>
                 </div>
               </div>
 
