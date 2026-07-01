@@ -74,7 +74,7 @@ export default function Header({ overlay = true }: HeaderProps) {
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
-                <li key={link.name} className="flex items-center group">
+                <li key={link.name} className="flex items-center">
                   <a
                     href={link.href}
                     className={`relative py-2 text-[11px] font-bold uppercase tracking-wider whitespace-nowrap transition-colors duration-300 ${
@@ -88,12 +88,6 @@ export default function Header({ overlay = true }: HeaderProps) {
                     }`}
                   >
                     {link.name}
-                    {/* Center-aligned expanding gold hover line */}
-                    <span 
-                      className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-4 h-[1.5px] bg-brand-orange scale-x-0 transition-transform duration-300 origin-center group-hover:scale-x-100 ${
-                        isActive ? 'scale-x-100' : ''
-                      }`} 
-                    />
                   </a>
                 </li>
               );
