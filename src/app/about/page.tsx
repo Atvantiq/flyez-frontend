@@ -22,7 +22,7 @@ export default function About() {
         <div
           className="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-[6000ms] scale-100 hover:scale-[1.03]"
           style={{ 
-            backgroundImage: 'url("https://images.unsplash.com/photo-1540962351504-03099e0a754b?q=80&w=1600&auto=format&fit=crop")'
+            backgroundImage: 'url("https://images.unsplash.com/photo-1544016768-382df4b5a2b5?q=80&w=1600&auto=format&fit=crop")'
           }}
         />
 
