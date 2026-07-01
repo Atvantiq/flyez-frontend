@@ -76,7 +76,7 @@ export default function NewsInsights() {
       readTime: "7 min read"
     },
     {
-      img: "https://images.unsplash.com/photo-1506013013222-c941df990c0f?q=80&w=600",
+      img: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?q=80&w=600",
       category: "Guides",
       title: "How to Secure Seat Upgrades at the Gate",
       excerpt: "An insider checklist detailing the precise windows and etiquette parameters that maximize your chances of getting bumped to first class.",
@@ -150,8 +150,8 @@ export default function NewsInsights() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch bg-white dark:bg-brand-primary-light border border-brand-border dark:border-slate-800 rounded-3xl overflow-hidden shadow-lg">
               <div className="lg:col-span-7 relative min-h-[300px] lg:min-h-full">
                 <img 
-                  src="https://images.unsplash.com/photo-1506013013222-c941df990c0f?q=80&w=1200" 
-                  alt="Featured Article" 
+                  src="https://images.unsplash.com/photo-1520437358207-323b43b50729?q=80&w=1200"
+                  alt="Featured Article"
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               </div>

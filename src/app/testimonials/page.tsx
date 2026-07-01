@@ -129,7 +129,7 @@ export default function TestimonialsPage() {
           transition={{ duration: 6, ease: "easeOut" }}
           className="absolute inset-0 bg-cover bg-center z-0"
           style={{ 
-            backgroundImage: 'url("https://images.unsplash.com/photo-1506013013222-c941df990c0f?q=80&w=1600&auto=format&fit=crop")'
+            backgroundImage: 'url("https://images.unsplash.com/photo-1530521954074-e64f6810b32d?q=80&w=1600&auto=format&fit=crop")'
           }}
         />
         <div 

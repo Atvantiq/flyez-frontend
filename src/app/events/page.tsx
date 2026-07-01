@@ -74,7 +74,7 @@ export default function EventsPage() {
       price: "$1,950"
     },
     {
-      img: "https://images.unsplash.com/photo-1513829096900-fe0386e89af7?q=80&w=600",
+      img: "https://images.unsplash.com/photo-1546436836-07a91091f160?q=80&w=600",
       title: "New Year's Times Square Gala",
       location: "New York City, USA",
       date: "December 30, 2026 – January 2, 2027",
