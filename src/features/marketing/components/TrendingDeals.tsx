@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { ArrowRight, Plane, Info, Sparkles } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 interface Deal {
   origin: string;
@@ -117,7 +116,7 @@ export default function TrendingDeals() {
       params.append('ardt1', `11/18/${currentYear}`);
     }
 
-    window.location.href = `https://flyez.ai/flight-listing?${params.toString()}`;
+    window.location.href = `/flights?${params.toString()}`;
   };
 
   return (
@@ -146,21 +145,10 @@ export default function TrendingDeals() {
         {/* Tickets Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {deals.map((deal, idx) => (
-            <motion.div
+            <div
               key={idx}
               onClick={() => handleDealClick(deal)}
-              whileHover="hover"
-              initial="initial"
-              variants={{
-                initial: { y: 0, borderColor: '#e2e8f0', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.05)' },
-                hover: { 
-                  y: -6, 
-                  borderColor: deal.color, 
-                  boxShadow: `0 15px 30px rgba(7, 14, 27, 0.08), 0 0 15px ${deal.glow}` 
-                }
-              }}
-              transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-              className="relative flex bg-white dark:bg-brand-primary-light border dark:border-gray-800 rounded-2xl min-h-[180px] cursor-pointer overflow-hidden group"
+              className="relative flex bg-white dark:bg-brand-primary-light border border-slate-200 dark:border-gray-800 rounded-2xl min-h-[180px] shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1.5 hover:border-slate-350 cursor-pointer overflow-hidden group"
             >
               {/* Colored Side Stripe */}
               <div className="w-1.5 shrink-0" style={{ backgroundColor: deal.color }} />
@@ -184,19 +172,14 @@ export default function TrendingDeals() {
                       {deal.origin}
                     </span>
                     
-                    {/* Animated path dotted line */}
+                    {/* path dotted line */}
                     <div className="flex-1 h-px border-b-2 border-dashed border-brand-border dark:border-gray-800 mx-2 relative min-w-[40px]">
-                      <motion.div 
-                        variants={{
-                          initial: { left: '10%' },
-                          hover: { left: '80%' }
-                        }}
-                        transition={{ duration: 0.7, ease: [0.25, 1, 0.5, 1] }}
-                        className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 rotate-90"
+                      <div 
+                        className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 rotate-90 left-[10%] group-hover:left-[80%] transition-all duration-[750ms] ease-out"
                         style={{ color: deal.color }}
                       >
                         <Plane size={11} fill="currentColor" />
-                      </motion.div>
+                      </div>
                     </div>
 
                     <span className="text-3xl font-display font-semibold text-brand-primary dark:text-white tracking-tight">
@@ -252,7 +235,7 @@ export default function TrendingDeals() {
               {/* Sheen Overlay Effect */}
               <div className="absolute top-0 -left-[150%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/12 to-transparent skew-x-[-25deg] transition-all duration-[750ms] group-hover:left-[150%] pointer-events-none z-10" />
 
-            </motion.div>
+            </div>
           ))}
         </div>
 

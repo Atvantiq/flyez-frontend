@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { DollarSign, Zap, ShieldCheck, CheckCircle, Award } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 interface Benefit {
   number: string;
@@ -87,18 +86,9 @@ export default function WhyBookWithUs() {
           {/* Right Column: Premium Staggered Benefits Panel */}
           <div className="lg:col-span-7 flex flex-col gap-5">
             {benefits.map((b, idx) => (
-              <motion.div
+              <div
                 key={idx}
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                whileHover={{ 
-                  x: 8, 
-                  borderColor: b.color,
-                  boxShadow: `0 12px 30px rgba(7, 14, 27, 0.04), 0 0 15px ${b.glow}` 
-                }}
-                className="relative flex items-start gap-6 p-6 rounded-2xl bg-white dark:bg-brand-primary-light border border-brand-border dark:border-gray-800/80 shadow-sm transition-all duration-300 group cursor-pointer overflow-hidden"
+                className="relative flex items-start gap-6 p-6 rounded-2xl bg-white dark:bg-brand-primary-light border border-brand-border dark:border-gray-800/80 shadow-sm transition-all duration-300 group cursor-pointer overflow-hidden hover:translate-x-2 hover:border-slate-300 hover:shadow-md"
               >
                 {/* Dynamic Brand Color Top-Left corner accent */}
                 <div className="absolute top-0 left-0 w-1 h-full transition-transform duration-300 group-hover:scale-y-110" style={{ backgroundColor: b.color }} />
@@ -122,7 +112,7 @@ export default function WhyBookWithUs() {
                     {b.desc}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
