@@ -41,7 +41,7 @@ export default function WhyBookWithUs() {
           <div className="lg:col-span-5 w-full flex items-center justify-center h-[440px] md:h-[480px] relative select-none">
             
             {/* Left Card - Wings / Sky */}
-            <div className="w-[30%] h-[310px] md:h-[340px] rounded-2xl overflow-hidden border-4 border-[#fafaf9] shadow-lg -rotate-6 translate-x-8 mt-8 transition-all duration-500 hover:rotate-0 hover:scale-105 hover:w-[44%] hover:translate-x-4 hover:z-20 hover:shadow-2xl group cursor-pointer shrink-0">
+            <div className="w-[30%] h-[310px] md:h-[340px] rounded-2xl overflow-hidden border-4 border-[#fafaf9] shadow-lg -rotate-6 translate-x-8 mt-8 transition-all duration-500 hover:rotate-0 hover:scale-105 hover:w-[44%] hover:translate-x-4 hover:z-20 hover:shadow-2xl group cursor-pointer shrink-0 hover:ring-4 hover:ring-brand-orange/20">
               <img
                 src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=400&auto=format&fit=crop"
                 alt="Premium flight wing sunset"
@@ -51,7 +51,7 @@ export default function WhyBookWithUs() {
             </div>
 
             {/* Center Card - Luxury Flight Cabin Video */}
-            <div className="w-[46%] h-[350px] md:h-[380px] rounded-3xl overflow-hidden border-4 border-[#fafaf9] shadow-2xl z-10 transition-all duration-500 hover:scale-105 hover:shadow-2xl group cursor-pointer shrink-0 relative">
+            <div className="w-[46%] h-[350px] md:h-[380px] rounded-3xl overflow-hidden border-4 border-[#fafaf9] shadow-2xl z-10 transition-all duration-500 hover:scale-105 hover:shadow-2xl group cursor-pointer shrink-0 relative hover:ring-4 hover:ring-brand-orange/25">
               <video
                 src="/videos/flight-deals-travel.mp4"
                 poster="/videos/flight-deals-poster.jpg"
@@ -64,7 +64,7 @@ export default function WhyBookWithUs() {
             </div>
 
             {/* Right Card - 5-Star VIP Airport Lounge */}
-            <div className="w-[30%] h-[310px] md:h-[340px] rounded-2xl overflow-hidden border-4 border-[#fafaf9] shadow-lg rotate-6 -translate-x-8 mt-8 transition-all duration-500 hover:rotate-0 hover:scale-105 hover:w-[44%] hover:-translate-x-4 hover:z-20 hover:shadow-2xl group cursor-pointer shrink-0">
+            <div className="w-[30%] h-[310px] md:h-[340px] rounded-2xl overflow-hidden border-4 border-[#fafaf9] shadow-lg rotate-6 -translate-x-8 mt-8 transition-all duration-500 hover:rotate-0 hover:scale-105 hover:w-[44%] hover:-translate-x-4 hover:z-20 hover:shadow-2xl group cursor-pointer shrink-0 hover:ring-4 hover:ring-brand-orange/20">
               <img
                 src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=400&auto=format&fit=crop"
                 alt="Luxury VIP transit lounge"
