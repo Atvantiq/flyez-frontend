@@ -38,15 +38,12 @@ export default function Footer() {
         {/* Tier 1: Brand Header Statement */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-12 mb-16 border-b border-white/[0.06]">
           <div className="max-w-xl">
-            <a href="/" className="flex items-center gap-2.5 group mb-3">
-              <img 
-                src="/logo-small.gif" 
-                alt="FlyEz Logo" 
-                className="h-7 w-auto object-contain transition-transform duration-500 group-hover:scale-105" 
+            <a href="/" className="flex items-center group mb-3">
+              <img
+                src="/logo-flyez-white.png"
+                alt="FlyEz Logo"
+                className="h-9 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
               />
-              <span className="text-2xl font-[800] font-display text-white tracking-tight">
-                Fly<span className="text-brand-orange font-medium">Ez</span>
-              </span>
             </a>
             <p className="text-white/50 text-xs sm:text-sm font-sans leading-relaxed">
               FlyEz negotiates directly with airline inventory desks to source private, unpublished airfares and consolidated rates for business and luxury travelers.

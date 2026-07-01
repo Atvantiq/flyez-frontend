@@ -62,9 +62,9 @@ export default function Header({ overlay = true }: HeaderProps) {
         {/* Logo left-aligned */}
         <a href="/" className="flex items-center group shrink-0">
           <img
-            src={transparent ? '/logo-white.png' : '/logo-small.gif'}
+            src={transparent ? '/logo-flyez-white.png' : '/logo-flyez.png'}
             alt="FlyEz Logo"
-            className="h-14 w-auto object-contain transition-transform duration-500 group-hover:scale-[1.04]"
+            className="h-10 w-auto object-contain transition-transform duration-500 group-hover:scale-[1.04]"
           />
         </a>
 
