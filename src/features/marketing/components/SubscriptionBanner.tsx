@@ -19,7 +19,7 @@ export default function SubscriptionBanner() {
   };
 
   return (
-    <section className="py-7 bg-slate-50 border-t border-b border-slate-200/60 relative overflow-hidden">
+    <section className="py-7 bg-gradient-to-r from-[#070e1b] to-[#0c1b33] border-t border-b border-white/5 relative overflow-hidden">
       <div className="premium-container relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
         
         {/* Left Side: Copywriting */}
@@ -27,10 +27,10 @@ export default function SubscriptionBanner() {
           <span className="text-[10px] text-brand-orange uppercase font-extrabold tracking-[2px] mb-1.5 block font-ui">
             VIP Fare Alerts
           </span>
-          <h3 className="text-brand-primary text-xl font-display font-semibold leading-tight mb-1">
+          <h3 className="text-white text-xl font-display font-semibold leading-tight mb-1">
             Unlock Member-Only Deals
           </h3>
-          <p className="text-xs sm:text-sm text-brand-text-muted">
+          <p className="text-xs sm:text-sm text-white/70">
             Join our newsletter and receive exclusive flight promotional codes and flash travel warnings.
           </p>
         </div>
@@ -44,17 +44,17 @@ export default function SubscriptionBanner() {
           ) : (
             <form 
               onSubmit={handleSubscribe}
-              className="flex items-center bg-white border border-slate-200/80 hover:border-slate-300 focus-within:border-brand-orange focus-within:shadow-[0_0_20px_rgba(255,92,0,0.08)] rounded-full p-1 transition-all duration-300 w-full"
+              className="flex items-center bg-white/5 hover:bg-white/7 border border-white/10 focus-within:border-brand-orange focus-within:bg-white/8 focus-within:shadow-[0_0_20px_rgba(255,92,0,0.2)] rounded-full p-1 transition-all duration-300 w-full"
             >
               <div className="flex items-center gap-2 flex-1 min-w-0 pl-3">
-                <Mail size={14} className="text-slate-400 shrink-0" />
+                <Mail size={14} className="text-white/40 shrink-0" />
                 <input 
                   type="email" 
                   placeholder="Enter email for secret deals" 
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-transparent border-0 outline-none text-xs sm:text-sm text-brand-primary placeholder:text-slate-300 py-1.5"
+                  className="w-full bg-transparent border-0 outline-none text-xs sm:text-sm text-white placeholder-white/40 py-1.5"
                 />
               </div>
               
