@@ -120,7 +120,7 @@ export default function TrendingDeals() {
   };
 
   return (
-    <section className="py-24 bg-white dark:bg-brand-primary">
+    <section className="py-24 bg-[#f8fafc] dark:bg-brand-primary border-t border-b border-stone-200/50">
       <div className="premium-container">
         
         {/* Title Block */}
@@ -204,8 +204,8 @@ export default function TrendingDeals() {
 
               {/* Ticket Coupon Separator (Dashed vertical line + cutout notches) */}
               <div className="relative w-px border-l-2 border-dashed border-stone-200/80 dark:border-gray-800 my-4 shrink-0 z-10">
-                <div className="absolute -top-[27px] -left-2 w-4 h-4 bg-white dark:bg-brand-primary rounded-full border border-stone-200/60 dark:border-gray-800 border-t-transparent transform rotate-135" />
-                <div className="absolute -bottom-[27px] -left-2 w-4 h-4 bg-white dark:bg-brand-primary rounded-full border border-stone-200/60 dark:border-gray-800 border-b-transparent transform rotate-135" />
+                <div className="absolute -top-[27px] -left-2 w-4 h-4 bg-[#f8fafc] dark:bg-brand-primary rounded-full border border-stone-200/60 dark:border-gray-800 border-t-transparent transform rotate-135" />
+                <div className="absolute -bottom-[27px] -left-2 w-4 h-4 bg-[#f8fafc] dark:bg-brand-primary rounded-full border border-stone-200/60 dark:border-gray-800 border-b-transparent transform rotate-135" />
               </div>
 
               {/* Right Side: Price & Barcode details */}
