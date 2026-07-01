@@ -77,7 +77,7 @@ export default function Header({ overlay = true }: HeaderProps) {
                 <li key={link.name} className="flex items-center">
                   <a
                     href={link.href}
-                    className={`relative py-2 text-[11px] font-bold uppercase tracking-wider whitespace-nowrap transition-colors duration-300 ${
+                    className={`relative py-2 text-[14px] font-semibold tracking-normal whitespace-nowrap transition-colors duration-300 ${
                       transparent
                         ? isActive
                           ? 'text-white hover:text-brand-orange'
