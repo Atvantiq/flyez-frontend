@@ -32,22 +32,68 @@ export default function WhyBookWithUs() {
     }
   ];
 
+  const mediaItems = [
+    {
+      id: "01",
+      category: "CABIN EXPERIENCE",
+      title: "First Class Suites",
+      image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?q=80&w=600&auto=format&fit=crop"
+    },
+    {
+      id: "02",
+      category: "VIP TRANSIT",
+      title: "Premium Lounges",
+      image: "https://images.unsplash.com/photo-1507395290247-36707c7fec36?q=80&w=500&auto=format&fit=crop"
+    },
+    {
+      id: "03",
+      category: "PRIVATE CHARTER",
+      title: "Elite Fleet Access",
+      image: "https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=600&auto=format&fit=crop"
+    }
+  ];
+
   return (
     <section className="py-20 lg:py-24 bg-[#fafaf9] border-t border-b border-stone-200/50 relative overflow-hidden font-sans">
       <div className="premium-container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          {/* Left Column: High-End Single Media Frame */}
-          <div className="lg:col-span-5 w-full">
-            <div className="relative w-full h-[380px] md:h-[420px] rounded-3xl overflow-hidden shadow-[0_12px_30px_rgba(7,14,27,0.08)] border border-stone-200/60 z-10 transition-transform duration-500 hover:scale-[1.01]">
-              <img
-                src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?q=80&w=800&auto=format&fit=crop"
-                alt="Luxury aircraft passenger cabin suite"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent pointer-events-none" />
-            </div>
+          {/* Left Column: Creative Flex Accordion Gallery with Micro-Animations */}
+          <div className="lg:col-span-5 w-full flex gap-3.5 h-[390px] md:h-[420px] rounded-3xl overflow-hidden shadow-[0_12px_30px_rgba(7,14,27,0.06)] border border-stone-200/50">
+            {mediaItems.map((item) => (
+              <div
+                key={item.id}
+                className="relative flex-1 hover:flex-[2.6] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] overflow-hidden group cursor-pointer"
+              >
+                {/* Background Image */}
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                  loading="lazy"
+                />
+
+                {/* Ambient Dark Bottom Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 opacity-60 group-hover:opacity-85 pointer-events-none" />
+
+                {/* Center Number Tag (Fades out when hovered) */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-10 transition-opacity duration-500 group-hover:opacity-0">
+                  <span className="font-display italic text-2xl text-white/80 font-medium tracking-widest drop-shadow-[0_2px_8px_rgba(7,14,27,0.4)]">
+                    {item.id}
+                  </span>
+                </div>
+
+                {/* Caption Panel (Fades/Slides up when hovered) */}
+                <div className="absolute bottom-5 left-4 right-4 z-20 transition-all duration-500 transform translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 pointer-events-none">
+                  <span className="text-[8px] font-extrabold tracking-[0.2em] text-brand-orange uppercase">
+                    {item.category}
+                  </span>
+                  <h4 className="text-white text-xs md:text-sm font-semibold tracking-wide font-display mt-0.5 whitespace-nowrap">
+                    {item.title}
+                  </h4>
+                </div>
+              </div>
+            ))}
           </div>
 
           {/* Right Column: Editorial Value Proposition Copy & Stacked Values */}
